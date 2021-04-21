@@ -8,7 +8,7 @@
       <link href="2021/04/21/zhu-ti-mei-hua/"/>
       <url>2021/04/21/zhu-ti-mei-hua/</url>
       
-        <content type="html"><![CDATA[<center>详情请见官方文档：<a herf="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a></center>]]></content>
+        <content type="html"><![CDATA[<center>详情请见官方文档：<a herf="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a></center><ul><li>待增添留言板功能</li></ul><blockquote><p><strong>注</strong>：本留言板功能依赖于第三方评论系统，请<strong>激活</strong>你的评论系统才有效果。并且在主题的 <code>_config.yml</code> 文件中，第 <code>19</code> 至 <code>21</code> 行的“<strong>菜单</strong>”配置，取消关于留言板的注释即可。</p></blockquote><ul><li>更改头像</li></ul><ul><li>修改关于页面</li></ul>]]></content>
       
       
       <categories>
@@ -212,14 +212,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> 博客           //多个标签可以这样添加 </tag>
-            
-            <tag> hexo </tag>
-            
-        </tags>
       
     </entry>
     

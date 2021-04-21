@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>肥蛋</title>
   
-  
+  <subtitle>肥蛋与鸡</subtitle>
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-21T07:40:35.634Z</updated>
+  <updated>2021-04-21T10:11:15.389Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/"/>
     <id>http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/</id>
     <published>2021-04-21T07:36:15.000Z</published>
-    <updated>2021-04-21T07:40:35.634Z</updated>
+    <updated>2021-04-21T10:11:15.389Z</updated>
     
     
       
@@ -97,7 +97,7 @@
     <link href="http://thomascheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/"/>
     <id>http://thomascheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</id>
     <published>2021-04-20T12:19:36.000Z</published>
-    <updated>2021-04-21T07:13:38.001Z</updated>
+    <updated>2021-04-21T10:12:20.071Z</updated>
     
     
       
@@ -242,7 +242,7 @@
     <link href="http://thomascheng99.github.io/2021/04/20/hexo/"/>
     <id>http://thomascheng99.github.io/2021/04/20/hexo/</id>
     <published>2021-04-20T11:13:10.000Z</published>
-    <updated>2021-04-20T11:37:53.046Z</updated>
+    <updated>2021-04-21T10:12:31.793Z</updated>
     
     
       
@@ -257,10 +257,6 @@
     
     <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
     
-    
-    <category term="博客           //多个标签可以这样添加" scheme="http://thomascheng99.github.io/tags/%E5%8D%9A%E5%AE%A2-%E5%A4%9A%E4%B8%AA%E6%A0%87%E7%AD%BE%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E6%B7%BB%E5%8A%A0/"/>
-    
-    <category term="hexo" scheme="http://thomascheng99.github.io/tags/hexo/"/>
     
   </entry>
   
