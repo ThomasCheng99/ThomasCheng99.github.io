@@ -464,9 +464,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>初始化文章的<code>Front-matter</code>：修改”/scaffolds/post.md”</li>
-</ul>
+                <h4 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h4><p>修改”/scaffolds/post.md”</p>
 <center>初始状态</center>
 
 <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line"><span class="keyword">tags:</span></span><br></pre></td></tr></table></figure>
@@ -476,6 +474,20 @@
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line"><span class="built_in">date</span>: &#123;&#123; <span class="built_in">date</span> &#125;&#125;</span><br><span class="line">top: <span class="literal">true</span>						<span class="meta">#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除</span></span><br><span class="line">cover: flase					<span class="meta">#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true</span></span><br><span class="line">summary: <span class="keyword">this</span> <span class="keyword">is</span> the summary 	<span class="meta">#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</span></span><br><span class="line">keywords: <span class="keyword">this</span> <span class="keyword">is</span> the keywords 	<span class="meta">#文章关键字，SEO 时需要;默认为文章标题</span></span><br><span class="line">tags:</span><br><span class="line">- <span class="keyword">new</span>							<span class="meta">#标签项，此项待修改</span></span><br><span class="line">categories: <span class="keyword">new</span>					<span class="meta">#分类项，此项待修改</span></span><br></pre></td></tr></table></figure>
 
 <p>*备注：author项已在根_config.yml中修改</p>
+<h4 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h4><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https:<span class="regexp">//gi</span>thub.com<span class="regexp">/CodeFalling/</span>hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_posts</span><br><span class="line">    <span class="string">|- hexo.md</span></span><br><span class="line">    <span class="string">|_ hexo</span></span><br><span class="line">        <span class="string">|_ image.png</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! [hexo image] (hexo/image.png)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>生成的页面中图片引用路径</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">&quot;/2016/11/25/hexo/image.png&quot;</span> <span class="attribute">alt</span>=<span class="string">&quot;hexo image&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>至此，用 markdown 完美实现本地图片插入</p>
 
                 
             </div>
@@ -713,7 +725,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/21/bo-ke-da-jian/">
+                <a href="/2021/04/21/000-bo-ke-da-jian/">
                     <div class="card-image">
                         
                         
