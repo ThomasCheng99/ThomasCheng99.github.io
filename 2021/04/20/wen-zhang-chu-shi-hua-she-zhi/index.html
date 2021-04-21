@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
 
 
 
@@ -450,10 +451,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    392
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -470,25 +486,38 @@
                 <h4 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h4><p>修改”/scaffolds/post.md”</p>
 <center>初始状态</center>
 
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line"><span class="keyword">tags:</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <center>修改后的状态</center>
 
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line"><span class="built_in">date</span>: &#123;&#123; <span class="built_in">date</span> &#125;&#125;</span><br><span class="line">top: <span class="literal">true</span>						<span class="meta">#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除</span></span><br><span class="line">cover: flase					<span class="meta">#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true</span></span><br><span class="line">summary: <span class="keyword">this</span> <span class="keyword">is</span> the summary 	<span class="meta">#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</span></span><br><span class="line">keywords: <span class="keyword">this</span> <span class="keyword">is</span> the keywords 	<span class="meta">#文章关键字，SEO 时需要;默认为文章标题</span></span><br><span class="line">tags:</span><br><span class="line">- <span class="keyword">new</span>							<span class="meta">#标签项，此项待修改</span></span><br><span class="line">categories: <span class="keyword">new</span>					<span class="meta">#分类项，此项待修改</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+top: true						#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除
+cover: flase					#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true
+summary: this is the summary 	#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+keywords: this is the keywords 	#文章关键字，SEO 时需要;默认为文章标题
+tags:
+- new							#标签项，此项待修改
+categories: new					#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>*备注：author项已在根_config.yml中修改</p>
 <h4 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h4><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https:<span class="regexp">//gi</span>thub.com<span class="regexp">/CodeFalling/</span>hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_posts</span><br><span class="line">    <span class="string">|- hexo.md</span></span><br><span class="line">    <span class="string">|_ hexo</span></span><br><span class="line">        <span class="string">|_ image.png</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">_posts
+    |- hexo.md
+    |_ hexo
+        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! [hexo image] (hexo/image.png)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">! [hexo image] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <p>生成的页面中图片引用路径</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">&quot;/2016/11/25/hexo/image.png&quot;</span> <span class="attribute">alt</span>=<span class="string">&quot;hexo image&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>至此，用 markdown 完美实现本地图片插入</p>
 
@@ -1002,13 +1031,13 @@
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2021</span>
             
-            <span id="year">2019</span>
+            <span id="year">2021</span>
             <a href="/about" target="_blank">Bobby</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1031,6 +1060,50 @@
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
