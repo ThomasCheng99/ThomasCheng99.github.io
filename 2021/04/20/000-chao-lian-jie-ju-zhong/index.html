@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%B6%85%E9%93%BE%E6%8E%A5%E5%B1%85%E4%B8%AD/">
+                                <span class="chip bg-color">超链接居中</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -473,59 +477,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>markdown本身不支持，但可以使用html</p>
+                <p>*markdown本身不支持，但可以使用html：</p>
 <ol>
-<li>(在csdn的markdown中<center>与前一个文字之间，可以只有空格但不能只有回车也不能只有回车+空格，否则超链接语法将会失效，其他地方的markdown有无此限制不清楚)：</li>
+<li>方法一：</li>
 </ol>
-<center>
-[链接名称](链接地址)
-</center>
-1
-2
-3
-法二：
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>[链接名称](链接地址)<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<center>
-<a href=链接地址>链接名称\</a>
-</center>
-1
-2
-3
-法三：
-<div align=center >
-<a href=链接地址>链接名称\</a>
-</div>
-1
-2
-3
-例1：<center>
-[我的博客](https://blog.csdn.net/weixin_42378324/article/details/108392847)
-</center>
+<p>示例：</p>
+<center>[链接名称](链接地址)</center>
 
 
-<p>我的博客<br>例1中如果center与例1： 中间夹一个回车，超链接语法就失效了，像这样：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42378324/article/details/108392847">我的博客</a></p>
-<p>◀例2：</p>
-<center>
-<a href=https://blog.csdn.net/weixin_42378324/article/details/108392847>我的博客\</a>
-</center>
-1
-2
-3
-我的博客
+
+<ol start="2">
+<li>方法二：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">链接地址</span>&gt;</span>链接名称<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<center><a href=链接地址>链接名称</a></center>
 
 
-<p>◀例3：</p>
-<div align=center >
-<a href=https://blog.csdn.net/weixin_42378324/article/details/108392847>我的博客\</a>
-</div>
-1
-2
-3
-我的博客
-————————————————
-版权声明：本文为CSDN博主「湫啊湫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/weixin_42378324/article/details/108392847
+
+<ol start="3">
+<li>方法三：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">center</span> &gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">链接地址</span>&gt;</span>链接名称<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<div align=center ><a href=链接地址>链接名称</a></div>
+
+
+
+<p>备注：方法一当有回车符时可能会失效</p>
+
                 
             </div>
             <hr/>
@@ -551,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/20/chao-lian-jie-ju-zhong/">http://ThomasCheng99.github.io/2021/04/20/chao-lian-jie-ju-zhong/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/04/20/000-chao-lian-jie-ju-zhong/">http://ThomasCheng99.github.io/2021/04/20/000-chao-lian-jie-ju-zhong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +572,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E8%B6%85%E9%93%BE%E6%8E%A5%E5%B1%85%E4%B8%AD/">
+                                    <span class="chip bg-color">超链接居中</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -799,7 +787,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/20/wen-zhang-front-matter-jie-shao/">
+                <a href="/2021/04/20/000-wen-zhang-front-matter-jie-shao/">
                     <div class="card-image">
                         
                         
