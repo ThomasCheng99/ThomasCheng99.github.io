@@ -172,13 +172,13 @@
     <link href="http://thomascheng99.github.io/2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/"/>
     <id>http://thomascheng99.github.io/2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/</id>
     <published>2021-04-20T11:32:01.000Z</published>
-    <updated>2021-04-22T02:22:12.469Z</updated>
+    <updated>2021-04-22T02:26:54.858Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;新建文章的方法&quot;&gt;&lt;a href=&quot;#新建文章的方法&quot; class=&quot;headerlink&quot; title=&quot;*新建文章的方法&quot;&gt;&lt;/a&gt;*新建文章的方法&lt;/h3&gt;&lt;h5 id=&quot;1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件&quot;&gt;&lt;a href=&quot;#1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件&quot; class=&quot;headerlink&quot; title=&quot;1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件&quot;&gt;&lt;/a&gt;1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件&lt;/h5&gt;&lt;h5 id=&quot;2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码&quot;&gt;&lt;a href=&quot;#2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码&quot; class=&quot;headerlink&quot; title=&quot;2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:&quot;&gt;&lt;/a&gt;2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:&lt;/h5&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;hexo new &amp;quot;新建文章名称&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此时，在” /source/_posts”文件夹里便有了”新建文章名称.md”文件。&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;</summary>
+&lt;p&gt;test01&lt;/p&gt;</summary>
     
     
     
