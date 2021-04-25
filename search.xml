@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>关机病毒制作</title>
+      <link href="2021/04/22/guan-ji-bing-du-zhi-zuo/"/>
+      <url>2021/04/22/guan-ji-bing-du-zhi-zuo/</url>
+      
+        <content type="html"><![CDATA[<h4 id="步骤1：打开新建的记事本，输入“shutdown-p”命令，即自动重启本地计算机，保存，重命名文本文档为“腾讯QQ-bat”"><a href="#步骤1：打开新建的记事本，输入“shutdown-p”命令，即自动重启本地计算机，保存，重命名文本文档为“腾讯QQ-bat”" class="headerlink" title="步骤1：打开新建的记事本，输入“shutdown -p”命令，即自动重启本地计算机，保存，重命名文本文档为“腾讯QQ.bat”"></a>步骤1：打开新建的记事本，输入“shutdown -p”命令，即自动重启本地计算机，保存，重命名文本文档为“腾讯QQ.bat”</h4><p><img src="/2021/04/22/guan-ji-bing-du-zhi-zuo/image-20210425164750463.png" alt="image-20210425164750463"></p><h4 id="步骤2：右键单击“腾讯QQ-bat”图标，在弹出的菜单中单击“创建快捷方式命令”"><a href="#步骤2：右键单击“腾讯QQ-bat”图标，在弹出的菜单中单击“创建快捷方式命令”" class="headerlink" title="步骤2：右键单击“腾讯QQ.bat”图标，在弹出的菜单中单击“创建快捷方式命令”"></a>步骤2：右键单击“腾讯QQ.bat”图标，在弹出的菜单中单击“创建快捷方式命令”</h4><h4 id="步骤3：右键单击“腾讯QQ-bat-快捷方式”图标，在弹出的菜单中单击“属性”命令"><a href="#步骤3：右键单击“腾讯QQ-bat-快捷方式”图标，在弹出的菜单中单击“属性”命令" class="headerlink" title="步骤3：右键单击“腾讯QQ.bat-快捷方式”图标，在弹出的菜单中单击“属性”命令"></a>步骤3：右键单击“腾讯QQ.bat-快捷方式”图标，在弹出的菜单中单击“属性”命令</h4><h4 id="步骤4：切换至“快捷方式”选项卡，单击“更改图标”按钮，改成腾讯QQ的图标"><a href="#步骤4：切换至“快捷方式”选项卡，单击“更改图标”按钮，改成腾讯QQ的图标" class="headerlink" title="步骤4：切换至“快捷方式”选项卡，单击“更改图标”按钮，改成腾讯QQ的图标"></a>步骤4：切换至“快捷方式”选项卡，单击“更改图标”按钮，改成腾讯QQ的图标</h4><p><img src="/2021/04/22/guan-ji-bing-du-zhi-zuo/image-20210425162955428.png" alt="image-20210425162955428"></p><h4 id="步骤5：右键单击“腾讯QQ-bat”图标，在弹出的菜单中单击“属性”，切换到“常规”选项卡，勾选“隐藏”勾选框"><a href="#步骤5：右键单击“腾讯QQ-bat”图标，在弹出的菜单中单击“属性”，切换到“常规”选项卡，勾选“隐藏”勾选框" class="headerlink" title="步骤5：右键单击“腾讯QQ.bat”图标，在弹出的菜单中单击“属性”，切换到“常规”选项卡，勾选“隐藏”勾选框"></a>步骤5：右键单击“腾讯QQ.bat”图标，在弹出的菜单中单击“属性”，切换到“常规”选项卡，勾选“隐藏”勾选框</h4><p><img src="/2021/04/22/guan-ji-bing-du-zhi-zuo/image-20210425163106991.png" alt="image-20210425163106991"></p><h4 id="最终：可看到桌面上未显示“腾讯QQ-bat”图标，只显示了“腾讯QQ”图标，用户一旦双击该图标计算机便会关机"><a href="#最终：可看到桌面上未显示“腾讯QQ-bat”图标，只显示了“腾讯QQ”图标，用户一旦双击该图标计算机便会关机" class="headerlink" title="最终：可看到桌面上未显示“腾讯QQ.bat”图标，只显示了“腾讯QQ”图标，用户一旦双击该图标计算机便会关机"></a>最终：可看到桌面上未显示“腾讯QQ.bat”图标，只显示了“腾讯QQ”图标，用户一旦双击该图标计算机便会关机</h4><h4 id="关机相关命令介绍："><a href="#关机相关命令介绍：" class="headerlink" title="关机相关命令介绍："></a>关机相关命令介绍：</h4><p>一段时间后关机：shutdown -s -t 秒数效果是倒计时到该秒数后关机，例如shutdown -s -t 3600就是3600秒后关机，也就是一小时后关机</p><p>立即关机命令：shutdown -p关闭本地计算机，效果是马上关机，而不进行倒计时；也可以使用shutdown -s -t 0设置0秒后关机，也就是立即关机的意思</p><p>一段时间后重启：shutdown -r -t 秒数，效果是倒计时该秒数后重启，例如shutdown -r -t 0倒数0秒后重启，也就是立即重启的意思，如果没有加-t参数则会倒计时默认的秒数后关机，一般是一分钟</p><p>休眠命令：shutdown -h,这条指令让计算机休眠，也就是完全断电，但是会保存当前电脑的状态，下次启动时这些打开过的程序都还在。类似虚拟机的挂起功能</p><p>睡眠指令：睡眠和休眠的不同的地方是，睡眠没有完全掉电，电脑中其他的耗电部分都关闭，只留下内存供电，下次在唤醒电脑的时候，恢复到睡眠之前的状态。这点和休眠类似，睡眠的好处就是启动快。短时间离开电脑的话可以睡眠，如果时间间隔比较久的话用休眠。休眠和关机一样是不耗电的，而睡眠因为还有给内存供电，所以睡眠还是耗电的</p><p>启用屏幕保护：cmd下输入rundll32.exe user32.dll LockWorkStation，可以启动屏幕保护功能，这样要再次使用电脑的时候要输入密码。可以在短时间离开的时候，防止别人动你电脑</p><p>显示shutdown命令语法：输入shutdown -help显示shutdown指令的用法</p><p>shutdown -a表示取消关机，或者取消重启。在shutdown -s或者shutdown -r倒计时结束之前执行shutdown -a可以取消关机或者重启操作</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 牛刀小试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 黑客尝试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下删除文件的几种方法及速度比较</title>
+      <link href="2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
+      <url>2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</url>
+      
+        <content type="html"><![CDATA[<p>场景：删除/tmp下的所有文件</p><p>方法一：直接使用rm</p><p>rm -f /tmp/*</p><p>方法二：使用find 和 rm</p><p>find /tmp/ -type f  -exec rm {} ;</p><p>方法三： 使用find</p><p>find /tmp/ -type f -delete</p><p>方法四：使用rsync</p><p>rsync是linux下文件同步和数据传输的命令。通过构造一个空文件夹并且和目标文件夹进行同步，就可以把目标文件夹的内容给删除了</p><p>mkdir blanktest<br>rsync –delete-before -d blanktest/  /tmp/</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> new </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> new </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>主题美化</title>
       <link href="2021/04/21/zhu-ti-mei-hua/"/>
       <url>2021/04/21/zhu-ti-mei-hua/</url>
