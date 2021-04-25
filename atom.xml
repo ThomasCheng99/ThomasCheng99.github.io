@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-25T09:49:03.221Z</updated>
+  <updated>2021-04-25T10:36:33.979Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>日常学习01</title>
+    <link href="http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/"/>
+    <id>http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/</id>
+    <published>2021-04-25T10:33:38.000Z</published>
+    <updated>2021-04-25T10:36:33.979Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;宏病毒：鉴于绝大多数人都不需要或者不会使用宏功能，所以可以得出一个相对重要的结论：如果office文档在打开时，系统给出一个宏病毒警告框，就应该对这个文档保持高度警惕，它被感染的可能性极大。&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>U盘病毒制作过程曝光</title>
+    <link href="http://thomascheng99.github.io/2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/"/>
+    <id>http://thomascheng99.github.io/2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/</id>
+    <published>2021-04-25T09:59:29.000Z</published>
+    <updated>2021-04-25T10:12:11.770Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;步骤1：将病毒或木马复制到U盘中&quot;&gt;&lt;a href=&quot;#步骤1：将病毒或木马复制到U盘中&quot; class=&quot;headerlink&quot; title=&quot;步骤1：将病毒或木马复制到U盘中&quot;&gt;&lt;/a&gt;步骤1：将病毒或木马复制到U盘中&lt;/h3&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="牛刀小试" scheme="http://thomascheng99.github.io/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/"/>
+    
+    
+    <category term="黑客尝试" scheme="http://thomascheng99.github.io/tags/%E9%BB%91%E5%AE%A2%E5%B0%9D%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux命令积累</title>
@@ -38,7 +91,7 @@
     <link href="http://thomascheng99.github.io/2021/04/22/000-guan-ji-bing-du-zhi-zuo/"/>
     <id>http://thomascheng99.github.io/2021/04/22/000-guan-ji-bing-du-zhi-zuo/</id>
     <published>2021-04-22T02:55:01.000Z</published>
-    <updated>2021-04-25T09:03:14.551Z</updated>
+    <updated>2021-04-25T10:00:26.723Z</updated>
     
     
       

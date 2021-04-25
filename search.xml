@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>日常学习01</title>
+      <link href="2021/04/25/ri-chang-xue-xi-01/"/>
+      <url>2021/04/25/ri-chang-xue-xi-01/</url>
+      
+        <content type="html"><![CDATA[<ul><li>宏病毒：鉴于绝大多数人都不需要或者不会使用宏功能，所以可以得出一个相对重要的结论：如果office文档在打开时，系统给出一个宏病毒警告框，就应该对这个文档保持高度警惕，它被感染的可能性极大。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>U盘病毒制作过程曝光</title>
+      <link href="2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/"/>
+      <url>2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/</url>
+      
+        <content type="html"><![CDATA[<h3 id="步骤1：将病毒或木马复制到U盘中"><a href="#步骤1：将病毒或木马复制到U盘中" class="headerlink" title="步骤1：将病毒或木马复制到U盘中"></a>步骤1：将病毒或木马复制到U盘中</h3><h3 id="步骤2：在U盘中新建文本文档，并重命名为“Autorun-inf”"><a href="#步骤2：在U盘中新建文本文档，并重命名为“Autorun-inf”" class="headerlink" title="步骤2：在U盘中新建文本文档，并重命名为“Autorun.inf”"></a>步骤2：在U盘中新建文本文档，并重命名为“Autorun.inf”</h3><h3 id="步骤3：用记事本打开“Autorun-inf”，编辑文件代码，使得双击U盘图标后运行制定木马程序"><a href="#步骤3：用记事本打开“Autorun-inf”，编辑文件代码，使得双击U盘图标后运行制定木马程序" class="headerlink" title="步骤3：用记事本打开“Autorun.inf”，编辑文件代码，使得双击U盘图标后运行制定木马程序"></a>步骤3：用记事本打开“Autorun.inf”，编辑文件代码，使得双击U盘图标后运行制定木马程序</h3><pre class="line-numbers language-none"><code class="language-none">[AutoRun]OPEN&#x3D;腾讯QQ.batshellexecute&#x3D;腾讯QQ.batshell\Auto\command&#x3D;腾讯QQ.bat]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><img src="/2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/image-20210425181201257.png"></p><h3 id="步骤4：将病毒或木马文件和“Autorun-inf”文件隐藏——在“属性”→“常规”界面勾选“隐藏”复选框"><a href="#步骤4：将病毒或木马文件和“Autorun-inf”文件隐藏——在“属性”→“常规”界面勾选“隐藏”复选框" class="headerlink" title="步骤4：将病毒或木马文件和“Autorun.inf”文件隐藏——在“属性”→“常规”界面勾选“隐藏”复选框"></a>步骤4：将病毒或木马文件和“Autorun.inf”文件隐藏——在“属性”→“常规”界面勾选“隐藏”复选框</h3><h3 id="最终：将U盘接入计算机中，右击U盘对应的图标，在快捷菜单中回到Auto命令，表示设置成功"><a href="#最终：将U盘接入计算机中，右击U盘对应的图标，在快捷菜单中回到Auto命令，表示设置成功" class="headerlink" title="最终：将U盘接入计算机中，右击U盘对应的图标，在快捷菜单中回到Auto命令，表示设置成功"></a>最终：将U盘接入计算机中，右击U盘对应的图标，在快捷菜单中回到Auto命令，表示设置成功</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 牛刀小试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 黑客尝试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux命令积累</title>
       <link href="2021/04/25/linux-ming-ling-ji-lei/"/>
       <url>2021/04/25/linux-ming-ling-ji-lei/</url>
