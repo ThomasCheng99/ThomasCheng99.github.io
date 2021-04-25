@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux命令积累</title>
+      <link href="2021/04/25/linux-ming-ling-ji-lei/"/>
+      <url>2021/04/25/linux-ming-ling-ji-lei/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关机病毒制作</title>
       <link href="2021/04/22/000-guan-ji-bing-du-zhi-zuo/"/>
       <url>2021/04/22/000-guan-ji-bing-du-zhi-zuo/</url>
@@ -58,7 +83,7 @@
       <link href="2021/04/21/zhu-ti-mei-hua/"/>
       <url>2021/04/21/zhu-ti-mei-hua/</url>
       
-        <content type="html"><![CDATA[<center>详情请见官方文档：<a herf="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a></center><ul><li>待增添留言板功能</li></ul><blockquote><p><strong>注</strong>：本留言板功能依赖于第三方评论系统，请<strong>激活</strong>你的评论系统才有效果。并且在主题的 <code>_config.yml</code> 文件中，第 <code>19</code> 至 <code>21</code> 行的“<strong>菜单</strong>”配置，取消关于留言板的注释即可。</p></blockquote><ul><li>更改头像</li></ul><ul><li>修改关于页面</li></ul>]]></content>
+        <content type="html"><![CDATA[<center>详情请见官方文档：<a herf="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a></center><h3 id="待完成事项"><a href="#待完成事项" class="headerlink" title="待完成事项"></a>待完成事项</h3><ul><li>待增添留言板功能</li></ul><blockquote><p><strong>注</strong>：本留言板功能依赖于第三方评论系统，请<strong>激活</strong>你的评论系统才有效果。并且在主题的 <code>_config.yml</code> 文件中，第 <code>19</code> 至 <code>21</code> 行的“<strong>菜单</strong>”配置，取消关于留言板的注释即可。</p></blockquote><ul><li>更改头像</li></ul><ul><li>修改关于页面</li></ul>]]></content>
       
       
       <categories>
@@ -133,9 +158,21 @@
       <link href="2021/04/20/wen-zhang-chu-shi-hua-she-zhi/"/>
       <url>2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</url>
       
-        <content type="html"><![CDATA[<h4 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h4><p>修改”/scaffolds/post.md”</p><center>初始状态</center><pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><center>修改后的状态</center><pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;top: true#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除cover: flase#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成truesummary: this is the summary #文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要keywords: this is the keywords #文章关键字，SEO 时需要;默认为文章标题tags:- new#标签项，此项待修改categories: new#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>*备注：author项已在根_config.yml中修改</p><h4 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h4><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p><pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p><pre class="line-numbers language-none"><code class="language-none">_posts    |- hexo.md    |_ hexo        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">! [hexo image] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>生成的页面中图片引用路径</p><pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>至此，用 markdown 完美实现本地图片插入</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h3><p>修改”/scaffolds/post.md”</p><center>初始状态</center><pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><center>修改后的状态</center><pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;top: true#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除cover: flase#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成truesummary: this is the summary #文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要keywords: this is the keywords #文章关键字，SEO 时需要;默认为文章标题tags:- new#标签项，此项待修改categories: new#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>备注：author项已在根_config.yml中修改</p><h3 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h3><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p><pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p><pre class="line-numbers language-none"><code class="language-none">_posts    |- hexo.md    |_ hexo        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">! [] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>生成的页面中图片引用路径</p><pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>至此，用 markdown 完美实现本地图片插入</p>]]></content>
       
       
+      <categories>
+          
+          <category> 个人博客设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文章 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -183,7 +220,7 @@
       
         <tags>
             
-            <tag> 新文章格式设置 </tag>
+            <tag> 文章 </tag>
             
         </tags>
       
@@ -196,7 +233,7 @@
       <link href="2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/"/>
       <url>2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/</url>
       
-        <content type="html"><![CDATA[<h3 id="新建文章的方法"><a href="#新建文章的方法" class="headerlink" title="*新建文章的方法"></a>*新建文章的方法</h3><h5 id="1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件"><a href="#1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件" class="headerlink" title="1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件"></a>1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件</h5><h5 id="2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码"><a href="#2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码" class="headerlink" title="2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:"></a>2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:</h5><pre class="line-numbers language-none"><code class="language-none">hexo new &quot;新建文章名称&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此时，在” /source/_posts”文件夹里便有了”新建文章名称.md”文件。</p><p>test01</p><span id="more"></span><h3 id="发布新建文章"><a href="#发布新建文章" class="headerlink" title="* 发布新建文章"></a>* 发布新建文章</h3><p>在该博客项目文件夹下右键选择 “ Git Bash Here “ 进入命令窗口，输入如下代码：</p><pre class="line-numbers language-none"><code class="language-none">hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意事项：</p><ul><li><p>部署到GitHub时，可能因为网速、被墙等原因，需要多次运行”hexo deploy”；也可以运行”hexo clean”后在运行上述代码</p></li><li><p>.md文件不要用记事本打开，建议使用具有markdown语法的程序打开</p></li></ul><!--more-->]]></content>
+        <content type="html"><![CDATA[<h3 id="新建文章的方法"><a href="#新建文章的方法" class="headerlink" title="新建文章的方法"></a>新建文章的方法</h3><h5 id="方法一：进入博客目录，在-source-posts-文件夹下直接建立一个-md文件"><a href="#方法一：进入博客目录，在-source-posts-文件夹下直接建立一个-md文件" class="headerlink" title="方法一：进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件"></a>方法一：进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件</h5><h5 id="方法二：进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码"><a href="#方法二：进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码" class="headerlink" title="方法二：进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:"></a>方法二：进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:</h5><pre class="line-numbers language-none"><code class="language-none">hexo new &quot;新建文章名称&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此时，在” /source/_posts”文件夹里便有了”新建文章名称.md”文件。</p><h3 id="发布新建文章"><a href="#发布新建文章" class="headerlink" title="发布新建文章"></a>发布新建文章</h3><p>在该博客项目文件夹下右键选择 “ Git Bash Here “ 进入命令窗口，输入如下代码：</p><pre class="line-numbers language-none"><code class="language-none">hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意事项：</p><ul><li><p>部署到GitHub时，可能因为网速、被墙等原因，需要多次运行”hexo deploy”；也可以运行”hexo clean”后在运行上述代码</p></li><li><p>.md文件不要用记事本打开，建议使用具有markdown语法的程序打开</p></li></ul>]]></content>
       
       
       <categories>
@@ -205,6 +242,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 文章 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -230,51 +273,6 @@
             <tag> 主题修改 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="2021/04/20/linux-ming-ling-ji-lei/"/>
-      <url>2021/04/20/linux-ming-ling-ji-lei/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>test</p><p><em>斜体文本</em></p><p><strong>test</strong></p><p><em><strong>test</strong></em></p><hr><p><del>test</del></p><p>test</p><p><u>test</u></p><p>test000:<a href="%E6%B5%8B%E3%80%82%E3%80%82%E3%80%82%E3%80%82">^test</a></p><ul><li>test</li></ul><ol><li><p>test</p></li><li><p>第一项：</p><ul><li>第一个</li></ul></li><li><p>第二项</p><ul><li>第二个</li></ul></li></ol><blockquote><p>test01</p><blockquote><p>test02</p><blockquote><p>test03</p></blockquote></blockquote></blockquote><ul><li><p>第一项</p><blockquote><p>test</p></blockquote></li><li><p>第二项</p><blockquote><p>test</p></blockquote></li></ul><p><code>printf()</code>函数</p><p>​    print()</p><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><a href="www.baidu.com">test</a></p><p>&lt;<a href="http://www.baidu.com&gt;/">www.baidu.com&gt;</a></p><p><img src="../images/1.png" alt="test"></p><table><thead><tr><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo使用技巧</title>
-      <link href="2021/04/20/hexo/"/>
-      <url>2021/04/20/hexo/</url>
-      
-        <content type="html"><![CDATA[<h5 id><a href="#" class="headerlink" title></a></h5>]]></content>
-      
-      
-      <categories>
-          
-          <category> 个人博客设计 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2021/04/20/hello-world/"/>
-      <url>2021/04/20/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
       
     </entry>
     

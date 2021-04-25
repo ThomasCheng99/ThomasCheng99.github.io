@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-25T09:03:14.551Z</updated>
+  <updated>2021-04-25T09:49:03.221Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令积累</title>
+    <link href="http://thomascheng99.github.io/2021/04/25/linux-ming-ling-ji-lei/"/>
+    <id>http://thomascheng99.github.io/2021/04/25/linux-ming-ling-ji-lei/</id>
+    <published>2021-04-25T09:41:19.000Z</published>
+    <updated>2021-04-25T09:49:03.221Z</updated>
+    
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Linux" scheme="http://thomascheng99.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>关机病毒制作</title>
@@ -72,14 +89,16 @@
     <link href="http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/"/>
     <id>http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/</id>
     <published>2021-04-21T07:36:15.000Z</published>
-    <updated>2021-04-21T10:11:15.389Z</updated>
+    <updated>2021-04-25T09:47:53.631Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;center&gt;详情请见官方文档：&lt;a</summary>
+    <summary type="html">&lt;center&gt;详情请见官方文档：&lt;a herf=&quot;https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md&quot;&gt;hexo-theme-matery&lt;/a&gt;&lt;/center&gt;
+
+&lt;h3</summary>
         
       
     
@@ -148,19 +167,23 @@
     <link href="http://thomascheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/"/>
     <id>http://thomascheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</id>
     <published>2021-04-20T12:19:36.000Z</published>
-    <updated>2021-04-21T10:12:20.071Z</updated>
+    <updated>2021-04-25T09:47:06.453Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;初始化文章的Front-matter&quot;&gt;&lt;a href=&quot;#初始化文章的Front-matter&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;初始化文章的Front-matter&quot;&gt;&lt;a href=&quot;#初始化文章的Front-matter&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="文章" scheme="http://thomascheng99.github.io/tags/%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
@@ -198,7 +221,7 @@
     <link href="http://thomascheng99.github.io/2021/04/20/000-wen-zhang-front-matter-jie-shao/"/>
     <id>http://thomascheng99.github.io/2021/04/20/000-wen-zhang-front-matter-jie-shao/</id>
     <published>2021-04-20T11:57:56.000Z</published>
-    <updated>2021-04-20T13:17:43.865Z</updated>
+    <updated>2021-04-25T09:44:10.179Z</updated>
     
     
       
@@ -214,7 +237,7 @@
     <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
     
     
-    <category term="新文章格式设置" scheme="http://thomascheng99.github.io/tags/%E6%96%B0%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F%E8%AE%BE%E7%BD%AE/"/>
+    <category term="文章" scheme="http://thomascheng99.github.io/tags/%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
@@ -223,18 +246,23 @@
     <link href="http://thomascheng99.github.io/2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/"/>
     <id>http://thomascheng99.github.io/2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/</id>
     <published>2021-04-20T11:32:01.000Z</published>
-    <updated>2021-04-22T02:32:57.204Z</updated>
+    <updated>2021-04-25T09:45:03.526Z</updated>
     
     
-    <summary type="html">&lt;h3 id=&quot;新建文章的方法&quot;&gt;&lt;a href=&quot;#新建文章的方法&quot; class=&quot;headerlink&quot; title=&quot;*新建文章的方法&quot;&gt;&lt;/a&gt;*新建文章的方法&lt;/h3&gt;&lt;h5 id=&quot;1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件&quot;&gt;&lt;a href=&quot;#1、进入博客目录，在-source-posts-文件夹下直接建立一个-md文件&quot; class=&quot;headerlink&quot; title=&quot;1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件&quot;&gt;&lt;/a&gt;1、进入博客目录，在 /source/_posts 文件夹下直接建立一个.md文件&lt;/h5&gt;&lt;h5 id=&quot;2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码&quot;&gt;&lt;a href=&quot;#2、进入博客目录，右键选择-“-Git-Bash-Here-“-进入命令窗口，输入下面代码&quot; class=&quot;headerlink&quot; title=&quot;2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:&quot;&gt;&lt;/a&gt;2、进入博客目录，右键选择 “ Git Bash Here “ 进入命令窗口，输入下面代码:&lt;/h5&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;hexo new &amp;quot;新建文章名称&amp;quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时，在” /source/_posts”文件夹里便有了”新建文章名称.md”文件。&lt;/p&gt;
-&lt;p&gt;test01&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;新建文章的方法&quot;&gt;&lt;a href=&quot;#新建文章的方法&quot; class=&quot;headerlink&quot; title=&quot;新建文章的方法&quot;&gt;&lt;/a&gt;新建文章的方法&lt;/h3&gt;&lt;h5</summary>
+        
+      
     
     
     
     <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
     
+    
+    <category term="文章" scheme="http://thomascheng99.github.io/tags/%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
@@ -261,71 +289,6 @@
     
     
     <category term="主题修改" scheme="http://thomascheng99.github.io/tags/%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://thomascheng99.github.io/2021/04/20/linux-ming-ling-ji-lei/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/linux-ming-ling-ji-lei/</id>
-    <published>2021-04-20T11:17:19.724Z</published>
-    <updated>2021-04-20T11:17:19.838Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World!&quot;&gt;&lt;/a&gt;Hello World!&lt;/h1&gt;&lt;h2 id=&quot;test&quot;&gt;&lt;a href=&quot;#test&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo使用技巧</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/hexo/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/hexo/</id>
-    <published>2021-04-20T11:13:10.000Z</published>
-    <updated>2021-04-21T10:12:31.793Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h5 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/hello-world/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/hello-world/</id>
-    <published>2021-04-20T10:34:14.841Z</published>
-    <updated>2021-04-20T10:34:14.841Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
