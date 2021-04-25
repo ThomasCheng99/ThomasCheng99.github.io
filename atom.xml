@@ -43,31 +43,27 @@
   
   <entry>
     <title>Linux下删除文件的几种方法及速度比较</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
+    <link href="http://thomascheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
+    <id>http://thomascheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
     <published>2021-04-22T02:53:32.000Z</published>
-    <updated>2021-04-25T08:56:40.100Z</updated>
+    <updated>2021-04-25T09:22:21.018Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;场景：删除/tmp下的所有文件&lt;/p&gt;
-&lt;p&gt;方法一：直接使用rm&lt;/p&gt;
-&lt;p&gt;rm -f /tmp/*&lt;/p&gt;
-&lt;p&gt;方法二：使用find 和 rm&lt;/p&gt;
-&lt;p&gt;find /tmp/ -type f  -exec rm {} ;&lt;/p&gt;
-&lt;p&gt;方法三：</summary>
+    <summary type="html">&lt;h3 id=&quot;方法汇总：&quot;&gt;&lt;a href=&quot;#方法汇总：&quot; class=&quot;headerlink&quot; title=&quot;方法汇总：&quot;&gt;&lt;/a&gt;方法汇总：&lt;/h3&gt;&lt;p&gt;场景：删除/tmp下的所有文件&lt;/p&gt;
+&lt;p&gt;方法一：直接使用rm——rm -f</summary>
         
       
     
     
     
-    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="new" scheme="http://thomascheng99.github.io/tags/new/"/>
+    <category term="Linux" scheme="http://thomascheng99.github.io/tags/Linux/"/>
     
   </entry>
   
