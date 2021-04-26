@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-26T08:22:27.786Z</updated>
+  <updated>2021-04-26T08:26:55.337Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Chrome更新书签策略</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/chrome-geng-xin-shu-qian-ce-lue/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/chrome-geng-xin-shu-qian-ce-lue/</id>
+    <link href="http://thomascheng99.github.io/2021/04/26/0/chrome-geng-xin-shu-qian-ce-lue/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/0/chrome-geng-xin-shu-qian-ce-lue/</id>
     <published>2021-04-26T08:21:09.000Z</published>
-    <updated>2021-04-26T08:22:27.786Z</updated>
+    <updated>2021-04-26T08:26:55.337Z</updated>
     
     
       
@@ -44,14 +44,15 @@
     <link href="http://thomascheng99.github.io/2021/04/26/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/"/>
     <id>http://thomascheng99.github.io/2021/04/26/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/</id>
     <published>2021-04-26T08:19:04.000Z</published>
-    <updated>2021-04-26T08:20:08.168Z</updated>
+    <updated>2021-04-26T08:26:23.061Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h5 id=&quot;双击WPS表格EXE打开多个窗口后选择对应的文件打开&quot;&gt;&lt;a href=&quot;#双击WPS表格EXE打开多个窗口后选择对应的文件打开&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;双击WPS表格EXE打开多个窗口后选择对应的文件打开&lt;/p&gt;
+</summary>
         
       
     
@@ -67,14 +68,15 @@
     <link href="http://thomascheng99.github.io/2021/04/26/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/"/>
     <id>http://thomascheng99.github.io/2021/04/26/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/</id>
     <published>2021-04-26T08:16:39.000Z</published>
-    <updated>2021-04-26T08:17:57.989Z</updated>
+    <updated>2021-04-26T08:26:05.277Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;只要从你要复制的最后开始往前选，一直选到开头的X人赞同的同字（包括同字），然后Ctrl-C，万事大吉（谷歌浏览器亲测有效，其余浏览器未测试）。&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;只要从你要复制的最后开始往前选，一直选到开头的X人赞同的同字（包括同字），然后Ctrl+C，万事大吉（谷歌浏览器亲测有效，其余浏览器未测试）。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -90,7 +92,7 @@
     <link href="http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/"/>
     <id>http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/</id>
     <published>2021-04-25T10:33:38.000Z</published>
-    <updated>2021-04-26T08:12:24.267Z</updated>
+    <updated>2021-04-26T08:28:08.847Z</updated>
     
     
       
@@ -119,7 +121,7 @@
     <link href="http://thomascheng99.github.io/2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/"/>
     <id>http://thomascheng99.github.io/2021/04/25/u-pan-bing-du-zhi-zuo-guo-cheng-pu-guang/</id>
     <published>2021-04-25T09:59:29.000Z</published>
-    <updated>2021-04-25T10:12:11.770Z</updated>
+    <updated>2021-04-26T08:27:37.775Z</updated>
     
     
       
@@ -144,7 +146,7 @@
     <link href="http://thomascheng99.github.io/2021/04/25/linux-ming-ling-ji-lei/"/>
     <id>http://thomascheng99.github.io/2021/04/25/linux-ming-ling-ji-lei/</id>
     <published>2021-04-25T09:41:19.000Z</published>
-    <updated>2021-04-25T09:49:03.221Z</updated>
+    <updated>2021-04-26T08:27:58.275Z</updated>
     
     
     
@@ -158,8 +160,8 @@
   
   <entry>
     <title>关机病毒制作</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/000-guan-ji-bing-du-zhi-zuo/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/000-guan-ji-bing-du-zhi-zuo/</id>
+    <link href="http://thomascheng99.github.io/2021/04/22/guan-ji-bing-du-zhi-zuo/"/>
+    <id>http://thomascheng99.github.io/2021/04/22/guan-ji-bing-du-zhi-zuo/</id>
     <published>2021-04-22T02:55:01.000Z</published>
     <updated>2021-04-25T10:00:26.723Z</updated>
     
@@ -183,8 +185,8 @@
   
   <entry>
     <title>Linux下删除文件的几种方法及速度比较</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
+    <link href="http://thomascheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
+    <id>http://thomascheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
     <published>2021-04-22T02:53:32.000Z</published>
     <updated>2021-04-25T09:32:30.049Z</updated>
     
@@ -236,8 +238,8 @@
   
   <entry>
     <title>Mac怎样查看隐藏文件</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/000mac-zen-yang-cha-kan-yin-cang-wen-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/000mac-zen-yang-cha-kan-yin-cang-wen-jian/</id>
+    <link href="http://thomascheng99.github.io/2021/04/21/mac-zen-yang-cha-kan-yin-cang-wen-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/21/mac-zen-yang-cha-kan-yin-cang-wen-jian/</id>
     <published>2021-04-21T07:18:16.000Z</published>
     <updated>2021-04-21T07:27:44.424Z</updated>
     
@@ -262,10 +264,10 @@
   
   <entry>
     <title>博客搭建</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/000-bo-ke-da-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/000-bo-ke-da-jian/</id>
+    <link href="http://thomascheng99.github.io/2021/04/21/bo-ke-da-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/21/bo-ke-da-jian/</id>
     <published>2021-04-21T03:48:44.000Z</published>
-    <updated>2021-04-21T06:50:31.965Z</updated>
+    <updated>2021-04-25T09:43:23.514Z</updated>
     
     
       
@@ -312,8 +314,8 @@
   
   <entry>
     <title>超链接居中</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/000-chao-lian-jie-ju-zhong/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/000-chao-lian-jie-ju-zhong/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/chao-lian-jie-ju-zhong/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/chao-lian-jie-ju-zhong/</id>
     <published>2021-04-20T12:06:55.000Z</published>
     <updated>2021-04-25T09:38:27.582Z</updated>
     
@@ -341,8 +343,8 @@
   
   <entry>
     <title>文章Front-matter介绍</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/000-wen-zhang-front-matter-jie-shao/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/000-wen-zhang-front-matter-jie-shao/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/wen-zhang-front-matter-jie-shao/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/wen-zhang-front-matter-jie-shao/</id>
     <published>2021-04-20T11:57:56.000Z</published>
     <updated>2021-04-25T09:44:10.179Z</updated>
     
@@ -391,8 +393,8 @@
   
   <entry>
     <title>主题修改</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/000-zhu-ti-xiu-gai/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/000-zhu-ti-xiu-gai/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/zhu-ti-xiu-gai/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/zhu-ti-xiu-gai/</id>
     <published>2021-04-20T11:27:46.000Z</published>
     <updated>2021-04-21T07:13:27.195Z</updated>
     

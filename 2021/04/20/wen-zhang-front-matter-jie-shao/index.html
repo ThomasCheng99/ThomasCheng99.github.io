@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux下删除文件的几种方法及速度比较, Bobby">
+    <meta name="keywords" content="文章Front-matter介绍, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux下删除文件的几种方法及速度比较 | Bobby</title>
+    <title>文章Front-matter介绍 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux下删除文件的几种方法及速度比较</h1>
+                    <h1 class="description center-align post-title">文章Front-matter介绍</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/%E6%96%87%E7%AB%A0/">
+                                <span class="chip bg-color">文章</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                日常学习
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                个人博客设计
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-22
+                    2021-04-20
                 </div>
                 
 
@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    953
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    3 分
                 </div>
                 
 
@@ -501,147 +501,120 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="方法汇总："><a href="#方法汇总：" class="headerlink" title="方法汇总："></a>方法汇总：</h3><p>场景：删除/tmp下的所有文件</p>
-<p>方法一：直接使用rm——rm -f /tmp/*</p>
-<p>方法二：使用find 和 rm——find /tmp/ -type f  -exec rm {} \</p>
-<p>方法三： 使用find——find /tmp/ -type f -delete</p>
-<p>方法四：使用rsync，rsync是linux下文件同步和数据传输的命令。通过构造一个空文件夹并且和目标文件夹进行同步，就可以把目标文件夹的内容给删除了：</p>
-<p>mkdir blankfiles<br>rsync –delete-before -d blanktest/  /tmp/</p>
-<h3 id="速度比较："><a href="#速度比较：" class="headerlink" title="速度比较："></a>速度比较：</h3><table>
-<thead>
-<tr>
-<th align="left">COMMAND</th>
-<th align="left">TIME TAKEN</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">RM Command</td>
-<td align="left">Is not capable of deleting large number of files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -exec</td>
-<td align="left">14 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -delete</td>
-<td align="left">5 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Perl</td>
-<td align="left">1 Minute for half a million files</td>
-</tr>
-<tr>
-<td align="left">RSYNC with -delete</td>
-<td align="left">2 Minute 56 seconds for half a million files</td>
-</tr>
-</tbody></table>
+                <center> 详情请见官方说明文档：<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a> </center>
+
 <hr>
-<center> 详情请见大佬说明文档：<a target="_blank" rel="noopener" href="https://www.slashroot.in/which-is-the-fastest-method-to-delete-files-in-linux">Which is the fastest method to delete files in Linux</a> </center>
-
-<p>Creating, deleting, and modifying files is one of the common task that a user does in any operating system. This kind of task comes under a day to day list of tasks that a user does. Although it is quite fast and seamless operation when it comes to deleting a single or a handful of files in Linux or any other operating system. But if the number of files is quite large, then the deletion operation takes quite long to complete.</p>
-<p><a target="_blank" rel="noopener" href="http://www.slashroot.in/how-does-file-deletion-work-linux">What happens when you delete a file in Linux</a>, depends on the kind of file system, on which the file you want to delete resides. There are many operational differences in deleting files under different types of file system. When we talk about files in Linux, its all about inodes rather than files. How an inode gets modified, during file deletion is an important aspect to understand.</p>
-<p>Inodes are the building blocks of Linux operating system. If you are interested in understanding inodes, i would recommend reading the below post, before going ahead, as we will not be discussing inode related details in this post.</p>
-<p><strong>Read:</strong> <a target="_blank" rel="noopener" href="http://www.slashroot.in/inode-and-its-structure-linux">What is an inode in Linux</a></p>
-<p>I am writing this post, to find out the fastest method to delete large number of files in Linux. We will begin this tutorial with some simple file deletion methods, and then will compare the speed with which different method completed the task of file deletion. Another major reason for writing this post is the time i spend on one of our crawler servers, to delete millions of files with very small size (few KBs).</p>
-<p>As i told, if you are dealing with small number of files, then the operation will be fast compared to a large number of files which are of very small size. Let’s begin this with some simple commands in Linux used to delete files.</p>
-<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="Commands-to-delete-files-in-Linux-and-their-example-usage"><a href="#Commands-to-delete-files-in-Linux-and-their-example-usage" class="headerlink" title="Commands to delete files in Linux and their example usage"></a>Commands to delete files in Linux and their example usage</h2><p>To delete files in Linux, the most commonly used command is rm command. Let’s see some example’s of rm command.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rm -f testfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>-f</strong> used in the above command, will delete the file forcefully without asking for a confirmation.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rm -rf testdirectory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above command will delete the directory named “<strong>testdirectory</strong>“ as well as all the contents inside that directory(-r option used is to delete files recursively)</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rmdir testdirectory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above command rmdir, will only delete the directory if its empty.</p>
-<p>Let’s now have a look at some different methods of deleting files in Linux. One of my favorite methods out there is to use find command. Find commands is a very handy tool that can be used to search files according to its type, size, created date, modified date, and much more different criteria. To find out more about this wonderful searching tool in Linux, read the below post.</p>
-<p><strong>Read:<a target="_blank" rel="noopener" href="http://www.slashroot.in/find-command-usage-and-examples-linux"> </a></strong><a target="_blank" rel="noopener" href="http://www.slashroot.in/find-command-usage-and-examples-linux">Usage examples of find command in Linux</a></p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -type f -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above shown command, will delete all the files inside /test directory. First the find command will look for all files inside the directory, and then for each result, it will execute and rm.</p>
-<p>Let’s see some different methods that can be used with find command, to delete files.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -mtime +7 -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>In the above shown example, find command will search all those files inside the /test directory which are modified 7 days ago, and then delete each of them.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -size +7M -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>Above shown example, will search for all those files in the directory /test which are larger than 7M, and then delete each of them.</p>
-<p>In all of the above shown examples of find command, rm command is invoked for each and every file in the list. For example, in the last find command shown above, if the result is 50 files which are bigger than 7M, then 50 rm commands are invoked for deleting each of them. This will take a much longer time.</p>
-<p>Instead of using the above command of rm with the help of -exec argument in find, there is a better alternative. We will see the alternative and then calculate the difference between speed in each of them.</p>
-<p>As i told before, the main idea behind finding the deletion speed, is when you delete large number of files. So lets first create half a million files with the help of a simple bash for loop. And after creating half a million files, we will try to delete it with rm command, find command with exec argument and then will see a better find command alternative.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# for i in $(seq 1 500000); do echo testing &gt;&gt; $i.txt; done<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above command will create 5 lakh files (half a million) in the current working directory, with the name 1.txt to 500000.txt, and each file contains the text <strong>“testing”,</strong> so the file size will be at least in the range of some kilo bytes. Let’s now test the speed of deleting these number of files with different commands. First let’s use the simple rm command, and then will use find command with -exec and then delete option to calculate the time taken to delete these number of files.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time rm -f *
--bash: &#x2F;bin&#x2F;rm: Argument list too long
-real  0m11.126s
-user  0m9.673s
-sys   0m1.278s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>If you see the above rm command i ran on the test directory, containing half a million files, it gave me a message saying <strong>/bin/rm: Argument list too long</strong>. Which means the command didn’t complete the deletion, because the number of files given to rm command was too big to complete. So rm command didn’t even stand the test, because it gave up. Don’t pay attention to the time displayed by the time command, because rm command didn’t complete its operation, and time command displays the output without bothering about the end result of the command.</p>
-<p>Now let’s use our previously seen find command with -exec argument.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time find .&#x2F; -type f -exec rm &#123;&#125; \;
-real  14m51.735s
-user  2m24.330s
-sys   9m48.743s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>From the output we got by using time command, it is clear that it took 14 minutes and 51 seconds to delete 5 lakh files from a single directory. This is quite a long time, because for each file a separate rm command is executed, until the complete list of files gets deleted.</p>
-<p>Now lets test the time consumed, by using <strong>-delete,</strong> option in find command.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time find .&#x2F; -type f -delete
-real  5m11.937s
-user  0m1.259s
-sys   0m28.441s
-[root@myvm1 test]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Wow you saw that result!! -delete option only took 5 minutes 11 seconds. That’s a wonderful improvement in the speed, when you delete millions of files in Linux.</p>
-<p>Let’s now have a look at how deleting files using Perl language works, and its speed compared to other options we saw earlier.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time perl -e &#39;for(&lt;*&gt;)&#123;((stat)[9]&lt;(unlink))&#125;&#39;
-real  1m0.488s
-user  0m7.023s
-sys   0m27.403s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>That’s insanely fast compared to other find command, and rm command options we saw earlier. Till now this seems to be the best method that can be used to delete all the files in a directory. That’s a remarkable achievement in speed for deleting files in Linux. If you see the output Perl only took around 1 minute to delete half a million files in that directory.</p>
-<p>But yeah if you are interested in finding more complex options while using Perl, you need to have some good hands on with Perl regular expressions.</p>
-<p>There is one more lesser used and less known method that can be used to delete large number of files inside a folder. This method is none other than our famous tool <strong>RSYNC</strong> used for transferring and synchronizing files between two local as well as remote locations in Linux.</p>
-<p>Let’s have a look at that method of deleting all files inside a folder with the help of RSYNC command. The method and logic used behind deleting files with the help of rsync is based on the fact that rsync is commonly used for synchronizing files between two different locations.</p>
-<p>This can be achieved by simply synchronizing a target directory which has the large number of files, with an empty directory. In our case <strong>test</strong> directory has half a million files, lets create a directory called as <strong>blanktest</strong>, which will be kept empty for the purpose of simply synchronization. Now along with this we will be using -delete option in rsync, which will delete all those files in the target directory, which are are not present in the source(in our case the source is an empty directory, so all the files in the destination directory will be deleted.)</p>
-<p><strong>Empty Directory</strong>: /home/blanktest</p>
-<p><strong>Directory to be emptied:</strong> /test</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 home]# time rsync -a --delete blanktest&#x2F; test&#x2F;
-real  2m52.502s
-user  0m2.772s
-sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>The results are pretty impressive, so its much better to use rsync if you want to empty a directory containing millions of files, compared to find command.</p>
-<p>The below shown table summarizes the speed for file deletion in Linux, using different methods in Linux.</p>
+<p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的</p>
 <table>
 <thead>
 <tr>
-<th align="left">COMMAND</th>
-<th align="left">TIME TAKEN</th>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">RM Command</td>
-<td align="left">Is not capable of deleting large number of files</td>
+<td>title</td>
+<td><code>Markdown</code> 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
 </tr>
 <tr>
-<td align="left">Find Command with -exec</td>
-<td align="left">14 Minutes for half a million files</td>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
 </tr>
 <tr>
-<td align="left">Find Command with -delete</td>
-<td align="left">5 Minutes for half a million files</td>
+<td>author</td>
+<td>根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td>文章作者</td>
 </tr>
 <tr>
-<td align="left">Perl</td>
-<td align="left">1 Minute for half a million files</td>
+<td>img</td>
+<td><code>featureImages</code> 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
 </tr>
 <tr>
-<td align="left">RSYNC with -delete</td>
-<td align="left">2 Minute 56 seconds for half a million files</td>
+<td>top</td>
+<td><code>true</code></td>
+<td>推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td><code>false</code></td>
+<td><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td><code>true</code></td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td><code>false</code></td>
+<td>是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>文章标题</td>
+<td>文章关键字，SEO 时需要</td>
+</tr>
+<tr>
+<td>reprintPolicy</td>
+<td>cc_by</td>
+<td>文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个</td>
 </tr>
 </tbody></table>
+<blockquote>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a target="_blank" rel="noopener" href="http://tool.oschina.net/encrypt?type=2">开源中国在线工具</a>、<a target="_blank" rel="noopener" href="http://encode.chahuo.com/">chahuo</a>、<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/hash.aspx">站长工具</a>。</li>
+<li>您可以在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则</li>
+</ol>
+</blockquote>
+<p>以下为文章的 <code>Front-matter</code> 示例。</p>
+<h3 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+top: true						#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除
+cover: flase					#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true
+summary: this is the summary 	#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+tags:
+<span class="token list punctuation">-</span> new							#标签项，此项待修改
+categories: new					#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
                 
             </div>
@@ -668,7 +641,7 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/">http://ThomasCheng99.github.io/2021/04/22/000linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/04/20/wen-zhang-front-matter-jie-shao/">http://ThomasCheng99.github.io/2021/04/20/wen-zhang-front-matter-jie-shao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,8 +679,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/%E6%96%87%E7%AB%A0/">
+                                    <span class="chip bg-color">文章</span>
                                 </a>
                             
                         </div>
@@ -883,31 +856,31 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/22/000-guan-ji-bing-du-zhi-zuo/">
+                <a href="/2021/04/20/chao-lian-jie-ju-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="关机病毒制作">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="超链接居中">
                         
-                        <span class="card-title">关机病毒制作</span>
+                        <span class="card-title">超链接居中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文详细介绍了关机病毒的制作流程
+                            该文介绍了markdown编写时超链接居中的方法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/" class="post-category">
-                                    牛刀小试
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    日常学习
                                 </a>
                             
                             
@@ -917,8 +890,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%BB%91%E5%AE%A2%E5%B0%9D%E8%AF%95/">
-                        <span class="chip bg-color">黑客尝试</span>
+                    <a href="/tags/markdown%E7%BC%96%E5%86%99%E6%8A%80%E5%B7%A7/">
+                        <span class="chip bg-color">markdown编写技巧</span>
                     </a>
                     
                 </div>
@@ -932,24 +905,24 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/21/zhu-ti-mei-hua/">
+                <a href="/2021/04/20/bian-xie-he-fa-bu-xin-wen-zhang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="主题美化">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="编写和发布新文章">
                         
-                        <span class="card-title">主题美化</span>
+                        <span class="card-title">编写和发布新文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文记录了主题美化的那些事~
+                            该文整理了一些编写和发布新文章的注意事项
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
                             </span>
                         <span class="publish-author">
                             
@@ -966,8 +939,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">
-                        <span class="chip bg-color">主题美化</span>
+                    <a href="/tags/%E6%96%87%E7%AB%A0/">
+                        <span class="chip bg-color">文章</span>
                     </a>
                     
                 </div>
