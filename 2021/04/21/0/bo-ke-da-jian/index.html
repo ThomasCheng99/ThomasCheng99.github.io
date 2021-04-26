@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux下删除文件的几种方法及速度比较, Bobby">
+    <meta name="keywords" content="博客搭建, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux下删除文件的几种方法及速度比较 | Bobby</title>
+    <title>博客搭建 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux下删除文件的几种方法及速度比较</h1>
+                    <h1 class="description center-align post-title">博客搭建</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">博客搭建</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                日常学习
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                个人博客设计
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-22
+                    2021-04-21
                 </div>
                 
 
@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    4 分
                 </div>
                 
 
@@ -501,147 +501,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="方法汇总："><a href="#方法汇总：" class="headerlink" title="方法汇总："></a>方法汇总：</h3><p>场景：删除/tmp下的所有文件</p>
-<p>方法一：直接使用rm——rm -f /tmp/*</p>
-<p>方法二：使用find 和 rm——find /tmp/ -type f  -exec rm {} \</p>
-<p>方法三： 使用find——find /tmp/ -type f -delete</p>
-<p>方法四：使用rsync，rsync是linux下文件同步和数据传输的命令。通过构造一个空文件夹并且和目标文件夹进行同步，就可以把目标文件夹的内容给删除了：</p>
-<p>mkdir blankfiles<br>rsync –delete-before -d blanktest/  /tmp/</p>
-<h3 id="速度比较："><a href="#速度比较：" class="headerlink" title="速度比较："></a>速度比较：</h3><table>
-<thead>
-<tr>
-<th align="left">COMMAND</th>
-<th align="left">TIME TAKEN</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">RM Command</td>
-<td align="left">Is not capable of deleting large number of files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -exec</td>
-<td align="left">14 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -delete</td>
-<td align="left">5 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Perl</td>
-<td align="left">1 Minute for half a million files</td>
-</tr>
-<tr>
-<td align="left">RSYNC with -delete</td>
-<td align="left">2 Minute 56 seconds for half a million files</td>
-</tr>
-</tbody></table>
-<hr>
-<center> 详情请见大佬说明文档：<a target="_blank" rel="noopener" href="https://www.slashroot.in/which-is-the-fastest-method-to-delete-files-in-linux">Which is the fastest method to delete files in Linux</a> </center>
+                <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h4 id="GitHub-pages设置"><a href="#GitHub-pages设置" class="headerlink" title="GitHub pages设置"></a>GitHub pages设置</h4><ol>
+<li>注册GitHub账号</li>
+<li>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%9A">https://github.com/，新建一个项目：</a></li>
+</ol>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/1.jpg"></p>
+<p>然后如下图所示，输入自己的项目名字，后面一定要加<code>.github.io</code>后缀，README初始化也要勾上</p>
+<p><strong>名称一定要和你的github名字完全一样，比如你github名字叫<code>abc</code>，那么仓库名字一定要是<code>abc.github.io</code></strong></p>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/2.jpg"></p>
+<p>然后项目就建成了，点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>，会变成下面这样：</p>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/3.jpg"></p>
+<p>浏览器输入链接”yourname.github.io”，就会出现自己的网页啦，效果如下：</p>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/4.jpg"></p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><ol>
+<li><p>去官网下载最新稳定版<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></p>
+</li>
+<li><p>安装选项全部默认，一路点击<code>Next</code></p>
+</li>
+<li><p>最后安装好之后，按<code>Win+R</code>打开命令提示符，输入<code>node -v</code>和<code>npm -v</code>，如果出现版本号，那么就安装成功了</p>
+</li>
+</ol>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><ol>
+<li><p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————Git[<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">下载地址]</a></p>
+</li>
+<li><p>安装选项还是全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了</p>
+</li>
+<li><p>安装完成后在命令提示符中输入<code>git --version</code>验证是否安装成功</p>
+</li>
+</ol>
+<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><ol>
+<li><p>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如存放在<code>D:\blog</code>目录下</p>
+</li>
+<li><p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口（以后我们所有的操作都在git控制台进行，就不要用Windows自带的控制台了）</p>
+</li>
+<li><p>定位到该目录下，输入<code>npm i hexo-cli -g</code>安装Hexo（会有几个报错，无视它就行）</p>
+</li>
+<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功</p>
+</li>
+<li><p>然后就要初始化我们的网站，输入<code>hexo init</code>初始化文件夹，接着输入<code>npm install</code>安装必备的组件</p>
+</li>
+<li><p>这样本地的网站配置也弄好啦，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%95%A6%EF%BC%8C%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A%EF%BC%88%E6%8C%89%60ctrl+c%60%E5%85%B3%E9%97%AD%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89">http://localhost:4000/，就可以看到我们的博客啦，效果如下：（按`ctrl+c`关闭本地服务器）</a></p>
+</li>
+</ol>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/5.jpg"></p>
+<h4 id="连接GitHub与本地"><a href="#连接GitHub与本地" class="headerlink" title="连接GitHub与本地"></a>连接GitHub与本地</h4><ol>
+<li>首先右键打开git bash，然后输入下面命令：（用户名和邮箱根据你注册github的信息自行修改）</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"yourname"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>Creating, deleting, and modifying files is one of the common task that a user does in any operating system. This kind of task comes under a day to day list of tasks that a user does. Although it is quite fast and seamless operation when it comes to deleting a single or a handful of files in Linux or any other operating system. But if the number of files is quite large, then the deletion operation takes quite long to complete.</p>
-<p><a target="_blank" rel="noopener" href="http://www.slashroot.in/how-does-file-deletion-work-linux">What happens when you delete a file in Linux</a>, depends on the kind of file system, on which the file you want to delete resides. There are many operational differences in deleting files under different types of file system. When we talk about files in Linux, its all about inodes rather than files. How an inode gets modified, during file deletion is an important aspect to understand.</p>
-<p>Inodes are the building blocks of Linux operating system. If you are interested in understanding inodes, i would recommend reading the below post, before going ahead, as we will not be discussing inode related details in this post.</p>
-<p><strong>Read:</strong> <a target="_blank" rel="noopener" href="http://www.slashroot.in/inode-and-its-structure-linux">What is an inode in Linux</a></p>
-<p>I am writing this post, to find out the fastest method to delete large number of files in Linux. We will begin this tutorial with some simple file deletion methods, and then will compare the speed with which different method completed the task of file deletion. Another major reason for writing this post is the time i spend on one of our crawler servers, to delete millions of files with very small size (few KBs).</p>
-<p>As i told, if you are dealing with small number of files, then the operation will be fast compared to a large number of files which are of very small size. Let’s begin this with some simple commands in Linux used to delete files.</p>
-<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="Commands-to-delete-files-in-Linux-and-their-example-usage"><a href="#Commands-to-delete-files-in-Linux-and-their-example-usage" class="headerlink" title="Commands to delete files in Linux and their example usage"></a>Commands to delete files in Linux and their example usage</h2><p>To delete files in Linux, the most commonly used command is rm command. Let’s see some example’s of rm command.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rm -f testfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>然后生成密钥SSH key：</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><strong>-f</strong> used in the above command, will delete the file forcefully without asking for a confirmation.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rm -rf testdirectory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>打开<a target="_blank" rel="noopener" href="http://github.com/">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随便</li>
+</ol>
+<blockquote>
+<p>git bash中输入</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>The above command will delete the directory named “<strong>testdirectory</strong>“ as well as all the contents inside that directory(-r option used is to delete files recursively)</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 ~]# rmdir testdirectory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>将输出的内容复制到框中，点击确定保存。</p>
+</blockquote>
+<ol start="4">
+<li>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了！</li>
+</ol>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/6.jpg"></p>
+<p>备注：打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息：</p>
+<blockquote>
+<p>修改最后一行的配置：</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deploy:
+  type: <span class="token function">git</span>
+  repository: https://github.com/godweiyang/godweiyang.github.io
+  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>The above command rmdir, will only delete the directory if its empty.</p>
-<p>Let’s now have a look at some different methods of deleting files in Linux. One of my favorite methods out there is to use find command. Find commands is a very handy tool that can be used to search files according to its type, size, created date, modified date, and much more different criteria. To find out more about this wonderful searching tool in Linux, read the below post.</p>
-<p><strong>Read:<a target="_blank" rel="noopener" href="http://www.slashroot.in/find-command-usage-and-examples-linux"> </a></strong><a target="_blank" rel="noopener" href="http://www.slashroot.in/find-command-usage-and-examples-linux">Usage examples of find command in Linux</a></p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -type f -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above shown command, will delete all the files inside /test directory. First the find command will look for all files inside the directory, and then for each result, it will execute and rm.</p>
-<p>Let’s see some different methods that can be used with find command, to delete files.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -mtime +7 -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>In the above shown example, find command will search all those files inside the /test directory which are modified 7 days ago, and then delete each of them.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 &#x2F;]# find &#x2F;test -size +7M -exec rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>Above shown example, will search for all those files in the directory /test which are larger than 7M, and then delete each of them.</p>
-<p>In all of the above shown examples of find command, rm command is invoked for each and every file in the list. For example, in the last find command shown above, if the result is 50 files which are bigger than 7M, then 50 rm commands are invoked for deleting each of them. This will take a much longer time.</p>
-<p>Instead of using the above command of rm with the help of -exec argument in find, there is a better alternative. We will see the alternative and then calculate the difference between speed in each of them.</p>
-<p>As i told before, the main idea behind finding the deletion speed, is when you delete large number of files. So lets first create half a million files with the help of a simple bash for loop. And after creating half a million files, we will try to delete it with rm command, find command with exec argument and then will see a better find command alternative.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# for i in $(seq 1 500000); do echo testing &gt;&gt; $i.txt; done<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>The above command will create 5 lakh files (half a million) in the current working directory, with the name 1.txt to 500000.txt, and each file contains the text <strong>“testing”,</strong> so the file size will be at least in the range of some kilo bytes. Let’s now test the speed of deleting these number of files with different commands. First let’s use the simple rm command, and then will use find command with -exec and then delete option to calculate the time taken to delete these number of files.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time rm -f *
--bash: &#x2F;bin&#x2F;rm: Argument list too long
-real  0m11.126s
-user  0m9.673s
-sys   0m1.278s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>If you see the above rm command i ran on the test directory, containing half a million files, it gave me a message saying <strong>/bin/rm: Argument list too long</strong>. Which means the command didn’t complete the deletion, because the number of files given to rm command was too big to complete. So rm command didn’t even stand the test, because it gave up. Don’t pay attention to the time displayed by the time command, because rm command didn’t complete its operation, and time command displays the output without bothering about the end result of the command.</p>
-<p>Now let’s use our previously seen find command with -exec argument.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time find .&#x2F; -type f -exec rm &#123;&#125; \;
-real  14m51.735s
-user  2m24.330s
-sys   9m48.743s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>From the output we got by using time command, it is clear that it took 14 minutes and 51 seconds to delete 5 lakh files from a single directory. This is quite a long time, because for each file a separate rm command is executed, until the complete list of files gets deleted.</p>
-<p>Now lets test the time consumed, by using <strong>-delete,</strong> option in find command.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time find .&#x2F; -type f -delete
-real  5m11.937s
-user  0m1.259s
-sys   0m28.441s
-[root@myvm1 test]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Wow you saw that result!! -delete option only took 5 minutes 11 seconds. That’s a wonderful improvement in the speed, when you delete millions of files in Linux.</p>
-<p>Let’s now have a look at how deleting files using Perl language works, and its speed compared to other options we saw earlier.</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 test]# time perl -e &#39;for(&lt;*&gt;)&#123;((stat)[9]&lt;(unlink))&#125;&#39;
-real  1m0.488s
-user  0m7.023s
-sys   0m27.403s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>That’s insanely fast compared to other find command, and rm command options we saw earlier. Till now this seems to be the best method that can be used to delete all the files in a directory. That’s a remarkable achievement in speed for deleting files in Linux. If you see the output Perl only took around 1 minute to delete half a million files in that directory.</p>
-<p>But yeah if you are interested in finding more complex options while using Perl, you need to have some good hands on with Perl regular expressions.</p>
-<p>There is one more lesser used and less known method that can be used to delete large number of files inside a folder. This method is none other than our famous tool <strong>RSYNC</strong> used for transferring and synchronizing files between two local as well as remote locations in Linux.</p>
-<p>Let’s have a look at that method of deleting all files inside a folder with the help of RSYNC command. The method and logic used behind deleting files with the help of rsync is based on the fact that rsync is commonly used for synchronizing files between two different locations.</p>
-<p>This can be achieved by simply synchronizing a target directory which has the large number of files, with an empty directory. In our case <strong>test</strong> directory has half a million files, lets create a directory called as <strong>blanktest</strong>, which will be kept empty for the purpose of simply synchronization. Now along with this we will be using -delete option in rsync, which will delete all those files in the target directory, which are are not present in the source(in our case the source is an empty directory, so all the files in the destination directory will be deleted.)</p>
-<p><strong>Empty Directory</strong>: /home/blanktest</p>
-<p><strong>Directory to be emptied:</strong> /test</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@myvm1 home]# time rsync -a --delete blanktest&#x2F; test&#x2F;
-real  2m52.502s
-user  0m2.772s
-sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>The results are pretty impressive, so its much better to use rsync if you want to empty a directory containing millions of files, compared to find command.</p>
-<p>The below shown table summarizes the speed for file deletion in Linux, using different methods in Linux.</p>
-<table>
-<thead>
-<tr>
-<th align="left">COMMAND</th>
-<th align="left">TIME TAKEN</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">RM Command</td>
-<td align="left">Is not capable of deleting large number of files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -exec</td>
-<td align="left">14 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Find Command with -delete</td>
-<td align="left">5 Minutes for half a million files</td>
-</tr>
-<tr>
-<td align="left">Perl</td>
-<td align="left">1 Minute for half a million files</td>
-</tr>
-<tr>
-<td align="left">RSYNC with -delete</td>
-<td align="left">2 Minute 56 seconds for half a million files</td>
-</tr>
-</tbody></table>
+<blockquote>
+<p>repository修改为你自己的github项目地址</p>
+</blockquote>
+<h4 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h4><ol>
+<li><p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code></p>
+</li>
+<li><p>然后输入<code>hexo new &quot;article title&quot;</code>，新建一篇文章</p>
+</li>
+<li><p>然后打开<code>D:\blog\source\_posts</code>的目录，可以发现下面多了一个<code>.md</code>文件，就是你的文章文件啦</p>
+</li>
+<li><p>编写完markdown文件后，根目录下输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>可以本地预览效果，最后输入<code>hexo d</code>上传到github上，这时打开你的github.io主页就能看到发布的文章啦！</p>
+</li>
+</ol>
+<h4 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h4><p>现在默认的域名还是<code>xxx.github.io</code>，是不是很没有牌面？</p>
+<p>想不想也像我一样弄一个专属域名呢，首先你得购买一个域名，xx云都能买，看你个人喜好了</p>
+<blockquote>
+<p>以我的百度云为例，如下图所示，添加两条解析记录：</p>
+</blockquote>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/7.jpg"></p>
+<blockquote>
+<p>然后打开你的github博客项目，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存：</p>
+</blockquote>
+<p><img src="/2021/04/21/0/bo-ke-da-jian/8.jpg"></p>
+<blockquote>
+<p>这时候你的项目根目录应该会出现一个名为<code>CNAME</code>的文件了。如果没有的话，打开你本地博客<code>/source</code>目录，我的是<code>D:\blog\source</code>，新建<code>CNAME</code>文件，注意没有后缀。然后在里面写上你的域名，保存</p>
+<p>最后运行<code>hexo g</code>、<code>hexo d</code>上传到github</p>
+</blockquote>
+<h4 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h4><p>有时候我们想换一台电脑继续写博客，这时候就可以将博客目录下的所有源文件都上传到github上面</p>
+<blockquote>
+<p>首先在github博客仓库下新建一个分支<code>hexo</code>，然后<code>git clone</code>到本地，把<code>.git</code>文件夹拿出来，放在博客根目录下</p>
+</blockquote>
+<blockquote>
+<p>然后<code>git checkout hexo</code>切换到<code>hexo</code>分支，然后<code>git add .</code>，然后<code>git commit -m &quot;xxx&quot;</code>，最后<code>git push origin hexo</code>提交就行了</p>
+</blockquote>
 
                 
             </div>
@@ -668,7 +639,7 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/">http://ThomasCheng99.github.io/2021/04/22/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/04/21/0/bo-ke-da-jian/">http://ThomasCheng99.github.io/2021/04/21/0/bo-ke-da-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,8 +677,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">博客搭建</span>
                                 </a>
                             
                         </div>
@@ -883,31 +854,31 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/22/guan-ji-bing-du-zhi-zuo/">
+                <a href="/2021/04/21/0/mac-zen-yang-cha-kan-yin-cang-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="关机病毒制作">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Mac怎样查看隐藏文件">
                         
-                        <span class="card-title">关机病毒制作</span>
+                        <span class="card-title">Mac怎样查看隐藏文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文详细介绍了关机病毒的制作流程
+                            该文介绍了查看Mac隐藏文件的方法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/" class="post-category">
-                                    牛刀小试
+                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
+                                    疑难杂症
                                 </a>
                             
                             
@@ -917,8 +888,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%BB%91%E5%AE%A2%E5%B0%9D%E8%AF%95/">
-                        <span class="chip bg-color">黑客尝试</span>
+                    <a href="/tags/Mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                        <span class="chip bg-color">Mac电脑使用技巧</span>
                     </a>
                     
                 </div>
@@ -932,24 +903,24 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/21/zhu-ti-mei-hua/">
+                <a href="/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="主题美化">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="文章初始化设置">
                         
-                        <span class="card-title">主题美化</span>
+                        <span class="card-title">文章初始化设置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文记录了主题美化的那些事~
+                            该文整理了一些初始化文章的方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
                             </span>
                         <span class="publish-author">
                             
@@ -966,8 +937,8 @@ sys   0m32.649s<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">
-                        <span class="chip bg-color">主题美化</span>
+                    <a href="/tags/%E6%96%87%E7%AB%A0/">
+                        <span class="chip bg-color">文章</span>
                     </a>
                     
                 </div>
