@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-25T10:36:33.979Z</updated>
+  <updated>2021-04-26T08:22:27.786Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -17,11 +17,80 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Chrome更新书签策略</title>
+    <link href="http://thomascheng99.github.io/2021/04/26/chrome-geng-xin-shu-qian-ce-lue/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/chrome-geng-xin-shu-qian-ce-lue/</id>
+    <published>2021-04-26T08:21:09.000Z</published>
+    <updated>2021-04-26T08:22:27.786Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）&quot;&gt;&lt;a href=&quot;#A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>WPS表格无法多窗口打开文件</title>
+    <link href="http://thomascheng99.github.io/2021/04/26/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/</id>
+    <published>2021-04-26T08:19:04.000Z</published>
+    <updated>2021-04-26T08:20:08.168Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;双击WPS表格EXE打开多个窗口后选择对应的文件打开&quot;&gt;&lt;a href=&quot;#双击WPS表格EXE打开多个窗口后选择对应的文件打开&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>知乎不支持转载的文章怎样复制文字?</title>
+    <link href="http://thomascheng99.github.io/2021/04/26/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/</id>
+    <published>2021-04-26T08:16:39.000Z</published>
+    <updated>2021-04-26T08:17:57.989Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;只要从你要复制的最后开始往前选，一直选到开头的X人赞同的同字（包括同字），然后Ctrl-C，万事大吉（谷歌浏览器亲测有效，其余浏览器未测试）。&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>日常学习01</title>
     <link href="http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/"/>
     <id>http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/</id>
     <published>2021-04-25T10:33:38.000Z</published>
-    <updated>2021-04-25T10:36:33.979Z</updated>
+    <updated>2021-04-26T08:12:24.267Z</updated>
     
     
       
@@ -31,7 +100,8 @@
     <summary type="html">&lt;ul&gt;
 &lt;li&gt;宏病毒：鉴于绝大多数人都不需要或者不会使用宏功能，所以可以得出一个相对重要的结论：如果office文档在打开时，系统给出一个宏病毒警告框，就应该对这个文档保持高度警惕，它被感染的可能性极大。&lt;/li&gt;
 &lt;/ul&gt;
-</summary>
+&lt;ul&gt;
+&lt;li&gt;解压缩：以往的压缩工具通常是将</summary>
         
       
     
