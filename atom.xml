@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-04-26T08:26:55.337Z</updated>
+  <updated>2021-05-12T02:23:43.920Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>产品经理必懂的技术那点事儿</title>
+    <link href="http://thomascheng99.github.io/2021/05/11/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/"/>
+    <id>http://thomascheng99.github.io/2021/05/11/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/</id>
+    <published>2021-05-11T02:55:03.000Z</published>
+    <updated>2021-05-12T02:23:43.920Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;产品思维侧重从用户和商业视角出发，技术思维侧重在技术实现和系统框架层面，两种思维方式也有交叉点，那就是产品的需求、设计和产品功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;产品定位是否清晰直接决定了产品以什么样的形态呈现给用户使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Chrome更新书签策略</title>
