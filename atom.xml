@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-05-12T02:27:45.476Z</updated>
+  <updated>2021-05-12T02:32:25.113Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -17,28 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一个APP的诞生</title>
-    <link href="http://thomascheng99.github.io/2021/05/12/yi-ge-app-de-dan-sheng/"/>
-    <id>http://thomascheng99.github.io/2021/05/12/yi-ge-app-de-dan-sheng/</id>
-    <published>2021-05-12T02:27:45.000Z</published>
-    <updated>2021-05-12T02:27:45.476Z</updated>
-    
-    
-    
-    
-    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
-    
-    
-    <category term="new" scheme="http://thomascheng99.github.io/tags/new/"/>
-    
-  </entry>
-  
-  <entry>
     <title>产品经理必懂的技术那点事儿</title>
-    <link href="http://thomascheng99.github.io/2021/05/11/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/"/>
-    <id>http://thomascheng99.github.io/2021/05/11/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/</id>
+    <link href="http://thomascheng99.github.io/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/"/>
+    <id>http://thomascheng99.github.io/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/</id>
     <published>2021-05-11T02:55:03.000Z</published>
-    <updated>2021-05-12T02:27:22.299Z</updated>
+    <updated>2021-05-12T02:32:25.113Z</updated>
     
     
       
@@ -64,8 +47,8 @@
   
   <entry>
     <title>Chrome更新书签策略</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0/chrome-geng-xin-shu-qian-ce-lue/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0/chrome-geng-xin-shu-qian-ce-lue/</id>
+    <link href="http://thomascheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/</id>
     <published>2021-04-26T08:21:09.000Z</published>
     <updated>2021-04-26T08:26:55.337Z</updated>
     
@@ -87,8 +70,8 @@
   
   <entry>
     <title>WPS表格无法多窗口打开文件</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/</id>
+    <link href="http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/</id>
     <published>2021-04-26T08:19:04.000Z</published>
     <updated>2021-04-26T08:26:23.061Z</updated>
     
@@ -111,8 +94,8 @@
   
   <entry>
     <title>知乎不支持转载的文章怎样复制文字?</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/</id>
+    <link href="http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/"/>
+    <id>http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/</id>
     <published>2021-04-26T08:16:39.000Z</published>
     <updated>2021-04-26T08:33:43.997Z</updated>
     
@@ -206,8 +189,8 @@
   
   <entry>
     <title>关机病毒制作</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/0/guan-ji-bing-du-zhi-zuo/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/0/guan-ji-bing-du-zhi-zuo/</id>
+    <link href="http://thomascheng99.github.io/2021/04/22/0-niu-dao-xiao-shi/guan-ji-bing-du-zhi-zuo/"/>
+    <id>http://thomascheng99.github.io/2021/04/22/0-niu-dao-xiao-shi/guan-ji-bing-du-zhi-zuo/</id>
     <published>2021-04-22T02:55:01.000Z</published>
     <updated>2021-04-25T10:00:26.723Z</updated>
     
@@ -231,8 +214,8 @@
   
   <entry>
     <title>Linux下删除文件的几种方法及速度比较</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/0/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/0/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
+    <link href="http://thomascheng99.github.io/2021/04/22/0-ri-chang-xue-xi/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
+    <id>http://thomascheng99.github.io/2021/04/22/0-ri-chang-xue-xi/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
     <published>2021-04-22T02:53:32.000Z</published>
     <updated>2021-04-25T09:32:30.049Z</updated>
     
@@ -284,8 +267,8 @@
   
   <entry>
     <title>Mac怎样查看隐藏文件</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/0/mac-zen-yang-cha-kan-yin-cang-wen-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/0/mac-zen-yang-cha-kan-yin-cang-wen-jian/</id>
+    <link href="http://thomascheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/</id>
     <published>2021-04-21T07:18:16.000Z</published>
     <updated>2021-04-21T07:27:44.424Z</updated>
     
@@ -310,8 +293,8 @@
   
   <entry>
     <title>博客搭建</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/0/bo-ke-da-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/0/bo-ke-da-jian/</id>
+    <link href="http://thomascheng99.github.io/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/"/>
+    <id>http://thomascheng99.github.io/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/</id>
     <published>2021-04-21T03:48:44.000Z</published>
     <updated>2021-04-25T09:43:23.514Z</updated>
     
@@ -360,8 +343,8 @@
   
   <entry>
     <title>超链接居中</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/0/chao-lian-jie-ju-zhong/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/0/chao-lian-jie-ju-zhong/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/0-ri-chang-xue-xi/chao-lian-jie-ju-zhong/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/0-ri-chang-xue-xi/chao-lian-jie-ju-zhong/</id>
     <published>2021-04-20T12:06:55.000Z</published>
     <updated>2021-04-25T09:38:27.582Z</updated>
     
@@ -389,8 +372,8 @@
   
   <entry>
     <title>文章Front-matter介绍</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/0/wen-zhang-front-matter-jie-shao/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/0/wen-zhang-front-matter-jie-shao/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/wen-zhang-front-matter-jie-shao/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/wen-zhang-front-matter-jie-shao/</id>
     <published>2021-04-20T11:57:56.000Z</published>
     <updated>2021-04-25T09:44:10.179Z</updated>
     
@@ -439,8 +422,8 @@
   
   <entry>
     <title>主题修改</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/0/zhu-ti-xiu-gai/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/0/zhu-ti-xiu-gai/</id>
+    <link href="http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/zhu-ti-xiu-gai/"/>
+    <id>http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/zhu-ti-xiu-gai/</id>
     <published>2021-04-20T11:27:46.000Z</published>
     <updated>2021-04-21T07:13:27.195Z</updated>
     

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文章初始化设置, Bobby">
+    <meta name="keywords" content="Mac怎样查看隐藏文件, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>文章初始化设置 | Bobby</title>
+    <title>Mac怎样查看隐藏文件 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">文章初始化设置</h1>
+                    <h1 class="description center-align post-title">Mac怎样查看隐藏文件</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                <span class="chip bg-color">文章</span>
+                            <a href="/tags/Mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                                <span class="chip bg-color">Mac电脑使用技巧</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                个人博客设计
+                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
+                                疑难杂症
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-20
+                    2021-04-21
                 </div>
                 
 
@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    390
+                    928
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -501,43 +501,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h3><p>修改”/scaffolds/post.md”</p>
-<center>初始状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<center>修改后的状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-top: true						#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除
-cover: flase					#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true
-summary: this is the summary 	#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-keywords: this is the keywords 	#文章关键字，SEO 时需要;默认为文章标题
-tags:
-- new							#标签项，此项待修改
-categories: new					#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>备注：author项已在根_config.yml中修改</p>
-<h3 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h3><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p>
-<pre class="line-numbers language-none"><code class="language-none">_posts
-    |- hexo.md
-    |_ hexo
-        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">! [] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<p>生成的页面中图片引用路径</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>至此，用 markdown 完美实现本地图片插入</p>
+                <p>现代人的隐私保护意识越来越强。而电脑做为日常生活和工作资料的储存箱，会存放很多涉及个人隐私的内容。所以有人喜欢在Mac上隐藏文件和文件夹，来保护自己的个人隐私。</p>
+<p>但是隐藏之后，有些用户却不知道如何让隐藏文件再显示出来，今天就来教大家如何在Mac上显示隐藏文件的几种办法。</p>
+<p>在我们说明办法之前，先普及一下隐藏文件的一些知识。</p>
+<h2 id="什么是隐藏文件以及它们在Mac上的位置？"><a href="#什么是隐藏文件以及它们在Mac上的位置？" class="headerlink" title="什么是隐藏文件以及它们在Mac上的位置？"></a>什么是隐藏文件以及它们在Mac上的位置？</h2><p>其实在我们的电脑中，默认情况下就会有很多隐藏文件和文件夹。这样用户在使用的过程中就不会意外的将其删除或者修改他们。</p>
+<p>因为这些默认隐藏的文件和文件夹都是一些支撑Mac运行的重要文件，总之是很重要的东西。</p>
+<p>在Mac中，隐藏文件不会显示在正常的文件和文件夹列表中。它们以“.”命名。在他们的名字之前隐藏文件可以是任何类型，例如，它可以是.bash_profile，.htaccess文件或.svn目录。如果希望，还可以隐藏/ bin，/ usr和/ etc等文件夹。大多数隐藏的文件都存在于Library文件夹（〜/ Library）中。</p>
+<h2 id="如何在Mac上显示隐藏文件？"><a href="#如何在Mac上显示隐藏文件？" class="headerlink" title="如何在Mac上显示隐藏文件？"></a>如何在Mac上显示隐藏文件？</h2><p>现在您已经了解了隐藏文件和文件夹的基本知识，那么隐藏文件和文件夹要怎么重新显示出来呢？</p>
+<h3 id="方法1：使用Finder查看Mac隐藏文件"><a href="#方法1：使用Finder查看Mac隐藏文件" class="headerlink" title="方法1：使用Finder查看Mac隐藏文件"></a>方法1：使用Finder查看Mac隐藏文件</h3><p>在最新的macOS Sierra中，Apple包含了Finder快捷键。这允许用户快速显示隐藏的文件夹Mac。</p>
+<p>操作步骤如下：</p>
+<ul>
+<li><p>打开Finder，然后点击主文件夹。您可以访问左栏中“设备”下的主文件夹。</p>
+</li>
+<li><p>按键盘键Cmd + Shift +。 （点）。只要按下此组合键，就会看到所有隐藏的文件夹和文件。</p>
+<p><img src="/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/finder.jpg"></p>
+</li>
+<li><p>如果您需要再次隐藏这些文件，您只需再次按下该组合即可。</p>
+</li>
+</ul>
+<h3 id="方法2：直接在库中查找隐藏文件夹"><a href="#方法2：直接在库中查找隐藏文件夹" class="headerlink" title="方法2：直接在库中查找隐藏文件夹"></a>方法2：直接在库中查找隐藏文件夹</h3><p>还有一种办法是直接在〜/ Library文件夹中进行查找</p>
+<ul>
+<li><p>首先打开Finder。按Alt（选项）键。现在，从按下键后丢弃的菜单栏中选择Go。</p>
+</li>
+<li><p>您现在可以使用Home文件夹下面的〜/ Library文件夹。</p>
+</li>
+<li><p>您也可以转到Finder &gt;&gt; Go查看该文件夹。现在选择“转到文件夹”选项或只需按Shift + Cmd + G组合键。现在输入〜/ Library并点击Go。</p>
+<p><img src="/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/library.jpg"></p>
+</li>
+</ul>
+<p>这将显示所有隐藏的文件和文件夹。此外，它还将授予您访问这些文件夹的权限。</p>
+<h3 id="方法3：使用命令查找隐藏文件和文件夹"><a href="#方法3：使用命令查找隐藏文件和文件夹" class="headerlink" title="方法3：使用命令查找隐藏文件和文件夹"></a>方法3：使用命令查找隐藏文件和文件夹</h3><p>如果你还想尝试一些更极客的办法，那么你可以使用命令查找</p>
+<p>如果你是一个极客并且非常清楚使用终端，那么这个解决方案可能会激发你的兴趣。您所要做的就是按照以下步骤进行操作。</p>
+<ul>
+<li><p>首先要打开终端。</p>
+</li>
+<li><p>在终端中，运行以下提到的脚本：</p>
+</li>
+<li><p>$ defaults写com.apple.Finder AppleShowAllFiles true $ killall Finder您的隐藏文件夹将可见。</p>
+</li>
+<li><p>如果要隐藏起来，只需要运行相同的脚本，将“true”值更改为“false”</p>
+<p><img src="/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/terminal.jpg"></p>
+</li>
+<li><p>如前所述，默认情况下会隐藏某些文件夹和文件。这是为了避免用户可能错误地对它们执行的修改。修改这些文件会损坏您的Mac系统，并且是不可逆的。</p>
+</li>
+<li><p>由于该过程不可逆转，所以在操作时需谨慎处理。</p>
+</li>
+</ul>
 
                 
             </div>
@@ -564,7 +573,7 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/">http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/">http://ThomasCheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,8 +611,8 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                    <span class="chip bg-color">文章</span>
+                                <a href="/tags/Mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                                    <span class="chip bg-color">Mac电脑使用技巧</span>
                                 </a>
                             
                         </div>
@@ -779,19 +788,19 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/">
+                <a href="/2021/04/21/zhu-ti-mei-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="博客搭建">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="主题美化">
                         
-                        <span class="card-title">博客搭建</span>
+                        <span class="card-title">主题美化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文详细介绍了个人博客的搭建方法
+                            该文记录了主题美化的那些事~
                         
                     </div>
                     <div class="publish-info">
@@ -813,8 +822,8 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
+                    <a href="/tags/%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">
+                        <span class="chip bg-color">主题美化</span>
                     </a>
                     
                 </div>
@@ -828,31 +837,31 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/20/0-ri-chang-xue-xi/chao-lian-jie-ju-zhong/">
+                <a href="/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="超链接居中">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="博客搭建">
                         
-                        <span class="card-title">超链接居中</span>
+                        <span class="card-title">博客搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文介绍了markdown编写时超链接居中的方法
+                            该文详细介绍了个人博客的搭建方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    日常学习
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    个人博客设计
                                 </a>
                             
                             
@@ -862,8 +871,8 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown%E7%BC%96%E5%86%99%E6%8A%80%E5%B7%A7/">
-                        <span class="chip bg-color">markdown编写技巧</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">博客搭建</span>
                     </a>
                     
                 </div>

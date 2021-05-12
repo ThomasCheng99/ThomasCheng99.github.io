@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文章初始化设置, Bobby">
+    <meta name="keywords" content="Chrome更新书签策略, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>文章初始化设置 | Bobby</title>
+    <title>Chrome更新书签策略 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">文章初始化设置</h1>
+                    <h1 class="description center-align post-title">Chrome更新书签策略</h1>
                 </div>
             </div>
         </div>
@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                <span class="chip bg-color">文章</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                个人博客设计
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -457,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-20
+                    2021-04-26
                 </div>
                 
 
@@ -466,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    390
+                    426
                 </div>
                 
 
@@ -501,43 +497,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h3><p>修改”/scaffolds/post.md”</p>
-<center>初始状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<center>修改后的状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-top: true						#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除
-cover: flase					#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true
-summary: this is the summary 	#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-keywords: this is the keywords 	#文章关键字，SEO 时需要;默认为文章标题
-tags:
-- new							#标签项，此项待修改
-categories: new					#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>备注：author项已在根_config.yml中修改</p>
-<h3 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h3><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p>
-<pre class="line-numbers language-none"><code class="language-none">_posts
-    |- hexo.md
-    |_ hexo
-        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">! [] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<p>生成的页面中图片引用路径</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>至此，用 markdown 完美实现本地图片插入</p>
+                <h5 id="A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）"><a href="#A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）" class="headerlink" title="A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）"></a>A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）</h5><p>如果某机器的最后一次操作时间比云端的最后一次操作时间要早，那么云端的配置比本地的配置要新，这时采用云端覆盖本地的操作，即下载。</p>
+<p>如果某机器的最后一次登录时间比云端的最后一次操作时间要晚，那么本地的配置比云端的配置要新，这时采用本地覆盖云端的操作，即上传。</p>
+<h5 id="B：目前采用的策略并非“最新的版本全替换”策略，而是“增量合并更新”的方式。"><a href="#B：目前采用的策略并非“最新的版本全替换”策略，而是“增量合并更新”的方式。" class="headerlink" title="B：目前采用的策略并非“最新的版本全替换”策略，而是“增量合并更新”的方式。"></a>B：目前采用的策略并非“最新的版本全替换”策略，而是“增量合并更新”的方式。</h5><p>即当A计算机的版本有更新时，在B计算机上存在旧版本的状态下，在B计算机上打开chrome同步，会采取增量更新合并的方式，即保留B计算机上的内容，同时同步获得A计算机上更新的内容。这样做的目的大概是为了保证本地（B计算机上）内容不因在A计算机的修改发生丢失，同时能够获得A计算机上更新的全部内容。这样的策略可以避免因为在A计算机上的误操作而导致B计算机上书签的丢失，保证了安全性，但是同时损失了书签的简洁性，增加了冗余性。个人还是推荐Google书签同步使用”最新版本全替换”的策略，同时增加书签“历史版本”，便于回滚和找回。</p>
 
                 
             </div>
@@ -564,7 +526,7 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/">http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/">http://ThomasCheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,11 +563,7 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                    <span class="chip bg-color">文章</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -779,44 +737,36 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/">
+                <a href="/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="博客搭建">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="产品经理必懂的技术那点事儿">
                         
-                        <span class="card-title">博客搭建</span>
+                        <span class="card-title">产品经理必懂的技术那点事儿</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文详细介绍了个人博客的搭建方法
+                            读书笔记
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    个人博客设计
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -828,44 +778,36 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/20/0-ri-chang-xue-xi/chao-lian-jie-ju-zhong/">
+                <a href="/2021/04/26/0-yi-nan-za-zheng/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="超链接居中">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="WPS表格无法多窗口打开文件">
                         
-                        <span class="card-title">超链接居中</span>
+                        <span class="card-title">WPS表格无法多窗口打开文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文介绍了markdown编写时超链接居中的方法
+                            WPS表格无法多窗口打开文件（影响比对效率）
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    日常学习
+                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
+                                    疑难杂症
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/markdown%E7%BC%96%E5%86%99%E6%8A%80%E5%B7%A7/">
-                        <span class="chip bg-color">markdown编写技巧</span>
-                    </a>
-                    
                 </div>
                 
             </div>

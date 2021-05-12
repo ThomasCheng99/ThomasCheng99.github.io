@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文章初始化设置, Bobby">
+    <meta name="keywords" content="产品经理必懂的技术那点事儿, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>文章初始化设置 | Bobby</title>
+    <title>产品经理必懂的技术那点事儿 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">文章初始化设置</h1>
+                    <h1 class="description center-align post-title">产品经理必懂的技术那点事儿</h1>
                 </div>
             </div>
         </div>
@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                <span class="chip bg-color">文章</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                个人博客设计
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                读书笔记
                             </a>
                         
                     </div>
@@ -457,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-20
+                    2021-05-11
                 </div>
                 
 
@@ -466,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    390
+                    372
                 </div>
                 
 
@@ -501,43 +497,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="初始化文章的Front-matter"><a href="#初始化文章的Front-matter" class="headerlink" title="初始化文章的Front-matter"></a>初始化文章的<code>Front-matter</code></h3><p>修改”/scaffolds/post.md”</p>
-<center>初始状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-tags:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<center>修改后的状态</center>
-
-<pre class="line-numbers language-none"><code class="language-none">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-top: true						#推荐文章（文章是否置顶）如果 top 值为 true，则会作为首页推荐文章;不置顶则将该行删除
-cover: flase					#版本新增，表示该文章是否需要加入到首页轮播封面中;默认关闭，不需要的话删除该行，需要的话将flase改成true
-summary: this is the summary 	#文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-keywords: this is the keywords 	#文章关键字，SEO 时需要;默认为文章标题
-tags:
-- new							#标签项，此项待修改
-categories: new					#分类项，此项待修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>备注：author项已在根_config.yml中修改</p>
-<h3 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h3><p>使用 markdown 语法插入相对路径的图片，可以利用插件。设置 <code>post_asset_folder:true</code> 后，在根目录下执行：</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>确保在 source/_posts 下创建和 markdown 文件同名的目录，里面存放需要的图片，然后在 markdown 中插入图片：</p>
-<pre class="line-numbers language-none"><code class="language-none">_posts
-    |- hexo.md
-    |_ hexo
-        |_ image.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">! [] (hexo&#x2F;image.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<p>生成的页面中图片引用路径</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;img src&#x3D;&quot;&#x2F;2016&#x2F;11&#x2F;25&#x2F;hexo&#x2F;image.png&quot; alt&#x3D;&quot;hexo image&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>至此，用 markdown 完美实现本地图片插入</p>
+                <ul>
+<li>产品思维侧重从用户和商业视角出发，技术思维侧重在技术实现和系统框架层面，两种思维方式也有交叉点，那就是产品的需求、设计和产品功能。</li>
+</ul>
+<ul>
+<li>产品定位是否清晰直接决定了产品以什么样的形态呈现给用户使用。</li>
+</ul>
+<ul>
+<li>产品经理必现回答的8个问题：<ol>
+<li>产品的目标用户是谁？</li>
+<li>产品为目标用户解决了一个什么核心问题？</li>
+<li>产品的核心功能是什么？</li>
+<li>产品的使用场景是什么？</li>
+<li>产品给目标用户带来的价值是什么？</li>
+<li>如何用一句话介绍产品是什么？</li>
+<li>与同类产品的定位差异是什么？</li>
+<li>产品的盈利模式是什么？</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>懂技术不如懂产品，去理解产品、理解用户才是真正把产品做好的决定性条件。</li>
+</ul>
+<ul>
+<li>在现在竞争激烈且同质化竞争严重的环境下，快速响应能力会成为一款产品的制胜要诀。应对快速响应有一个理论方法可以采用，那就是MVP（minimum viable product，最小可行性产品）。做MVP需要化繁为简的能力，抓住本质核心，把关键路径上的节点做好后再去做细节分支。很多时候，人都有求全的心理，觉得没有这个会怎样，没有那个会怎样，实际却是不会怎样。</li>
+</ul>
 
                 
             </div>
@@ -564,7 +548,7 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/">http://ThomasCheng99.github.io/2021/04/20/wen-zhang-chu-shi-hua-she-zhi/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/">http://ThomasCheng99.github.io/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,11 +585,7 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%96%87%E7%AB%A0/">
-                                    <span class="chip bg-color">文章</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -775,49 +755,43 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/21/0-ge-ren-bo-ke-she-ji/bo-ke-da-jian/">
+                <a href="/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="博客搭建">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="产品经理必懂的技术那点事儿">
                         
-                        <span class="card-title">博客搭建</span>
+                        <span class="card-title">产品经理必懂的技术那点事儿</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文详细介绍了个人博客的搭建方法
+                            读书笔记
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    个人博客设计
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -828,24 +802,24 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/20/0-ri-chang-xue-xi/chao-lian-jie-ju-zhong/">
+                <a href="/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="超链接居中">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Chrome更新书签策略">
                         
-                        <span class="card-title">超链接居中</span>
+                        <span class="card-title">Chrome更新书签策略</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该文介绍了markdown编写时超链接居中的方法
+                            该文简单介绍了Chrome更新书签策略
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
                             </span>
                         <span class="publish-author">
                             
@@ -858,14 +832,6 @@ categories: new					#分类项，此项待修改<span aria-hidden="true" class="
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/markdown%E7%BC%96%E5%86%99%E6%8A%80%E5%B7%A7/">
-                        <span class="chip bg-color">markdown编写技巧</span>
-                    </a>
-                    
                 </div>
                 
             </div>
