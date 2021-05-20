@@ -4,6 +4,88 @@
   
     
     <entry>
+      <title>商业模式新生代</title>
+      <link href="2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/"/>
+      <url>2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/</url>
+      
+        <content type="html"><![CDATA[<ol><li>CS客户细分–customer segments：任何一个组织都会服务于一个或多个客户群体</li><li>VP价值主张–value propositions：一个组织的价值主张在于解决客户的问题和满足客户的需求</li><li>CH渠道通路–channels：价值主张通过沟通、分发以及销售渠道传递给客户</li><li>CR客户关系–customer relationships：客户关系以客户群体为单位建立和维护</li><li>R$收入来源–revenue streams：收入来源于将价值主张成功地提供给客户</li><li>KR核心资源–key resources：核心资源是指为实现上述各项元素的供给和交付而必须的资源</li><li>KA关键业务–key activities：为实现供给和交付所需完成的关键业务活动</li><li>KP重要合作–key partnerships：部分活动需要外包，部分资源需要从其他企业获得</li><li>C$成本结构–cost structure：成本结构取决于经济模式中的各项元素</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> new </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>身体语言密码</title>
+      <link href="2021/05/20/0-du-shu-bi-ji/shen-ti-yu-yan-mi-ma/"/>
+      <url>2021/05/20/0-du-shu-bi-ji/shen-ti-yu-yan-mi-ma/</url>
+      
+        <content type="html"><![CDATA[<ul><li>绝大多数的男性和将近半数的女性并不知道自己脖子以下的身体究竟是何种模样。</li></ul><ul><li>20 世纪 50 年代的一位研究肢体语言的先锋人物阿尔伯特·麦拉宾发现：一条信息所产生的全部影响力中 7%来自于语言（仅指文字），38%来自于声音（其中包括语音、音调以及其他声音），剩下的 55%则全部来自于无声的肢体语言。</li></ul><ul><li>所谓“感知力强”，也就是指能够通过观察发现人们的话语和他们的肢体语言之间的矛盾之处。</li></ul><ul><li>正确解读身体语言的三大规则：</li></ul><ol><li>连贯地理解</li><li>寻找一致性</li><li>结合语境来理解</li></ol><ul><li>投降的小狗会吐出舌头以示友好，人则会亮出自己的手掌</li></ul><ul><li>男性的手臂稍稍向内侧弯曲，而女性的手臂则恰恰相反。稍稍向内侧弯曲的手臂使得男性在瞄准和投掷时能够更加准确，而女性略微向外侧张开的手臂则使得她们能在抱孩子时更加平稳。</li></ul><ol><li>正在撒谎——他的嘴唇在颤抖</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>横向领导力</title>
+      <link href="2021/05/20/0-du-shu-bi-ji/heng-xiang-ling-dao-li/"/>
+      <url>2021/05/20/0-du-shu-bi-ji/heng-xiang-ling-dao-li/</url>
+      
+        <content type="html"><![CDATA[<ul><li>培养个人技能，明确目标，影响他人</li></ul><ul><li>我们遇到问题时总是喜欢责怪别人，取得成绩时则喜欢把荣誉据为己有，这是人类的通病。</li></ul><ol><li>根据你想要实现的结果制定目标</li><li>有条理地思考，从数据，到分析，到方向，再到具体行动</li><li>在经验中学习，随时学习，随时总结</li><li>通过接受具有挑战性的任务，充分投入到工作中</li><li>对于应该坚持的工作方法和需要改进的工作方法提供和寻求反馈</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机网络</title>
+      <link href="2021/05/12/ji-suan-ji-wang-luo/"/>
+      <url>2021/05/12/ji-suan-ji-wang-luo/</url>
+      
+        <content type="html"><![CDATA[<ul><li>互联网之所以能够向用户提供许多服务，就是因为互联网具有两个重要基本特点，即连通性和共享。</li></ul><ul><li>电路交换——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送。</li><li>报文交换——整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。</li><li>分组交换——单个分组（这只是整个报文的一部分）传送到相邻结点，存储下来后查找转发表，转发到下一个结点。</li><li>若要连续传送大量的数据，且其传送时间远大于连接建立时间，则电路交换的传输效率较快。报文交换和分组交换不需要预先分配传输带宽，在传送突发数据时可提高整个网络的信道利用率。由于一个分组的长度往往远小于整个报文的长度，因此分组交换比报文交换的时延小，同时也具有更好的灵活性。</li></ul><ul><li>对于高速网络链路，我们提高的仅仅是数据的发送速率而不是比特在链路上的传播速率，传播速率只取决于通信线路的介质材料。因此，通常说的“光纤信道的传输速率高”是指可以用很高的速率向光纤信道发送数据，而光纤信道的传播速率实际上还要比铜线的传播速率略低一些。</li></ul><ul><li>信道或网络的利用率过高会产生非常大的时延。</li></ul><ul><li>能够占领市场的就是标准。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> new </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> new </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>产品经理必懂的技术那点事儿</title>
       <link href="2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/"/>
       <url>2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/</url>

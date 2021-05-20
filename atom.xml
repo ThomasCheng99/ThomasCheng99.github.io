@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-05-12T02:32:25.113Z</updated>
+  <updated>2021-05-20T11:31:13.721Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,119 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>商业模式新生代</title>
+    <link href="http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/"/>
+    <id>http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/</id>
+    <published>2021-05-20T11:17:43.000Z</published>
+    <updated>2021-05-20T11:31:13.721Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;CS客户细分–customer segments：任何一个组织都会服务于一个或多个客户群体&lt;/li&gt;
+&lt;li&gt;VP价值主张–value</summary>
+        
+      
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>身体语言密码</title>
+    <link href="http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/shen-ti-yu-yan-mi-ma/"/>
+    <id>http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/shen-ti-yu-yan-mi-ma/</id>
+    <published>2021-05-20T09:44:33.000Z</published>
+    <updated>2021-05-20T11:17:02.494Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;绝大多数的男性和将近半数的女性并不知道自己脖子以下的身体究竟是何种模样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;20 世纪 50 年代的一位研究肢体语言的先锋人物阿尔伯特·麦拉宾发现：一条信息所产生的全部影响力中</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>横向领导力</title>
+    <link href="http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/heng-xiang-ling-dao-li/"/>
+    <id>http://thomascheng99.github.io/2021/05/20/0-du-shu-bi-ji/heng-xiang-ling-dao-li/</id>
+    <published>2021-05-20T09:30:07.000Z</published>
+    <updated>2021-05-20T09:38:20.870Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;培养个人技能，明确目标，影响他人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;我们遇到问题时总是喜欢责怪别人，取得成绩时则喜欢把荣誉据为己有，这是人类的通病。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;根据你想要实现的结果制定目标&lt;/li&gt;
+&lt;li&gt;有条理地思考，从数</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://thomascheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/"/>
+    <id>http://thomascheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/</id>
+    <published>2021-05-12T02:58:50.000Z</published>
+    <updated>2021-05-14T02:11:11.555Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;互联网之所以能够向用户提供许多服务，就是因为互联网具有两个重要基本特点，即连通性和共享。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;电路交换——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送。&lt;/li&gt;
+&lt;li&gt;报文交换——整个报文先传送到相邻结点，全</summary>
+        
+      
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/tags/new/"/>
+    
+  </entry>
   
   <entry>
     <title>产品经理必懂的技术那点事儿</title>
@@ -417,32 +530,6 @@
     
     
     <category term="文章" scheme="http://thomascheng99.github.io/tags/%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主题修改</title>
-    <link href="http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/zhu-ti-xiu-gai/"/>
-    <id>http://thomascheng99.github.io/2021/04/20/0-ge-ren-bo-ke-she-ji/zhu-ti-xiu-gai/</id>
-    <published>2021-04-20T11:27:46.000Z</published>
-    <updated>2021-04-21T07:13:27.195Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;挑个好看的主题&quot;&gt;&lt;a href=&quot;#挑个好看的主题&quot; class=&quot;headerlink&quot; title=&quot;挑个好看的主题&quot;&gt;&lt;/a&gt;挑个好看的主题&lt;/h3&gt;&lt;p&gt;全凭个人喜好，在网上能找到很多好看的主题供你下载&lt;/p&gt;
-&lt;p&gt;知乎话题：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="主题修改" scheme="http://thomascheng99.github.io/tags/%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9/"/>
     
   </entry>
   
