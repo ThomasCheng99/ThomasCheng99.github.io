@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="计算机网络, Bobby">
+    <meta name="keywords" content="Android编译流程, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>计算机网络 | Bobby</title>
+    <title>Android编译流程 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机网络</h1>
+                    <h1 class="description center-align post-title">Android编译流程</h1>
                 </div>
             </div>
         </div>
@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/new/">
-                                <span class="chip bg-color">new</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/new/" class="post-category">
-                                new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -457,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-21
                 </div>
                 
 
@@ -466,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    587
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -501,39 +497,89 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>互联网之所以能够向用户提供许多服务，就是因为互联网具有两个重要基本特点，即连通性和共享。</li>
-</ul>
+                <p><img src="/2021/05/21/android-bian-yi-liu-cheng/11.png" alt="11"></p>
+ <center>图一 编译流程（旧）取自Google官方的<a target="_blank" rel="noopener" href="http://developer.android.com/sdk/installing/studio-build.html#detailed-build">[Build System Overview]</a></center>
+
+<p>注解：</p>
 <ul>
-<li>电路交换——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送。</li>
-<li>报文交换——整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。</li>
-<li>分组交换——单个分组（这只是整个报文的一部分）传送到相邻结点，存储下来后查找转发表，转发到下一个结点。</li>
-<li>若要连续传送大量的数据，且其传送时间远大于连接建立时间，则电路交换的传输效率较快。报文交换和分组交换不需要预先分配传输带宽，在传送突发数据时可提高整个网络的信道利用率。由于一个分组的长度往往远小于整个报文的长度，因此分组交换比报文交换的时延小，同时也具有更好的灵活性。</li>
+<li>图中绿色标注为其中用到的相应工具，蓝色代表的是中间生成的各类文件类型；</li>
+<li>首先aapt工具会将资源文件进行转化，生成对应资源ID的R文件和资源文件；</li>
+<li>adil工具会将其中的aidl接口转化成Java的接口；</li>
+<li>至此，Java Compiler开始进行Java文件向class文件的转化，将R文件，Java源代码，由aidl转化来的Java接口，统一转化成.class文件；</li>
+<li>通过dx工具将class文件转化为dex文件；</li>
+<li>此时我们得到了经过处理后的资源文件和一个dex文件，当然，还会存在一些其它的资源文件，这个时候，就是将其打包成一个类似apk的文件，但还并不是直接可以安装在Android系统上的APK文件；</li>
+<li>通过签名工具对其进行签名；</li>
+<li>通过Zipalign进行优化，提升运行速度；</li>
+<li>最终生成一个可以安装在我们手机上的APK；</li>
 </ul>
-<ul>
-<li>对于高速网络链路，我们提高的仅仅是数据的发送速率而不是比特在链路上的传播速率，传播速率只取决于通信线路的介质材料。因此，通常说的“光纤信道的传输速率高”是指可以用很高的速率向光纤信道发送数据，而光纤信道的传播速率实际上还要比铜线的传播速率略低一些。</li>
-</ul>
-<ul>
-<li>信道或网络的利用率过高会产生非常大的时延。</li>
-</ul>
-<ul>
-<li>能够占领市场的就是标准。</li>
-</ul>
-<ul>
-<li>看一台计算机网络协议是否正确，不能只看在正常情况下是否正确，而且还必须非常仔细地检查这个协议能否应付各种异常情况。</li>
-</ul>
-<ul>
-<li>在任何信道中，码元传输的速率是有上限的，传输速率超过此上限，就会出现严重的码间串扰的问题，使接收端对码元的判决（即识别）成为不可能。</li>
-</ul>
-<ul>
-<li>信号应当有足够大的振幅，以便在噪声干扰下能够在接收端正确地被检测出来。</li>
-</ul>
-<ul>
-<li>时分复用更有利于数字信号的传输</li>
-</ul>
-<ul>
-<li></li>
-</ul>
+<p><img src="/2021/05/21/android-bian-yi-liu-cheng/12.png" alt="12"></p>
+ <center>图二 编译流程（新）取自Google官方<a target="_blank" rel="noopener" href="http://tools.android.com/tech-docs/new-build-system/build-workflow">New Build System</a>的Build WorkFlow</center>
+
+
+
+<p>按照上述构建过程进行具体分析：</p>
+<p>第1步：aapt打包资源文件，生成R.java和编译后的资源（二进制文件）</p>
+<p>注解：Android中的资源文件有那些呢?Android应用程序资源可以分为两大类，分别是assets和res：</p>
+<p>1）assets类资源放在工程根目录的assets子目录下，它里面保存的是一些原始的文件，可以以任何方式来进行组织。这些文件最终会被原装不动地打包在apk文件中。如果我们要在程序中访问这些文件，那么就需要指定文件名来访问。例如，假设在assets目录下有一个名称为filename的文件，那么就可以使用以下代码来访问它：</p>
+<blockquote>
+<p>AssetManager am= getAssets();  </p>
+<p>InputStream is = assset.open(“filename”); </p>
+</blockquote>
+<p>2）res类资源放在工程根目录的res子目录下，它里面保存的文件大多数都会被编译，并且都会被赋予资源ID。这样我们就可以在程序中通过ID来访问res类的资源。res类资源按照不同的用途可以进一步划分为以下10种子类型：</p>
+<p>layout(布局文件)，drawable，xml，value，menu，raw，color，anim，animator，mipmap。</p>
+<p>为了使得一个应用程序能够在运行时同时支持不同的大小和密度的屏幕，以及支持国际化，即支持不同的国家地区和语言，Android应用程序资源的组织方式有18个维度，每一个维度都代表一个配置信息，从而可以使得应用程序能够根据设备的当前配置信息来找到最匹配的资源来展现在UI上，从而提高用户体验。由于Android应用程序资源的组织方式可以达到18个维度，因此就要求Android资源管理框架能够快速定位最匹配设备当前配置信息的资源来展现在UI上，否则的话，就会影响用户体验。为了支持Android资源管理框架快速定位最匹配资源，Android资源打包工具aapt在编译和打包资源的过程中，会执行以下两个额外的操作：</p>
+<blockquote>
+<p>1）赋予每一个非assets资源一个ID值，这些ID值以常量的形式定义在一个R.java文件中。</p>
+<p>2）生成一个resources.arsc文件，用来描述那些具有ID值的资源的配置信息，它的内容就相当于是一个资源索引表。包含了所有的id值的数据集合。在该文件中，如果某个id对应的是string，那么该文件会直接包含该值，如果id对应的资源是某个layout或者drawable资源，那么该文件会存入对应资源的路径。</p>
+</blockquote>
+<p>第2步：进行aidl（Android Interface Definition Language，即Android接口定义语言。是我们在编写进程间通信的代码的时候，定义的接口）转换</p>
+<blockquote>
+<p>输入：aidl后缀的文件；</p>
+<p>输出：可用于进程通信的C/S端java代码，位于build/generated/source/aidl；</p>
+</blockquote>
+<p>第3步：Java源码编译</p>
+<p>使用javac将R.java和aidl生成的Java文件，加上工程的源代码进行正常的java编译生成class文件；</p>
+<blockquote>
+<p>输入：java source的文件夹（另外还包括了build/generated下的：R.java, aidl生成的java文件，以及BuildConfig.java）；</p>
+<p>输出：对于gradle编译，可以在build/intermediates/classes里，看到输出的class文件。</p>
+</blockquote>
+<p>第4步：代码混淆（proguard）</p>
+<p>源码编译之后，我们可能还会对其进行代码的混淆，混淆的作用是增加反编译的难度，同时也将一些代码的命名进行了缩短，减少代码占用的空间。混淆完成之后，会生成一个混淆前后的映射表，这个是用来在反应我们的应用执行的时候的一些堆栈信息，可以将混淆后的信息转化为我们混淆前实际代码中的内容。</p>
+<p>而这个过程使用的工具就是ProGuard，是一个开源的Java代码混淆器（obfuscation）。ADT r8开始它被默认集成到了Android SDK中。 其具备三个主要功能。</p>
+<blockquote>
+<p>1）压缩 - 移除无效的类、属性、方法等</p>
+<p>2）优化 - 优化bytecode移除没用的结构</p>
+<p>3）混淆 - 把类名、属性名、方法名替换为晦涩难懂的1到2个字母的名字</p>
+</blockquote>
+<p>当然它也只能混淆Java代码，Android工程中Native代码，资源文件（图片、xml），它是无法混淆的。而且对于Java的常量值也是无法混淆的，所以不要使用常量定义平文的密码等重要信息。同时对于混淆，我们可以通过代码制定去混淆那些，不去混淆那些。</p>
+<p>-keep public class com.rensanning.example.Test</p>
+<p>第5步：转化为dex</p>
+<p>调用dx.bat将所有的class文件转化为classes.dex文件，dx会将class转换为Dalvik字节码，生成常量池，消除冗余数据等。由于dalvik是一种针对嵌入式设备而特殊设计的java虚拟机，所以dex文件与标准的class文件在结构设计上有着本质的区别,当java程序编译成class后，使用dx工具将所有的class文件整合到一个dex文件，目的是其中各个类能够共享数据，在一定程度上降低了冗余，同时也是文件结构更加经凑，实验表明，dex文件是传统jar文件大小的50%左右。class文件结构和dex文件结构比对。</p>
+<p>第6步：apkbuilder</p>
+<p>打包生成APK文件。旧的apkbuilder脚本已经废弃，现在都已经通过sdklib.jar的ApkBuilder类进行打包了。输入为我们之前生成的包含resources.arcs的.ap_文件，上一步生成的dex文件，以及其他资源如jni、.so文件。大致步骤为以包含resources.arcs的.ap_文件为基础，new一个ApkBuilder，设置debugMode</p>
+<blockquote>
+<p>apkBuilder.addZipFile(f);</p>
+<p>apkBuilder.addSourceFolder(f);</p>
+<p>apkBuilder.addResourcesFromJar(f);</p>
+<p>apkBuilder.addNativeLibraries(nativeFileList);</p>
+<p>apkBuilder.sealApk(); // 关闭apk文件</p>
+<p>generateDependencyFile(depFile,inputPaths,outputFile.getAbsolutePath());</p>
+</blockquote>
+<p>第7步：对APK签名</p>
+<p>对APK文件进行签名。Android系统在安装APK的时候，首先会检验APK的签名，如果发现签名文件不存在或者校验签名失败，则会拒绝安装，所以应用程序在发布之前一定要进行签名。签名信息中包含有开发者信息，在一定程度上可以防止应用被伪造。对一个APK文件签名之后，APK文件根目录下会增加META-INF目录，该目录下增加三个文件：</p>
+<blockquote>
+<p>MANIFEST.MF</p>
+<p>[CERT].RSA</p>
+<p>[CERT]</p>
+</blockquote>
+<p>Android系统就是根据这三个文件的内容对APK文件进行签名检验的。签名过程主要利用apksign.jar或者jarsinger.jar两个工具。将根据我们提供的Debug和Release两个版本的Keystore进行相应的签名。</p>
+<p>MANIFEST.MF中包含对apk中除了/META-INF文件夹外所有文件的签名值，签名方法是先SHA1()(或其他hash方法)在base64()。存储形式是：Name加[SHA1]-Digest。</p>
+<p>[CERT].SF是对MANIFEST.MF文件整体签名以及其中各个条目的签名。一般地，如果是使用工具签名，还多包括一项。就是对MANIFEST.MF头部信息的签名。</p>
+<p>[CERT].RSA包含用私钥对[CERT].SF的签名以及包含公钥信息的数字证书。</p>
+<p>第8步：zipalign优化</p>
+<p>Zipalign是一个Android平台上整理APK文件的工具，它首次被引入是在Android 1.6版本的SDK软件开发工具包中。它能够对打包的Android应用程序进行优化， 以使Android操作系统与应用程序之间的交互作用更有效率，这能够让应用程序和整个系统运行得更快。用Zipalign处理过的应用程序执行时间达到最低限度，当设备运行APK应用程序时占更少的RAM。</p>
+<p>Zipalign如何进行优化的呢？调用buildtoolszipalign，对签名后的APK文件进行对齐处理，使APK中所有资源文件距离文件起始偏移为4字节的整数倍，从而在通过内存映射访问APK文件时会更快。同时也减少了在设备上运行时的内存消耗。</p>
+<p>至此，一个完整的Android APK就生成了。</p>
 
                 
             </div>
@@ -560,7 +606,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/">http://ThomasCheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/21/android-bian-yi-liu-cheng/">http://ThomasCheng99.github.io/2021/05/21/android-bian-yi-liu-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,11 +643,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/new/">
-                                    <span class="chip bg-color">new</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -771,41 +813,43 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/05/20/0-du-shu-bi-ji/heng-xiang-ling-dao-li/">
+                <a href="/2021/05/21/android-bian-yi-liu-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="横向领导力">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Android编译流程">
                         
-                        <span class="card-title">横向领导力</span>
+                        <span class="card-title">Android编译流程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            横向领导力笔记
+                            简要介绍了Android编译流程
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    日常学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -816,24 +860,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/11/0-du-shu-bi-ji/chan-pin-jing-li-bi-dong-de-ji-zhu-na-dian-shi-er/">
+                <a href="/2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="产品经理必懂的技术那点事儿">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="商业模式新生代">
                         
-                        <span class="card-title">产品经理必懂的技术那点事儿</span>
+                        <span class="card-title">商业模式新生代</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            产品经理必懂的技术那点事儿读书笔记
+                            商业模式新生代读书笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
                             </span>
                         <span class="publish-author">
                             
