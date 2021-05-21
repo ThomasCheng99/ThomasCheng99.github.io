@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="商业模式新生代, Bobby">
+    <meta name="keywords" content="HAL层学习, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>商业模式新生代 | Bobby</title>
+    <title>HAL层学习 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">商业模式新生代</h1>
+                    <h1 class="description center-align post-title">HAL层学习</h1>
                 </div>
             </div>
         </div>
@@ -440,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                读书笔记
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -453,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-20
+                    2021-05-21
                 </div>
                 
 
@@ -462,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    248
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    19 分
                 </div>
                 
 
@@ -497,17 +497,350 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>CS客户细分–customer segments：任何一个组织都会服务于一个或多个客户群体</li>
-<li>VP价值主张–value propositions：一个组织的价值主张在于解决客户的问题和满足客户的需求</li>
-<li>CH渠道通路–channels：价值主张通过沟通、分发以及销售渠道传递给客户</li>
-<li>CR客户关系–customer relationships：客户关系以客户群体为单位建立和维护</li>
-<li>R$收入来源–revenue streams：收入来源于将价值主张成功地提供给客户</li>
-<li>KR核心资源–key resources：核心资源是指为实现上述各项元素的供给和交付而必须的资源</li>
-<li>KA关键业务–key activities：为实现供给和交付所需完成的关键业务活动</li>
-<li>KP重要合作–key partnerships：部分活动需要外包，部分资源需要从其他企业获得</li>
-<li>C$成本结构–cost structure：成本结构取决于经济模式中的各项元素</li>
-</ol>
+                <h1 id="Android-HAL-简介"><a href="#Android-HAL-简介" class="headerlink" title="Android HAL 简介"></a>Android HAL 简介</h1><p>Android 系统硬件抽象层（Hardware Abstract Layer）运行在用户空间中，它向下屏蔽了硬件驱动的实现细节，向上提供了硬件访问的服务。通过 HAL 层，Android 系统分为两层来支持硬件设备，其中一层实现在用户空间，另外一层实现在内核空间中，它在 Android 系统框架中的位置如下图所示。传统的 Linux 系统则把对硬件的支持和管理全部放在内核空间中,即把对硬件的全部支持都放在硬件驱动模块当中。</p>
+<p><img src="/2021/05/21/hal-ceng-xue-xi/1.png"></p>
+<h1 id="为什么要添加一个-HAL-层？"><a href="#为什么要添加一个-HAL-层？" class="headerlink" title="为什么要添加一个 HAL 层？"></a>为什么要添加一个 HAL 层？</h1><p>Android 在用户空间中新建一个的 HAL 层来支持硬件设备的主要原因还是因为 Android 使用的开源协议是 Apache License，这个协议比较宽松，它允许开发者获取并修改了源码之后，不用把源码公开出来。而 Linux 使用的开源协议 GPL，它的要求限制就比较多，它要求开发者添加或修改了源码之后，必须把添加或修改后的代码公开出来，所以我们在 Linux 内核中的所使用的设备驱动程序都是源码公开的，任何人都可以获取并修改它。</p>
+<p>因此，如果 Android 系统像其他 Linux 系统一样，把对硬件的支持完全实现在 Linux 内核的驱动模块中，那么硬件厂商就必须将这些硬件驱动源码公开，这样就可能损害到移动厂商的利益，因为这相当于暴露了硬件的实现细节和参数。</p>
+<p>所以，Android 就在用户空间搞了一个 HAL 层，将硬件的一些重要的操作都放在这一层中完成，这些操作都封装在厂商所提供的一个动态链接库中，从而达到了避免源码公开的目的，而底层 Linux 内核空间中的设备驱动模块，现在则只提供一些最基本的硬件设备寄存器操作的功能。</p>
+<p>也正是由于这个分层的原因，Android被踢出了Linux内核主线代码树中。大家想想，Android放在内核空间的驱动程序对硬件的支持是不完整的，把Linux内核移植到别的机器上去时，由于缺乏硬件抽象层的支持，硬件就完全不能用了，这也是为什么说Android是开放系统而不是开源系统的原因。</p>
+<h1 id="HAL-模块是如何实现的？"><a href="#HAL-模块是如何实现的？" class="headerlink" title="HAL 模块是如何实现的？"></a>HAL 模块是如何实现的？</h1><p>以音频系统对应的 audio HAL 模块（ 它最终是以 <code>audio.primary.x86.so</code> 的动态链接库形式存在 ）为例来介绍一个 HAL 模块的定义及实现过程。</p>
+<h2 id="HAL-层的三个重要结构体"><a href="#HAL-层的三个重要结构体" class="headerlink" title="HAL 层的三个重要结构体"></a>HAL 层的三个重要结构体</h2><p>Android 系统的 HAL 层其实并不复杂，只要你能理解清楚下面这 3 个结构体的含义：</p>
+<blockquote>
+<ul>
+<li><strong>hw_module_t</strong>：用来描述硬件模块</li>
+<li><strong>hw_device_t</strong>：用来描述硬件设备</li>
+<li><strong>hw_module_methods_t</strong>：用来打开硬件模块中包含硬件设备，获得指向硬件设备结构体的指针</li>
+</ul>
+</blockquote>
+<p>Android 系统中 HAL 层是以<strong>模块</strong>的方式来管理各个硬件访问的接口，每一个硬件模块都对应一个动态链接库文件，而这些动态链接库文件需要符号一定的规范，而上述的这 3 种结构体就是用来建立这种规范。并且一个<strong>硬件模块</strong>可以管理多个<strong>硬件设备</strong>，例如 audio HAL 硬件模块中就管理了扬声器、麦克风等多个硬件设备。</p>
+<p><strong>注意：这里一定区分 hw_module_t 和 hw_device_t 它们所表示的含义</strong></p>
+<h3 id="hw-module-t"><a href="#hw-module-t" class="headerlink" title="hw_module_t"></a>hw_module_t</h3><p>结构体 hw_module_t 定义在 <code>/hardware/libhardware/include/hardware/hardware.h</code> 文件中，其定义如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">1. *&#x2F;***
+2. ** Every hardware module must have a data structure named HAL_MODULE_INFO_SYM*
+3. ** and the fields of this data structure must begin with hw_module_t*
+4. ** followed by module specific information.*
+5. **&#x2F;*
+6. typedef struct hw_module_t &#123;
+7. *&#x2F;** tag must be initialized to HARDWARE_MODULE_TAG \*&#x2F;*
+8. uint32_t tag;
+9. 
+10. *&#x2F;***
+11. ** The API version of the implemented module. The module owner is*
+12. ** responsible for updating the version when a module interface has*
+13. ** changed.*
+14. ***
+15. ** The derived modules such as gralloc and audio own and manage this field.*
+16. ** The module user must interpret the version field to decide whether or*
+17. ** not to inter-operate with the supplied module implementation.*
+18. ** For example, SurfaceFlinger is responsible for making sure that*
+19. ** it knows how to manage different versions of the gralloc-module API,*
+20. ** and AudioFlinger must know how to do the same for audio-module API.*
+21. ***
+22. ** The module API version should include a major and a minor component.*
+23. ** For example, version 1.0 could be represented as 0x0100. This format*
+24. ** implies that versions 0x0100-0x01ff are all API-compatible.*
+25. ***
+26. ** In the future, libhardware will expose a hw_get_module_version()*
+27. ** (or equivalent) function that will take minimum&#x2F;maximum supported*
+28. ** versions as arguments and would be able to reject modules with*
+29. ** versions outside of the supplied range.*
+30. **&#x2F;*
+31. uint16_t module_api_version;
+32. \#define version_major module_api_version
+33. *&#x2F;***
+34. ** version_major&#x2F;version_minor defines are supplied here for temporary*
+35. ** source code compatibility. They will be removed in the next version.*
+36. ** ALL clients must convert to the new version format.*
+37. **&#x2F;*
+38. 
+39. *&#x2F;***
+40. ** The API version of the HAL module interface. This is meant to*
+41. ** version the hw_module_t, hw_module_methods_t, and hw_device_t*
+42. ** structures and definitions.*
+43. ***
+44. ** The HAL interface owns this field. Module users&#x2F;implementations*
+45. ** must NOT rely on this value for version information.*
+46. ***
+47. ** Presently, 0 is the only valid value.*
+48. **&#x2F;*
+49. uint16_t hal_api_version;
+50. \#define version_minor hal_api_version
+51. 
+52. *&#x2F;** Identifier of module \*&#x2F;*
+53. const char *id;
+54. 
+55. *&#x2F;** Name of this module \*&#x2F;*
+56. const char *name;
+57. 
+58. *&#x2F;** Author&#x2F;owner&#x2F;implementor of the module \*&#x2F;*
+59. const char *author;
+60. 
+61. *&#x2F;** Modules methods \*&#x2F;*
+62. struct hw_module_methods_t* methods;
+63. 
+64. *&#x2F;** module&#39;s dso \*&#x2F;*
+65. void* dso;
+66. 
+67. \#ifdef __LP64__
+68. uint64_t reserved[32-7];
+69. \#else
+70. *&#x2F;** padding to 128 bytes, reserved for future use \*&#x2F;*
+71. uint32_t reserved[32-7];
+72. \#endif
+73. 
+74. &#125; hw_module_t;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>我们先看下结构体 hw_module_t 定义最前面的一段注释说明，它的意思是：</p>
+<blockquote>
+<p>每个硬件模块中都要定义一个名字叫做 HAL_MODULE_INFO_SYM 结构体变量，而这结构体变量中的第一个成员必须是 hw_module_t 类型。也就是说，每个硬件模块都要自己实现一个结构体，但是这个结构体的第一个成员必须是 hw_module_t 结构体类型。</p>
+</blockquote>
+<p><strong>其实这里蕴含着一种面向对象中继承的思想，hw_module_t 就是一个基类，描述所有硬件模块都应该具有的一些属性，然后具体到某个特定的硬件模块实现时，都需要继承自 hw_module_t 结构体。也就是说 hw_module_t 是所有特定硬件模块的父类。</strong></p>
+<p>有关结构体 hw_module_t 中各个成员的具体含义，这里就不一一进行说明了，相信大家从它们的注释说明中就能了解到每一个成员所表示的含义，这里就挑一些重要的结构体成员来进一步说明。</p>
+<blockquote>
+<ul>
+<li>id：这个成员用一个字符串来表示硬件模块的，用来区别于其他硬件模块。</li>
+<li>methods：这个成员是一个 hw_module_methods_t 指针，它表示硬件模块所包含的方法集（其实里面就一个 open 函数指针，用来打开 hw_device_t 硬件设备，获得指向对应的硬件设备的结构体对象的指针）。</li>
+<li>dso：我们前面提到，HAL 层中的<strong>硬件模块</strong>是用动态链接库表示的，所以 dso 指针就是系统使用 dlopen() 函数打开共享动态共享链接库之后获得的句柄。</li>
+</ul>
+</blockquote>
+<h3 id="hw-device-t"><a href="#hw-device-t" class="headerlink" title="hw_device_t"></a>hw_device_t</h3><p>结构体 hw_device_t 定义在 <code>/hardware/libhardware/include/hardware/hardware.h</code> 文件中，其定义如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">1. *&#x2F;***
+2. ** Every device data structure must begin with hw_device_t*
+3. ** followed by module specific public methods and attributes.*
+4. **&#x2F;*
+5. typedef struct hw_device_t &#123;
+6. *&#x2F;** tag must be initialized to HARDWARE_DEVICE_TAG \*&#x2F;*
+7. uint32_t tag;
+8. 
+9. *&#x2F;***
+10. ** Version of the module-specific device API. This value is used by*
+11. ** the derived-module user to manage different device implementations.*
+12. ***
+13. ** The module user is responsible for checking the module_api_version*
+14. ** and device version fields to ensure that the user is capable of*
+15. ** communicating with the specific module implementation.*
+16. ***
+17. ** One module can support multiple devices with different versions. This*
+18. ** can be useful when a device interface changes in an incompatible way*
+19. ** but it is still necessary to support older implementations at the same*
+20. ** time. One such example is the Camera 2.0 API.*
+21. ***
+22. ** This field is interpreted by the module user and is ignored by the*
+23. ** HAL interface itself.*
+24. **&#x2F;*
+25. uint32_t version;
+26. 
+27. *&#x2F;** reference to the module this device belongs to \*&#x2F;*
+28. struct hw_module_t* module;
+29. 
+30. *&#x2F;** padding reserved for future use \*&#x2F;*
+31. \#ifdef __LP64__
+32. uint64_t reserved[12];
+33. \#else
+34. uint32_t reserved[12];
+35. \#endif
+36. 
+37. *&#x2F;** Close this device \*&#x2F;*
+38. int (*close)(struct hw_device_t* device);
+39. 
+40. &#125; hw_device_t;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>和 hw_module_t 类似，hw_device_t 也可以看做是一个基类，它描述了所有硬件设备都应该具有的属性，然后具体到某个特定的硬件设备（例如，音频播放时需要的扬声器设备）实现时，都需要继承自 audio_device 结构体。所以，每个 HAL 层中硬件设备对应的结构体中的第一个成员必须是 hw_device_t。</strong></p>
+<p>下面还是简单提一下结构体 hw_device_t 比较关键的几个成员：</p>
+<blockquote>
+<ul>
+<li>module：这个成员是一个 hw_module_t 指针，表示该结构体 hw_device_t 表示的<strong>硬件设备</strong>是由哪个 hw_module_t 表示的<strong>硬件模块</strong>进行管理的。（在这里所以一定要区分清楚==<strong>硬件设备</strong>==和==<strong>硬件模块</strong>==的区别！）</li>
+<li>close：这是一个函数指针，表示如何关闭打开的硬件设备，通常==打开硬件设备的操作==在 hw_module_t 中包含的 hw_module_methods_t 函数列表中的 <strong>open()</strong> 函数中打开的。</li>
+</ul>
+</blockquote>
+<h3 id="hw-module-methods-t"><a href="#hw-module-methods-t" class="headerlink" title="hw_module_methods_t"></a>hw_module_methods_t</h3><p>结构体 hw_module_methods_t 定义在 <code>/hardware/libhardware/include/hardware/hardware.h</code> 文件中，其定义如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">1. typedef struct hw_module_methods_t &#123;
+2. *&#x2F;** Open a specific device \*&#x2F;*
+3. int (*open)(const struct hw_module_t* module, const char* id,
+4. struct hw_device_t** device);
+5. 
+6. &#125; hw_module_methods_t;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>结构体 hw_module_methods_t 就比较简单了，它里面就只有一个 <strong>open</strong> 函数指针，用来打开 module 硬件模块==所管理==的硬件设备id值为 id 的硬件设备，最后将打开的==硬件设备（用 hw_device_t 结构体来描述）==通过 device 返回。</p>
+<p>*<em>注意：这个 open 函数明确指出第三个参数的类型为 struct hw_device_t*<em>，这主要是为了统一不同硬件设备向上层提供的硬件接口，然后在具体使用到某中硬件设备时，再转换成特定硬件设备的结构体类型。</em></em></p>
+<h1 id="Audio-HAL-模块的实现"><a href="#Audio-HAL-模块的实现" class="headerlink" title="Audio HAL 模块的实现"></a>Audio HAL 模块的实现</h1><h3 id="Step-1：定义-struct-audio-module-模块"><a href="#Step-1：定义-struct-audio-module-模块" class="headerlink" title="Step 1：定义 struct audio_module 模块"></a>Step 1：定义 struct audio_module 模块</h3><p>我们前面在结构体 hw_module_t 介绍时，有提到具体的<strong>硬件模块</strong>要定义一个新的结构体并且这个结构体的==第一个成员必须是 hw_module_t 类型==，所以根据这个规则，audio_module 的定义如下所示：</p>
+<p>代码路径：<code>/hardware/libhardware/include/hardware/audio.h</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. struct audio_module &#123;
+2. struct hw_module_t common;
+3. &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="step-2：定义-struct-audio-module-类型的-HAL-MODULE-INFO-SYM-变量"><a href="#step-2：定义-struct-audio-module-类型的-HAL-MODULE-INFO-SYM-变量" class="headerlink" title="step 2：定义 struct audio_module 类型的 HAL_MODULE_INFO_SYM 变量"></a>step 2：定义 struct audio_module 类型的 HAL_MODULE_INFO_SYM 变量</h3><p>HAL_MODULE_INFO_SYM 其实是一个宏，它定义如下所示：</p>
+<p>代码路径：<code>/hardware/libhardware/include/hardware/hardware.h</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. *&#x2F;***
+2. ** Name of the hal_module_info*
+3. **&#x2F;*
+4. \#define HAL_MODULE_INFO_SYM HMI
+5. 
+6. *&#x2F;***
+7. ** Name of the hal_module_info as a string*
+8. **&#x2F;*
+9. \#define HAL_MODULE_INFO_SYM_AS_STR &quot;HMI&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>而 struct audio_module 类型名为 <code>HAL_MODULE_INFO_SYM</code> 变量的定义如下所示：</p>
+<p>代码路径：<code>&lt;aosp&gt;/generic/goldfish/audio/audio_hw.c</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. struct audio_module HAL_MODULE_INFO_SYM &#x3D; &#123;
+2. .common &#x3D; &#123;
+3. .tag &#x3D; HARDWARE_MODULE_TAG,
+4. .module_api_version &#x3D; AUDIO_MODULE_API_VERSION_0_1,
+5. .hal_api_version &#x3D; HARDWARE_HAL_API_VERSION,
+6. .id &#x3D; AUDIO_HARDWARE_MODULE_ID,
+7. .name &#x3D; &quot;Generic audio HW HAL&quot;,
+8. .author &#x3D; &quot;The Android Open Source Project&quot;,
+9. .methods &#x3D; &amp;hal_module_methods,
+10. &#125;,
+11. &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>但是我们为什么要在每个硬件模块中都定义一个变量名为 HAL_MODULE_INFO_SYM 的变量呢？</strong></p>
+<p>原因是<strong>为了统一标准的接口</strong>。这个硬件模块类型的变量主要是在 HAL 动态链接库加载时用到，它使得上层的 Framework 层打开所有的 HAL 动态链接库时都能找到名为 HAL_MODULE_INFO_SYM（也就是 hmi）的硬件模块类型变量，然后通过这个变量再来打开它所管理的硬件设备，从而与之进行交互。这么做的好处就是 Framework 层中只需要用相同的 API，就能处理各个厂商所提供的不同的 HAL 动态链接库。</p>
+<p>在上面音频硬件设备结构体 <code>audio_hw_device</code> 的定义中，第一个结构体成员就是 <code>struct hw_device_t</code>类型的，而其他的结构体成员都是函数指针，例如 <code>open_output_stream</code> 函数就是用来打开播放音频的扬声器设备，<code>open_input_stream</code> 函数则是用来打开录音用的麦克风设备。</p>
+<h3 id="step-3：定义-struct-audio-hw-device-硬件设备结构体"><a href="#step-3：定义-struct-audio-hw-device-硬件设备结构体" class="headerlink" title="step 3：定义 struct audio_hw_device 硬件设备结构体"></a>step 3：定义 struct audio_hw_device 硬件设备结构体</h3><p>每个硬件设备都需要通过一个结构体来表示，并且这个结构体的第一个成员必须是 hw_device_t 类型。而有关的对底层硬件设备的有关操作的函数指针接口，也是在这个结构体中定义。 struct audio_hw_device 硬件设备结构体的定义如下所示：</p>
+<p>代码路径：<code>/hardware/libhardware/include/hardware/audio.h</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. struct audio_hw_device &#123;
+2. *&#x2F;***
+3. ** Common methods of the audio device. This \*must\* be the first member of audio_hw_device*
+4. ** as users of this structure will cast a hw_device_t to audio_hw_device pointer in contexts*
+5. ** where it&#39;s known the hw_device_t references an audio_hw_device.*
+6. **&#x2F;*
+7. struct hw_device_t common;
+8. 
+9. ......
+10. 
+11. *&#x2F;\* Returns audio input buffer size according to parameters passed or*
+12. ** 0 if one of the parameters is not supported.*
+13. ** See also get_buffer_size which is for a particular stream.*
+14. **&#x2F;*
+15. size_t (*get_input_buffer_size)(const struct audio_hw_device *dev,
+16. const struct audio_config *config);
+17. 
+18. *&#x2F;** This method creates and opens the audio hardware output stream.*
+19. ** The &quot;address&quot; parameter qualifies the &quot;devices&quot; audio device type if needed.*
+20. ** The format format depends on the device type:*
+21. ** - Bluetooth devices use the MAC address of the device in the form &quot;00:11:22:AA:BB:CC&quot;*
+22. ** - USB devices use the ALSA card and device numbers in the form &quot;card&#x3D;X;device&#x3D;Y&quot;*
+23. ** - Other devices may use a number or any other string.*
+24. **&#x2F;*
+25. 
+26. int (*open_output_stream)(struct audio_hw_device *dev,
+27. audio_io_handle_t handle,
+28. audio_devices_t devices,
+29. audio_output_flags_t flags,
+30. struct audio_config *config,
+31. struct audio_stream_out **stream_out,
+32. const char *address);
+33. 
+34. void (*close_output_stream)(struct audio_hw_device *dev,
+35. struct audio_stream_out* stream_out);
+36. 
+37. *&#x2F;** This method creates and opens the audio hardware input stream \*&#x2F;*
+38. int (*open_input_stream)(struct audio_hw_device *dev,
+39. audio_io_handle_t handle,
+40. audio_devices_t devices,
+41. struct audio_config *config,
+42. struct audio_stream_in **stream_in,
+43. audio_input_flags_t flags,
+44. const char *address,
+45. audio_source_t source);
+46. 
+47. void (*close_input_stream)(struct audio_hw_device *dev,
+48. struct audio_stream_in *stream_in);
+49. 
+50. ......
+51. 
+52. &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="step-4：定义-struct-hw-module-methods-t-函数列表变量"><a href="#step-4：定义-struct-hw-module-methods-t-函数列表变量" class="headerlink" title="step 4：定义 struct hw_module_methods_t 函数列表变量"></a>step 4：定义 struct hw_module_methods_t 函数列表变量</h3><p>在前面介绍的结构体 hw_module_t 的定义中就有一个 hw_module_methods_t 函数指针类型的成员<code>open</code>，该函数的作用就是让<strong>硬件模块</strong>打开<strong>硬件设备</strong>，然后对特定硬件设备（例如上面的 struct audio_device_t结构体）中定义函数指针变量进行赋值绑定，所以在每个<strong>硬件模块</strong>都要实现这样一个变量。</p>
+<p>struct audio_module 结构体中 <code>struct hw_module_t 类型的成员 common</code>中的 hw_module_methods_t 函数指针成员的实现绑定如下所示：</p>
+<p>代码路径：<code>&lt;aosp&gt;/generic/goldfish/audio/audio_hw.c</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. static struct hw_module_methods_t hal_module_methods &#x3D; &#123;
+2. .open &#x3D; adev_open,
+3. &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>可以看到，在 audio HAL 模块中使用了 <code>adev_open</code> 函数来初始化了 struct hw_module_methods_t 中的 <code>open</code> 函数指针成员。我们现在回过头来看 <strong>step 2</strong>中 <strong>struct audio_module HAL_MODULE_INFO_SYM</strong> 变量的定义中，audio_module 中的第一个成员 common中的结构体变量 methods 的指针就是被初始化指向了现在这里定义的 <code>hal_module_methods</code> 变量。</p>
+<h3 id="step-5：adev-open-函数的实现"><a href="#step-5：adev-open-函数的实现" class="headerlink" title="step 5：adev_open 函数的实现"></a>step 5：adev_open 函数的实现</h3><p>最后，我们来看看 <code>adev_open</code> 函数的实现，看看它是如何通过 audio_module 硬件模块对象来打开 audio_hw_device 硬件设备对象。</p>
+<p>代码路径：<code>&lt;aosp&gt;/generic/goldfish/audio/audio_hw.c</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. static int adev_open(const hw_module_t* module, const char* name,
+2. hw_device_t** device)
+3. &#123;
+4. struct generic_audio_device *adev;
+5. int fd;
+6. 
+7. if (strcmp(name, AUDIO_HARDWARE_INTERFACE) !&#x3D; 0)
+8. return -EINVAL;
+9. 
+10. fd &#x3D; open(AUDIO_DEVICE_NAME, O_RDWR);
+11. if (fd &lt; 0)
+12. return -ENOSYS;
+13. 
+14. adev &#x3D; calloc(1, sizeof(struct generic_audio_device));
+15. 
+16. adev-&gt;fd &#x3D; fd;
+17. 
+18. adev-&gt;device.common.tag &#x3D; HARDWARE_DEVICE_TAG;
+19. adev-&gt;device.common.version &#x3D; AUDIO_DEVICE_API_VERSION_2_0;
+20. adev-&gt;device.common.module &#x3D; (struct hw_module_t *) module;
+21. adev-&gt;device.common.close &#x3D; adev_close;
+22. 
+23. adev-&gt;device.init_check &#x3D; adev_init_check;
+24. adev-&gt;device.set_voice_volume &#x3D; adev_set_voice_volume;
+25. adev-&gt;device.set_master_volume &#x3D; adev_set_master_volume;
+26. adev-&gt;device.get_master_volume &#x3D; adev_get_master_volume;
+27. adev-&gt;device.set_master_mute &#x3D; adev_set_master_mute;
+28. adev-&gt;device.get_master_mute &#x3D; adev_get_master_mute;
+29. adev-&gt;device.set_mode &#x3D; adev_set_mode;
+30. adev-&gt;device.set_mic_mute &#x3D; adev_set_mic_mute;
+31. adev-&gt;device.get_mic_mute &#x3D; adev_get_mic_mute;
+32. adev-&gt;device.set_parameters &#x3D; adev_set_parameters;
+33. adev-&gt;device.get_parameters &#x3D; adev_get_parameters;
+34. adev-&gt;device.get_input_buffer_size &#x3D; adev_get_input_buffer_size;
+35. adev-&gt;device.open_output_stream &#x3D; adev_open_output_stream;
+36. adev-&gt;device.close_output_stream &#x3D; adev_close_output_stream;
+37. adev-&gt;device.open_input_stream &#x3D; adev_open_input_stream;
+38. adev-&gt;device.close_input_stream &#x3D; adev_close_input_stream;
+39. adev-&gt;device.dump &#x3D; adev_dump;
+40. 
+41. *device &#x3D; &amp;adev-&gt;device.common;
+42. 
+43. return 0;
+44. &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>这里再补充一个小的定义，<code>struct generic_audio_device</code> 中的第一个成员 <code>device</code> 就是我们前面提到的 <code>struct audio_hw_device</code> 结构体，它的定义如下:</p>
+<p>代码路径：<code>/hardware/libaudio/audio_hw.c</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1. struct generic_audio_device &#123;
+2. struct audio_hw_device device;
+3. pthread_mutex_t lock;
+4. struct audio_stream_out *output;
+5. struct audio_stream_in *input;
+6. int fd;
+7. bool mic_mute;
+8. &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>我们可以从 <code>adev_open</code> 函数中的实现中看到，它里面的主要工作就是做一些对 <code>struct audio_hw_device</code>对象的初始化，将其定义的函数指针指向对应的已经实现好的函数中。例如，这里将<code>struct audio_hw_device</code>中定义的 <code>open_output_stream</code> 函数指针成员指向了 <code>adev_open_output_stream</code> 函数。这样在 Framework 层调用的 <code>struct audio_hw_device</code> 对象的 <code>open_output_stream</code> 函数，其实最终调用的是 <code>adev_open_output_stream</code>函数。</p>
+<p><strong>这里，还有一点需要特别注意的就是我们所打开的硬件设备对象是怎么返回的？</strong> 答案就是它是通过 <code>open</code>函数中的第三个参数 <code>hw_device_t** device</code>返回的。在 open 函数初始化并打开特定的硬件设备之后，它就将硬件设备结构体中的第一个成员 <code>struct audio_hw_device</code> 类型的 common 对象返回。</p>
+<p><em><em>那么为什么这里返回的是 hw_device_t*</em> 类型的硬件设备，而不是audio_hw_device*</em> 类型呢？** 其实这个问题在前面在介绍 <code>hw_module_methods_t</code> 中的 <code>open</code> 函数时已经提到过了。这里主要也蕴含着面向对象编程中的另外一种重要思想<strong>多态</strong>，这使得使用的 hw_device_t 指针就可以访问到子类中继承了父类的属性和方法，如果要获得某个子类所特有的属性，那么只要将其进行类型的强制转换即可。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>理解 Android HAL 层最关键的还是要弄清楚 hw_module_t 、 hw_device_t、 hw_module_methods_t 这三个结构体的含义即关系，以及如何基于这三个结构体来实现特定硬件的<strong>硬件模块结构体</strong>、<strong>硬件设备结构体</strong>、<strong>硬件模块方法列表结构体</strong>。其实从面向对象编程的角度来考虑，前面三者和后面三者之间的关系，就好比是父类和子类的关系。</p>
 
                 
             </div>
@@ -534,7 +867,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/">http://ThomasCheng99.github.io/2021/05/20/0-du-shu-bi-ji/shang-ye-mo-shi-xin-sheng-dai/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/21/hal-ceng-xue-xi/">http://ThomasCheng99.github.io/2021/05/21/hal-ceng-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -745,6 +1078,55 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/05/21/jni-ceng-xue-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JNI层学习">
+                        
+                        <span class="card-title">JNI层学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JNI层学习
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/new/" class="post-category">
+                                    new
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/new/">
+                        <span class="chip bg-color">new</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/05/21/0-ri-chang-xue-xi/android-bian-yi-liu-cheng/">
                     <div class="card-image">
                         
@@ -761,56 +1143,15 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
                                     日常学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/20/0-du-shu-bi-ji/shen-ti-yu-yan-mi-ma/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="身体语言密码">
-                        
-                        <span class="card-title">身体语言密码</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            身体语言密码笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
                                 </a>
                             
                             
