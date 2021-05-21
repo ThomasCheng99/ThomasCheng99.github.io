@@ -507,7 +507,7 @@
 <li><p>JNIEnv的认识</p>
 </li>
 </ul>
-<h2 id="一、JNI的认识"><a href="#一、JNI的认识" class="headerlink" title="一、JNI的认识"></a><strong>一、JNI的认识</strong></h2><p><img src="/2021/05/21/jni-ceng-xue-xi/11.png"></p>
+<h2 id="一、JNI的认识"><a href="#一、JNI的认识" class="headerlink" title="一、JNI的认识"></a><strong>一、JNI的认识</strong></h2><p><img src="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/11.png"></p>
 <p>JNI是Java Native Interface的缩写，它提供了若干的API实现了Java和其他语言的通信（主要是C&amp;C++）。在安卓中，主要做到以下两点：</p>
 <blockquote>
 <p>1）Java程序中函数可以调用Native语言写的函数，Native一般指C/C++编写的函数</p>
@@ -519,7 +519,7 @@
 <p>2）C/C++语音已经有了很多成熟的模块，Java只需要直接调用即可。还有一些追求效率和速度的场合，需要Native语言参与的。</p>
 </blockquote>
 <p>在Android平台上，JNI就是一座将Native世界和Java世界的天堑变通途的桥。</p>
-<h3 id="本文从源码中的MediaScanner中来初步窥视JNI用法"><a href="#本文从源码中的MediaScanner中来初步窥视JNI用法" class="headerlink" title="本文从源码中的MediaScanner中来初步窥视JNI用法"></a><strong>本文从源码中的</strong>MediaScanner<strong>中来初步窥视</strong>JNI<strong>用法</strong></h3><p><img src="/2021/05/21/jni-ceng-xue-xi/15-1621568639139.png"></p>
+<h3 id="本文从源码中的MediaScanner中来初步窥视JNI用法"><a href="#本文从源码中的MediaScanner中来初步窥视JNI用法" class="headerlink" title="本文从源码中的MediaScanner中来初步窥视JNI用法"></a><strong>本文从源码中的</strong>MediaScanner<strong>中来初步窥视</strong>JNI<strong>用法</strong></h3><p><img src="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/15-1621568639139.png"></p>
 <p>上图可以看到Java层 、JNI层、Native层之间的架构，JNI是中间层【这里区分了<a target="_blank" rel="noopener" href="http://libmedia_jni.so/">libmedia_jni.so</a>、<a target="_blank" rel="noopener" href="http://libmedia.so/">libmedia.so</a>:平常开发直接用一个.so 文件。这里区分为了说明JNI层和Native层】</p>
 <blockquote>
 <ul>
@@ -937,11 +937,11 @@ bail:
 
 
 <p>总结流程如下图所示：</p>
-<p><img src="/2021/05/21/jni-ceng-xue-xi/12.png"></p>
+<p><img src="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/12.png"></p>
 <p><strong>当</strong>Java<strong>层通过调用</strong>System.loadLibrary<strong>加载完</strong>JNI<strong>动态库后，紧接着会查找该库中一个叫</strong>JNI_OnLoad的函数。如果有，就调用他，而动态注册的工作就是在这里完成的。<br>所以，如果想使用动态注册方法，必须实现JNI_OnLoad函数，只有这个函数才有机会完成动态注册的工作，静态注册则没有这个要求。</p>
 <h2 id="四、JNIEnv的认识"><a href="#四、JNIEnv的认识" class="headerlink" title="四、JNIEnv的认识"></a><strong>四、JNIEnv</strong>的认识</h2><p>你会发现在JNI世界里，你是离不开JNIEnv，它就是<strong>一个与线程相关的代表</strong>JNI<strong>环境的结构体</strong>。</p>
-<p><img src="/2021/05/21/jni-ceng-xue-xi/13.png"></p>
-<p><img src="/2021/05/21/jni-ceng-xue-xi/14.png"></p>
+<p><img src="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/13.png"></p>
+<p><img src="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/14.png"></p>
 <p>上图可以看到：JNIEnv提供了一些JNI系统函数，通过这些函数可以</p>
 <blockquote>
 <p>1）调用Java函数【jni层调用java层】</p>
@@ -1120,7 +1120,7 @@ bail:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/05/21/jni-ceng-xue-xi/">http://ThomasCheng99.github.io/2021/05/21/jni-ceng-xue-xi/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/">http://ThomasCheng99.github.io/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1331,7 +1331,7 @@ bail:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/">
+                <a href="/2021/05/21/0-ri-chang-xue-xi/linux-kernel-qi-dong-liu-cheng-xue-xi/">
                     <div class="card-image">
                         
                         
@@ -1372,7 +1372,7 @@ bail:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/21/hal-ceng-xue-xi/">
+                <a href="/2021/05/21/0-ri-chang-xue-xi/hal-ceng-xue-xi/">
                     <div class="card-image">
                         
                         

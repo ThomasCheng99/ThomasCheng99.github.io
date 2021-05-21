@@ -506,10 +506,10 @@
 </ul>
 </blockquote>
 <p>2.第二阶段的关键代码主要使用c语言编写，它进行内核初始化的全部工作，最后调用rest_init函数启动init过程，创建系统的第一个进程：init进程。在第二个阶段，仍有部分架构、开发板相关的代码</p>
-<p><img src="/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/1.png"></p>
+<p><img src="/2021/05/21/0-ri-chang-xue-xi/linux-kernel-qi-dong-liu-cheng-xue-xi/1.png"></p>
 <center>下面图解ARM-Linux的启动全过程：内核自解压阶段—>内核引导阶段—>内核初始化阶段—>BusyBox初始化阶段</center>
 
-<p><img src="/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/2.png"></p>
+<p><img src="/2021/05/21/0-ri-chang-xue-xi/linux-kernel-qi-dong-liu-cheng-xue-xi/2.png"></p>
 <h1 id="Linux-kernel启动流程："><a href="#Linux-kernel启动流程：" class="headerlink" title="Linux kernel启动流程："></a>Linux kernel启动流程：</h1><h3 id="执行arch-arm-kernel-head-armv-S"><a href="#执行arch-arm-kernel-head-armv-S" class="headerlink" title="执行arch/arm/kernel/head-armv.S"></a>执行arch/arm/kernel/head-armv.S</h3><p>该文件是内核最先执行的一个文件，包括内核入口ENTRY(stext)到start_kernel间的初始化代码，</p>
 <p><strong>主要作用</strong>是检查CPU ID， Architecture Type，初始化BSS等操作，并跳到start_kernel函数。在执行前，处理器应满足以下状态： </p>
 <blockquote>
@@ -843,8 +843,8 @@ open_softirq(HI_SOFTIRQ, tasklet_hi_action, NULL); &#x2F;* 初始化tasklet_stru
 
 <p><strong>查看 /arch/i386/vmlinux.lds，其中有一段代码</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">__initcall_start &#x3D; .; 
-　.initcall.init : &#123; *(.initcall.init) &#125; 
-　__initcall_end &#x3D; .; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+.initcall.init : &#123; *(.initcall.init) &#125; 
+__initcall_end &#x3D; .; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>其含义是__initcall_start指向代码节.initcall.init的节首，而__initcall_end指向.initcall.init的节尾。</p>
 <p><strong>do_initcalls</strong>所作的是系统中有关驱动部分的初始化工作，那么<strong>这些函数指针数据是怎样放到了.initcall.init节呢？</strong></p>
@@ -1593,7 +1593,7 @@ unnamed_dev_init()**，* *key_init()*
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/">http://ThomasCheng99.github.io/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/21/0-ri-chang-xue-xi/linux-kernel-qi-dong-liu-cheng-xue-xi/">http://ThomasCheng99.github.io/2021/05/21/0-ri-chang-xue-xi/linux-kernel-qi-dong-liu-cheng-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1804,7 +1804,7 @@ unnamed_dev_init()**，* *key_init()*
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/21/makefile-zu-zhi-jie-gou-ji-bian-yi-kong-zhi/">
+                <a href="/2021/05/21/0-ri-chang-xue-xi/makefile-zu-zhi-jie-gou-ji-bian-yi-kong-zhi/">
                     <div class="card-image">
                         
                         
@@ -1845,7 +1845,7 @@ unnamed_dev_init()**，* *key_init()*
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/21/jni-ceng-xue-xi/">
+                <a href="/2021/05/21/0-ri-chang-xue-xi/jni-ceng-xue-xi/">
                     <div class="card-image">
                         
                         
