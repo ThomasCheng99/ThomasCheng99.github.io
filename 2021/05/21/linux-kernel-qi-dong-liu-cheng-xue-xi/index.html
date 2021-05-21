@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/new/">
-                                <span class="chip bg-color">new</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/new/" class="post-category">
-                                new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -466,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    7.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    33 分
                 </div>
                 
 
@@ -501,7 +497,1077 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="前导知识"><a href="#前导知识" class="headerlink" title="前导知识"></a><strong>前导知识</strong></h1><p>Linux内核的启动过程可以分为两部分：架构/开发板的相关引导过程，后续的通用启动过程</p>
+<p>1.<strong>引导阶段</strong>通常使用汇编语言编写，它首先检查内核是否支持当前架构的处理器，然后检查是否支持当前开发板。通过检查后，就为调用下一阶段的start_kernel函数做准备，这主要分为两个步骤：</p>
+<blockquote>
+<ul>
+<li>设置页表，使能MMU</li>
+<li>调用c函数start_kernel之前的常规工作，包括复制数据段，清除BSS段，调用start_kernel函数</li>
+</ul>
+</blockquote>
+<p>2.第二阶段的关键代码主要使用c语言编写，它进行内核初始化的全部工作，最后调用rest_init函数启动init过程，创建系统的第一个进程：init进程。在第二个阶段，仍有部分架构、开发板相关的代码</p>
+<p><img src="/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/1.png"></p>
+<center>下面图解ARM-Linux的启动全过程：内核自解压阶段—>内核引导阶段—>内核初始化阶段—>BusyBox初始化阶段</center>
+
+<p><img src="/2021/05/21/linux-kernel-qi-dong-liu-cheng-xue-xi/2.png"></p>
+<h1 id="Linux-kernel启动流程："><a href="#Linux-kernel启动流程：" class="headerlink" title="Linux kernel启动流程："></a>Linux kernel启动流程：</h1><h3 id="执行arch-arm-kernel-head-armv-S"><a href="#执行arch-arm-kernel-head-armv-S" class="headerlink" title="执行arch/arm/kernel/head-armv.S"></a>执行arch/arm/kernel/head-armv.S</h3><p>该文件是内核最先执行的一个文件，包括内核入口ENTRY(stext)到start_kernel间的初始化代码，</p>
+<p><strong>主要作用</strong>是检查CPU ID， Architecture Type，初始化BSS等操作，并跳到start_kernel函数。在执行前，处理器应满足以下状态： </p>
+<blockquote>
+<p>r0 - should be 0<br>r1 - unique architecture number<br>MMU - off<br>I-cache - on or off<br>D-cache – off </p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none"> 1 &#x2F;* 部分源代码分析 *&#x2F; 
+ 2 &#x2F;* 内核入口点 *&#x2F; 
+ 3 ENTRY(stext) 
+ 4 &#x2F;* 程序状态，禁止FIQ、IRQ，设定SVC模式 *&#x2F; 
+ 5 mov r0, #F_BIT | I_BIT | MODE_SVC@ make sure svc mode 
+ 6 &#x2F;* 置当前程序状态寄存器 *&#x2F; 
+ 7 msr cpsr_c, r0 @ and all irqs disabled 
+ 8 &#x2F;* 判断CPU类型，查找运行的CPU ID值与Linux编译支持的ID值是否支持 *&#x2F; 
+ 9 bl __lookup_processor_type 
+10 &#x2F;* 跳到__error *&#x2F; 
+11 teq r10, #0 @ invalid processor? 
+12 moveq r0, #&#39;p&#39; @ yes, error &#39;p&#39; 
+13 beq __error 
+14 &#x2F;* 判断体系类型，查看R1寄存器的Architecture Type值是否支持 *&#x2F; 
+15 bl __lookup_architecture_type 
+16 &#x2F;* 不支持，跳到出错 *&#x2F; 
+17 teq r7, #0 @ invalid architecture? 
+18 moveq r0, #&#39;a&#39; @ yes, error &#39;a&#39; 
+19 beq __error 
+20 &#x2F;* 创建核心页表 *&#x2F; 
+21 bl __create_page_tables 
+22 adr lr, __ret @ return address 
+23 add pc, r10, #12 @ initialise processor 
+24 &#x2F;* 跳转到start_kernel函数 *&#x2F; 
+25 b start_kernel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="start-kernel中进行各项初始化工作（例如cpu，irq，时钟，cmd参数解析，console初始化等等……）"><a href="#start-kernel中进行各项初始化工作（例如cpu，irq，时钟，cmd参数解析，console初始化等等……）" class="headerlink" title="start_kernel中进行各项初始化工作（例如cpu，irq，时钟，cmd参数解析，console初始化等等……）"></a>start_kernel中进行各项初始化工作（例如cpu，irq，时钟，cmd参数解析，console初始化等等……）</h3><p>start_kernel ()函数完成Linux内核的初始化工作。几乎每天内核部件都是由这个函数进行初始化的，例如：</p>
+<blockquote>
+<ul>
+<li>调用sched_init()函数来初始化调度程序；</li>
+<li>调用build_all_zonelists()函数来初始化内存管理区；</li>
+<li>调用page_alloc_init()函数来初始化伙伴系统分配程序；</li>
+<li>调用trap_init()函数和init_IRQ()函数以完成IDT初始化；</li>
+<li>调用softirq_init()函数初始化TASKLET_SOFTIRQ和HI_SOFTIRQ；</li>
+<li>调用time_init()函数来初始化系统日期和时间；</li>
+<li>调用kmem_cache_init()函数来初始化slab分配器；</li>
+<li>调用calibrate_delay()函数以确定CPU时钟的速度；</li>
+<li>调用kernel_thread()函数为进程1创建内核线程，这个内核线程又会创建其他的内核线程并执行sbin/init程序</li>
+</ul>
+</blockquote>
+<p>现对start_kernel()函数及其相关函数进行具体分析：</p>
+<ul>
+<li><h3 id="lock-kernel"><a href="#lock-kernel" class="headerlink" title="lock_kernel()"></a>lock_kernel()</h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"> 1 &#x2F;* Getting the big kernel lock. 
+ 2 * This cannot happen asynchronously, 
+ 3 * so we only need to worry about other 
+ 4 * CPU&#39;s. 
+ 5 *&#x2F; 
+ 6 extern __inline__ void lock_kernel(void) 
+ 7 &#123; 
+ 8     if (!++current-&gt;lock_depth) 
+ 9     spin_lock(&amp;kernel_flag); 
+10 &#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>kernel_flag</strong> 是一个内核大自旋锁，所有进程都通过这个大锁来实现向内核态的迁移。</p>
+<p>只有获得这个大自旋锁的处理器可以进入内核，如中断处理程序等。在任何一对 lock_kernel／unlock_kernel函数里至多可以有一个程序占用CPU。</p>
+<p>进程的lock_depth成员初始化为-1，在 kerenl/fork.c文件中设置。在它小于0时 （恒为 -1），进程不拥有内核锁；当大于或等于0时，进程得到内核锁。</p>
+<ul>
+<li><h3 id="setup-arch"><a href="#setup-arch" class="headerlink" title="setup_arch()"></a>setup_arch()</h3></li>
+</ul>
+<p>**setup_arch()**函数做体系相关的初始化工作，函数的定义在arch/arm/kernel/setup.c文件中，主要涉及下列主要函数及代码。 </p>
+<p><strong>setup_processor()</strong> 该函数主要通过</p>
+<pre class="line-numbers language-none"><code class="language-none">for (list &#x3D; &amp;__proc_info_begin; list &lt; &amp;__proc_info_end ; list++) 
+if ((processor_id &amp; list-&gt;cpu_mask) &#x3D;&#x3D; list-&gt;cpu_val) 
+break; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这样一个循环来在.<a target="_blank" rel="noopener" href="http://proc.info/">proc.info</a>段中寻找匹配的processor_id，processor_id在head_armv.S文件中设置。 </p>
+<h4 id="setup-architecture-machine-arch-type-该函数获得体系结构的信息，返回mach-xxx-arch-c-文件中定义的machine结构体的指针，包含以下内容"><a href="#setup-architecture-machine-arch-type-该函数获得体系结构的信息，返回mach-xxx-arch-c-文件中定义的machine结构体的指针，包含以下内容" class="headerlink" title="setup_architecture(machine_arch_type) 该函数获得体系结构的信息，返回mach-xxx/arch.c 文件中定义的machine结构体的指针，包含以下内容"></a><strong>setup_architecture(machine_arch_type)</strong> 该函数获得体系结构的信息，返回mach-xxx/arch.c 文件中定义的machine结构体的指针，包含以下内容</h4><pre class="line-numbers language-none"><code class="language-none">MACHINE_START (xxx, “xxx”) 
+MAINTAINER (&quot;xxx&quot; 
+BOOT_MEM (xxx, xxx, xxx) 
+FIXUP (xxx) 
+MAPIO (xxx) 
+INITIRQ (xxx) 
+MACHINE_END <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="内存设置代码"><a href="#内存设置代码" class="headerlink" title="内存设置代码"></a>内存设置代码</h4><pre class="line-numbers language-none"><code class="language-none">if (meminfo.nr_banks &#x3D;&#x3D; 0) 
+&#123; 
+    meminfo.nr_banks &#x3D; 1; 
+    meminfo.bank[0].start &#x3D; PHYS_OFFSET; 
+    meminfo.bank[0].size &#x3D; MEM_SIZE; 
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>meminfo结构表明内存情况，是对物理内存结构meminfo的默认初始化。nr_banks指定内存块的数量，bank指定每块内存的范围，PHYS _OFFSET指定某块内存块的开始地址，MEM_SIZE指定某块内存块长度。 PHYS _OFFSET和MEM_SIZE都定义在include/asm-armnommu/arch-XXX/memory.h文件中，其中 PHYS _OFFSET是内存的开始地址，MEM_SIZE就是内存的结束地址。这个结构在接下来内存的初始化代码中起重要作用。</p>
+<h4 id="内核内存空间管理"><a href="#内核内存空间管理" class="headerlink" title="内核内存空间管理"></a>内核内存空间管理</h4><pre class="line-numbers language-none"><code class="language-none">init_mm.start_code &#x3D; (unsigned long) &amp;_text; 内核代码段开始 
+init_mm.end_code &#x3D; (unsigned long) &amp;_etext; 内核代码段结束 
+init_mm.end_data &#x3D; (unsigned long) &amp;_edata; 内核数据段开始 
+init_mm.brk &#x3D; (unsigned long) &amp;_end; 内核数据段结束 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>每一个任务都有一个<strong>mm_struct</strong>结构管理其内存空间，init_mm 是内核的mm_struct。其中设置成员变量* mmap指向自己， 意味着内核只有一个内存管理结构，设置 pgd=swapper_pg_dir，swapper_pg_dir是内核的页目录，ARM体系结构的内核页目录大小定义为16k。init_mm定义了整个内核的内存空间，内核线程属于内核代码，同样使用内核空间，其访问内存空间的权限与内核一样。 </p>
+<h4 id="内存结构初始化"><a href="#内存结构初始化" class="headerlink" title="内存结构初始化"></a>内存结构初始化</h4><p>bootmem_init (&amp;meminfo)函数根据meminfo进行内存结构初始化。</p>
+<p>bootmem_init(&amp;meminfo)函数中调用reserve_node_zero(bootmap_pfn, bootmap_pages) 函数，这个函数的作用是保留一部分内存使之不能被动态分配。</p>
+<p>这些内存块包括：</p>
+<pre class="line-numbers language-none"><code class="language-none">reserve_bootmem_node(pgdat, __pa(&amp;_stext), &amp;_end - &amp;_stext); &#x2F;*内核所占用地址空间*&#x2F; 
+reserve_bootmem_node(pgdat, bootmap_pfn&lt;&lt;PAGE_SHIFT, bootmap_pages&lt;&lt;PAGE_SHIFT) &#x2F;*bootmem结构所占用地址空间*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="paging-init-amp-meminfo-mdesc"><a href="#paging-init-amp-meminfo-mdesc" class="headerlink" title="paging_init(&amp;meminfo, mdesc)"></a>paging_init(&amp;meminfo, mdesc)</h4><p>创建内核页表，映射所有物理内存和IO空间，对于不同的处理器，该函数差别比较大。</p>
+<p>下面简单描述一下<strong>ARM体系结构的存储系统及MMU相关的概念。</strong></p>
+<p>在ARM存储系统中，使用内存管理单元(MMU)实现虚拟地址到实际物理地址的映射。</p>
+<p>利用MMU，可把SDRAM的地址完全映射到0x0起始的一片连续地址空间，而把原来占据这片空间的FLASH或者ROM映射到其他不相冲突的存储空间位置。</p>
+<p>例如，FLASH的地址从0x0000 0000～0x00FFFFFF，而SDRAM的地址范围是0x3000 0000～0x3lFFFFFF，则可把SDRAM地址映射为0x0000 0000～0xlFFFFFF，而FLASH的地址可以映射到0x9000 0000～0x90FFFFFF(此处地址空间为空闲，未被占用)。映射完成后，如果处理器发生异常，假设依然为IRQ中断，PC指针指向0xl8处的地址，而这个时候PC实际上是从位于物理地址的0x3000 0018处读取指令。</p>
+<p>通过MMU的映射，则可实现程序完全运行在SDRAM之中。在实际的应用中．可能会把两片不连续的物理地址空间分配给SDRAM。而在操作系统中，习惯于把SDRAM的空间连续起来，方便内存管理，且应用程序申请大块的内存时，操作系统内核也可方便地分配。通过MMU可实现不连续的物理地址空间映射为连续的虚拟地址空间。操作系统内核或者一些比较关键的代码，一般是不希望被用户应用程序访问。通过MMU可以控制地址空间的访问权限，从而保护这些代码不被破坏。 </p>
+<p><strong>MMU的实现过程，实际上就是一个查表映射的过程</strong>。建立页表是实现MMU功能不可缺少的一步。页表位于系统的内存中，页表的每一项对应于一个虚拟地址到物理地址的映射。每一项的长度即是一个字的长度(在ARM中，一个字的长度被定义为4Bytes)。页表项除完成虚拟地址到物理地址的映射功能之外，还定义了访问权限和缓冲特性等。　</p>
+<p>MMU的映射分为两种，一级页表的变换和二级页表变换。两者的不同之处就是实现的变换地址空间大小不同。</p>
+<p>一级页表变换支持1 M大小的存储空间的映射，而二级可以支持64 kB，4 kB和1 kB大小地址空间的映射。</p>
+<blockquote>
+<p>动态表(页表)的大小＝表项数＊每个表项所需的位数，即为整个内存空间建立索引表时，需要多大空间存放索引表本身。<br>表项数＝虚拟地址空间/每页大小<br>每个表项所需的位数＝Log(实际页表数)+适当控制位数<br>实际页表数 ＝物理地址空间/每页大小</p>
+</blockquote>
+<ul>
+<li><h3 id="parse-options"><a href="#parse-options" class="headerlink" title="parse_options()"></a><strong>parse_options()</strong></h3></li>
+</ul>
+<p>分析由内核引导程序发送给内核的启动选项，在初始化过程中按照某些选项运行，并将剩余部分传送给init进程。</p>
+<p>这些选项可能已经存储在配置文件中，也可能是由用户在系统启动时敲入的。但内核并不关心这些，这些细节都是内核引导程序关注的内容，嵌入式系统更是如此。 </p>
+<ul>
+<li><h3 id="trap-init-（-kernel-traps-c-do-trap）"><a href="#trap-init-（-kernel-traps-c-do-trap）" class="headerlink" title="trap_init() （/kernel/traps.c do_trap）"></a>trap_init() （/kernel/traps.c do_trap）</h3></li>
+</ul>
+<p>这个函数用来做体系相关的<strong>中断处理</strong>的初始化，在该函数中调用__trap_init((void *)vectors_base()) </p>
+<p>函数将exception vector设置到vectors_base开始的地址上。 __trap_init函数位于entry-armv.S文件中，对于ARM处理器，共有复位、未定义指令、SWI、预取终止、数据终止、IRQ和FIQ 几种方式。</p>
+<p>　　</p>
+<p><strong>SWI主要用来实现系统调用</strong>，而产生了IRQ之后，通过exception vector进入中断处理过程，执行<strong>do_IRQ</strong>函数。</p>
+<p>armnommu的trap_init（）函数在arch/armnommu/kernel/traps.c文件中。</p>
+<p>vectors_base是写中断向量的开始地址，在include/asm-armnommu/proc-armv/system.h文件中设置，地址为0或0XFFFF0000。 </p>
+<pre class="line-numbers language-none"><code class="language-none">ENTRY(__trap_init)
+stmfd sp!, &#123;r4 - r6, lr&#125;
+
+mrs r1, cpsr @ code from 2.0.38
+bic r1, r1, #MODE_MASK @ clear mode bits &#x2F;* 设置svc模式，disable IRQ,FIQ *&#x2F;
+orr r1, r1, #I_BIT|F_BIT|MODE_SVC @ set SVC mode, disable IRQ,FIQ
+msr cpsr, r1
+
+adr r1, .LCvectors @ set up the vectors
+ldmia r1, &#123;r1, r2, r3, r4, r5, r6, ip, lr&#125;
+stmia r0, &#123;r1, r2, r3, r4, r5, r6, ip, lr&#125; &#x2F;* 拷贝异常向量 *&#x2F;
+
+add r2, r0, #0x200
+adr r0, __stubs_start @ copy stubs to 0x200
+adr r1, __stubs_end
+1: ldr r3, [r0], #4
+str r3, [r2], #4
+cmp r0, r1
+blt 1b
+LOADREGS(fd, sp!, &#123;r4 - r6, pc&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>__stubs_start到__stubs_end的地址中包含了异常处理的代码，因此拷贝到vectors_base+0x200的位置上。 </p>
+<ul>
+<li><h3 id="init-IRQ"><a href="#init-IRQ" class="headerlink" title="init_IRQ()"></a>init_IRQ()</h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">void __init init_IRQ(void)
+&#123;
+extern void init_dma(void);
+int irq;
+
+for (irq &#x3D; 0; irq &lt; NR_IRQS; irq++) &#123;
+irq_desc[irq].probe_ok &#x3D; 0;
+irq_desc[irq].valid &#x3D; 0;
+irq_desc[irq].noautoenable &#x3D; 0;
+irq_desc[irq].mask_ack &#x3D; dummy_mask_unmask_irq;
+irq_desc[irq].mask &#x3D; dummy_mask_unmask_irq;
+irq_desc[irq].unmask &#x3D; dummy_mask_unmask_irq;
+&#125;
+CSR_WRITE(AIC_MDCR, 0x7FFFE); &#x2F;* disable all interrupts *&#x2F;
+CSR_WRITE(CAHCNF,0x0);&#x2F;*Close Cache*&#x2F;
+CSR_WRITE(CAHCON,0x87);&#x2F;*Flush Cache*&#x2F;
+while(CSR_READ(CAHCON)!&#x3D;0);
+CSR_WRITE(CAHCNF,0x7);&#x2F;*Open Cache*&#x2F;
+
+init_arch_irq();
+init_dma();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>这个函数用来做体系相关的irq处理的初始化.</p>
+<p><strong>irq_desc</strong>数组是用来描述IRQ的请求队列，<strong>每一个中断号分配一个irq_desc结构，组成了一个数组。</strong></p>
+<p>NR_IRQS代表中断数目，这里只是对中断结构irq_desc进行了初始化。</p>
+<p>在默认的初始化完成后调用初始化函数init_arch_irq，先执行arch/armnommu/kernel/irq-arch.c文件中的函数genarch_init_irq()，然后就执行 include/asm-armnommu/arch-xxxx/irq.h中的inline函数<strong>irq_init_irq</strong>，在这里对irq_desc进行了实质的初始化。</p>
+<p>其中mask用阻塞中断；unmask用来取消阻塞；mask_ack的作用是阻塞中断，同时还回应ack给硬件表示这个中断已经被处理了，否则硬件将再次发生同一个中断。这里，不是所有硬件需要这个ack回应，所以很多时候mask_ack与mask用的是同一个函数。</p>
+<p>接下来执行init_dma（）函数，如果不支持DMA，可以设置include/asm-armnommu/arch-xxxx/dma.h中的 MAX_DMA_CHANNELS为0，这样在arch/armnommu/kernel/dma.c文件中会根据这个定义使用不同的函数。 </p>
+<ul>
+<li><h3 id="sched-init"><a href="#sched-init" class="headerlink" title="sched_init()"></a>sched_init()</h3></li>
+</ul>
+<p>初始化系统调度进程，主要对定时器机制和时钟中断的Bottom Half的初始化函数进行设置。</p>
+<p>与时间相关的初始化过程主要有两步：</p>
+<blockquote>
+<p>（1）调用 init_timervecs()函数初始化内核定时器机制；</p>
+<p>（2）调用init_bh()函数将BH向量TIMER_BH、TQUEUE_BH和 IMMEDIATE_BH所对应的BH函数分别设置成timer_bh()、tqueue_bh()和immediate_bh()函数 </p>
+</blockquote>
+<ul>
+<li><h3 id="softirq-init"><a href="#softirq-init" class="headerlink" title="softirq_init()"></a>softirq_init()</h3></li>
+</ul>
+<p>内核的软中断机制初始化函数。</p>
+<p>调用tasklet_init初始化tasklet_struct结构，软中断的个数为32个。用于bh的 tasklet_struct结构调用tasklet_init()以后，它们的函数指针func全都指向bh_action()。</p>
+<p>bh_action就是tasklet实现bh机制的代码，但此时具体的bh函数还没有指定。</p>
+<p>HI_SOFTIRQ用于实现bottom half，TASKLET_SOFTIRQ用于公共的tasklet。 </p>
+<pre class="line-numbers language-none"><code class="language-none">open_softirq(TASKLET_SOFTIRQ, tasklet_action, NULL); &#x2F;* 初始化公共的tasklet_struct要用到的软中断 *&#x2F; 
+open_softirq(HI_SOFTIRQ, tasklet_hi_action, NULL); &#x2F;* 初始化tasklet_struct实现的bottom half调用 *&#x2F; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><h3 id="time-init"><a href="#time-init" class="headerlink" title="time_init()"></a>time_init()</h3></li>
+</ul>
+<p>这个函数用来做体系相关的timer的初始化，armnommu的在arch/armnommu/kernel/time.c。</p>
+<p>这里调用了在 include/asm-armnommu/arch-xxxx/time.h中的inline函数setup_timer。</p>
+<p><strong>setup_timer（）</strong>函数的设计与硬件设计紧密相关，主要是根据硬件设计情况设置时钟中断号和时钟频率等。 </p>
+<pre class="line-numbers language-none"><code class="language-none"> 1 void __inline__ setup_timer (void) 
+ 2 &#123; 
+ 3 &#x2F;*----- disable timer -----*&#x2F; 
+ 4 CSR_WRITE(TCR0, xxx); 
+ 5 
+ 6 CSR_WRITE (AIC_SCR7, xxx); &#x2F;* setting priority level to high *&#x2F; 
+ 7 &#x2F;* timer 0: 100 ticks&#x2F;sec *&#x2F; 
+ 8 CSR_WRITE(TICR0, xxx); 
+ 9 
+10 timer_irq.handler &#x3D; xxxxxx_timer_interrupt; 
+11 setup_arm_irq(IRQ_TIMER, &amp;timer_irq); &#x2F;* IRQ_TIMER is the interrupt number *&#x2F; 
+12 
+13 INT_ENABLE(IRQ_TIMER); 
+14 &#x2F;* Clear interrupt flag *&#x2F; 
+15 CSR_WRITE(TISR, xxx); 
+16 
+17 &#x2F;* enable timer *&#x2F; 
+18 CSR_WRITE(TCR0, xxx); 
+19 &#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><h3 id="console-init"><a href="#console-init" class="headerlink" title="console_init()"></a>console_init()</h3></li>
+</ul>
+<p>控制台初始化。控制台也是一种驱动程序，由于其特殊性，提前到该处完成初始化，主要是为了提前看到输出信息，据此判断内核运行情况。</p>
+<p>很多嵌入式Linux操作系统由于没有在/dev目录下正确配置console设备，造成启动时发生诸如unable to open an initial console的错误。 </p>
+<ul>
+<li><h3 id="init-modules"><a href="#init-modules" class="headerlink" title="init_modules()"></a>init_modules()</h3></li>
+</ul>
+<p>模块初始化。如果编译内核时使能该选项，则内核支持模块化加载/卸载功能 </p>
+<ul>
+<li><h3 id="kmem-cache-init"><a href="#kmem-cache-init" class="headerlink" title="kmem_cache_init()"></a>kmem_cache_init()</h3></li>
+</ul>
+<p>内核Cache初始化</p>
+<ul>
+<li><h3 id="sti"><a href="#sti" class="headerlink" title="sti()"></a>sti()</h3></li>
+</ul>
+<p><strong>使能中断，这里开始，中断系统开始正常工作。</strong></p>
+<ul>
+<li><h3 id="calibrate-delay"><a href="#calibrate-delay" class="headerlink" title="calibrate_delay()"></a>calibrate_delay()</h3></li>
+</ul>
+<p>近似计算BogoMIPS数字的内核函数。作为第一次估算，calibrate_delay计算出在每一秒内执行多少次__delay循环，也就是每个定时器滴答（timer tick）―百分之一秒内延时循环可以执行多少次。这种计算只是一种估算，结果并不能精确到纳秒，但这个数字供内核使用已经足够精确了。 </p>
+<p>BogoMIPS的数字由内核计算并在系统初始化的时候打印。它近似的给出了每秒钟CPU可以执行一个短延迟循环的次数。在内核中，这个结果主要用于需要等待非常短周期的设备驱动程序――例如，等待几微秒并查看设备的某些信息是否已经可用。 </p>
+<p>计算一个定时器滴答内可以执行多少次循环需要在滴答开始时就开始计数，或者应该尽可能与它接近。全局变量jiffies中存储了从内核开始保持跟踪时间开始到现在已经经过的定时器滴答数， jiffies保持异步更新，在一个中断内——每秒一百次，内核暂时挂起正在处理的内容，更新变量，然后继续刚才的工作。 </p>
+<ul>
+<li><h3 id="kmem-cache-sizes-init"><a href="#kmem-cache-sizes-init" class="headerlink" title="kmem_cache_sizes_init()"></a>kmem_cache_sizes_init()</h3></li>
+</ul>
+<p>内核内存管理器的初始化，也就是初始化cache和SLAB分配机制。</p>
+<ul>
+<li><h3 id="pgtable-cache-init"><a href="#pgtable-cache-init" class="headerlink" title="pgtable_cache_init()"></a>pgtable_cache_init()</h3></li>
+</ul>
+<p>页表cache初始化。</p>
+<ul>
+<li><h3 id="fork-init"><a href="#fork-init" class="headerlink" title="fork_init()"></a>fork_init()</h3></li>
+</ul>
+<p>这里根据硬件的内存情况，如果计算出的max_threads数量太大，可以自行定义。</p>
+<ul>
+<li><h3 id="proc-caches-init"><a href="#proc-caches-init" class="headerlink" title="proc_caches_init();"></a>proc_caches_init();</h3></li>
+</ul>
+<p>为proc文件系统创建高速缓冲 </p>
+<ul>
+<li><h3 id="vfs-caches-init-num-physpages"><a href="#vfs-caches-init-num-physpages" class="headerlink" title="vfs_caches_init(num_physpages);"></a>vfs_caches_init(num_physpages);</h3></li>
+</ul>
+<p>为VFS创建SLAB高速缓冲</p>
+<ul>
+<li><h3 id="buffer-init-num-physpages"><a href="#buffer-init-num-physpages" class="headerlink" title="buffer_init(num_physpages);"></a>buffer_init(num_physpages);</h3></li>
+</ul>
+<p>初始化buffer </p>
+<ul>
+<li><h3 id="page-cache-init-num-physpages"><a href="#page-cache-init-num-physpages" class="headerlink" title="page_cache_init(num_physpages);"></a>page_cache_init(num_physpages);</h3></li>
+</ul>
+<p>页缓冲初始化 </p>
+<ul>
+<li><h3 id="signals-init"><a href="#signals-init" class="headerlink" title="signals_init();"></a>signals_init();</h3></li>
+</ul>
+<p>创建信号队列高速缓冲 </p>
+<ul>
+<li><h3 id="proc-root-init"><a href="#proc-root-init" class="headerlink" title="proc_root_init();"></a>proc_root_init();</h3></li>
+</ul>
+<p><strong>在内存中创建包括根结点在内的所有节点</strong> </p>
+<ul>
+<li><h3 id="check-bugs"><a href="#check-bugs" class="headerlink" title="check_bugs();"></a>check_bugs();</h3></li>
+</ul>
+<p>检查与处理器相关的bug </p>
+<ul>
+<li><h3 id="smp-init"><a href="#smp-init" class="headerlink" title="smp_init();"></a>smp_init();</h3></li>
+<li><h3 id="rest-init"><a href="#rest-init" class="headerlink" title="rest_init();"></a>rest_init();</h3></li>
+</ul>
+<p>*<em>此函数调用*<em>kernel_thread*</em>(init, NULL, CLONE_FS | CLONE_FILES | CLONE_SIGNAL)函数。</em>*</p>
+<h4 id="kernel-thread-函数分析"><a href="#kernel-thread-函数分析" class="headerlink" title="kernel_thread()函数分析"></a>kernel_thread()函数分析</h4><p>这里调用了arch/armnommu/kernel/process.c中的函数kernel_thread，kernel_thread函数中通过**__syscall(clone)** 创建新线程。</p>
+<p>__syscall(clone)函数参见armnommu/kernel目录下的entry- common.S文件。</p>
+<h4 id="init-完成下列功能："><a href="#init-完成下列功能：" class="headerlink" title="init()完成下列功能："></a>init()完成下列功能：</h4><p>**init()**函数通过kernel_thread(init, NULL, CLONE_FS | CLONE_FILES | CLONE_SIGNAL)的回调函数执行，完成下列功能。 </p>
+<p>**do_basic_setup()**在该函数里，sock_init()函数进行网络相关的初始化，占用相当多的内存，如果所开发系统不支持网络功能，可以把该函数的执行注释掉。 </p>
+<p><strong>do_initcalls()<strong>实现驱动的初始化, 这里需要与</strong>vmlinux.lds</strong>联系起来看才能明白其中奥妙。</p>
+<pre class="line-numbers language-none"><code class="language-none">static void __init do_initcalls(void)
+&#123;
+　　initcall_t *call;
+
+　　call &#x3D; &amp;__initcall_start;
+　　do &#123;
+　　　(*call)();
+　　　call++;
+　　&#125; while (call &lt; &amp;__initcall_end);
+
+　　&#x2F;* Make sure there is no pending stuff from the initcall sequence *&#x2F;
+　　flush_scheduled_tasks();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>查看 /arch/i386/vmlinux.lds，其中有一段代码</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">__initcall_start &#x3D; .; 
+　.initcall.init : &#123; *(.initcall.init) &#125; 
+　__initcall_end &#x3D; .; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>其含义是__initcall_start指向代码节.initcall.init的节首，而__initcall_end指向.initcall.init的节尾。</p>
+<p><strong>do_initcalls</strong>所作的是系统中有关驱动部分的初始化工作，那么<strong>这些函数指针数据是怎样放到了.initcall.init节呢？</strong></p>
+<p>在include/linux/init.h文件中有如下3个定义： </p>
+<blockquote>
+<ol>
+<li>#define __init_call　　 <strong>attribute</strong> ((unused,<strong>section</strong> (“.initcall.init” )) </li>
+</ol>
+<p>__attribute__的含义就是构建一个在.initcall.init节的指向初始函数的指针。 </p>
+<ol start="2">
+<li>#define __initcall(fn) static initcall_t _<em>initcall</em>##fn _<em>init_call = fn<br>##意思就是在可变参数使用宏定义的时候构建一个变量名称为所指向的函数的名称，并且在前面加上__initcall</em> </li>
+<li>#define <strong>module_init</strong>(x) __initcall(x);<br><strong>很多驱动中都有类似module_init(usb_init)的代码，通过该宏定义逐层解释存放到.<a target="_blank" rel="noopener" href="http://initcall.int/">initcall.int</a>节中。</strong></li>
+</ol>
+</blockquote>
+<h4 id="init执行过程"><a href="#init执行过程" class="headerlink" title="init执行过程"></a>init执行过程</h4><p>在内核引导结束并启动init之后，系统就转入用户态的运行，在这之后创建的一切进程，都是在用户态进行。 </p>
+<p>这里先要清楚一个<strong>概念</strong>：</p>
+<p>就是init进程虽然是从内核开始的，即在前面所讲的init/main.c中的init()函数在启动后就已经是一个核心线程，但在转到执行init程序（如 /sbin/init）之后，内核中的init()就变成了/sbin/init程序，状态也转变成了用户态，也就是说<strong>核心线程变成了一个普通的进程。</strong></p>
+<p>这样一来，内核中的init函数实际上只是用户态init进程的入口，它在执行execve(“/sbin/init”,argv_init, envp_init)时改变成为一个普通的用户进程。这也就是exec函数的乾坤大挪移法，在exec函数调用其他程序时，当前进程被其他进程“灵魂附体”。 </p>
+<p>除此之外，它们的代码来源也有差别，内核中的init()函数的源代码在/init/main.c中，是内核的一部分。而/sbin/init程序的源代码是应用程序。</p>
+<p>init程序启动之后，要完成以下任务：检查文件系统，启动各种后台服务进程，最后为每个终端和虚拟控制台启动一个getty进程供用户登录。由于所有其它用户进程都是由init派生的，因此它又是其它一切用户进程的父进程。 </p>
+<p>init进程启动后，按照/etc/inittab的内容进程系统设置。很多嵌入式系统用的是BusyBox的init，它与一般所使用的init不一样，会先执行/etc/init.d/rcS二百非/etc/rc.d/rc.sysinit。</p>
+<p>kernel_init() -&gt; kernel_init_freeable() -&gt; do_basic_setup() ，其中包括do_initcalls()按照优先级加载各项内核built-in驱动</p>
+<p>再通过run_init_process()启动用户空间的init进程，由init来加载rootfs以及其他各项module驱动 最终进入cpu_idle循环中，至此内核启动完成</p>
+<p><strong>拓展内容：</strong></p>
+<p>内核的初始化过程由start_kernel函数开始，至第一个用户进程init结束，调用了一系列的初始化函数对所有的内核组件进行初始化。其中，start_kernel、rest_init、kernel_init、init_post等4个函数构成了整个初始化过程的主线。</p>
+<ul>
+<li><h3 id="start-kernel-函数：从start-kernel函数开始，内核即进入了C语言部分，它完成了内核的大部分初始化工作。实际上，可以将start-kernel函数看做内核的main函数。"><a href="#start-kernel-函数：从start-kernel函数开始，内核即进入了C语言部分，它完成了内核的大部分初始化工作。实际上，可以将start-kernel函数看做内核的main函数。" class="headerlink" title="start_kernel()函数：从start_kernel函数开始，内核即进入了C语言部分，它完成了内核的大部分初始化工作。实际上，可以将start_kernel函数看做内核的main函数。"></a>start_kernel()函数：从start_kernel函数开始，内核即进入了C语言部分，它完成了内核的大部分初始化工作。实际上，可以将start_kernel函数看做内核的main函数。</h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">*513 asmlinkage void __init start_kernel(void)* 
+
+*514 &#123;* 
+
+*515   char \* command_line;* 
+
+*516   extern struct kernel_param __start___param[], __stop___param[];* 
+
+*517* 
+
+​    *&#x2F;** 
+
+​     *** *当只有一个**CPU**的时候这个函数就什么都不做，*
+
+​     *** *但是如果有多个**CPU**的时候那么它就* 
+
+​     *** *返回在启动的时候的那个**CPU**的号* 
+
+​     **&#x2F;* 
+
+*518   smp_setup_processor_id();* 
+
+*519* 
+
+*520   &#x2F;** 
+
+*521   \* Need to run as early as possible, to initialize the* 
+
+*522   \* lockdep hash:* 
+
+*523   \*&#x2F;* 
+
+*524   unwind_init();* 
+
+*525   lockdep_init();* 
+
+*526* 
+
+​    *&#x2F;** *关闭当前**CPU**的中断* **&#x2F;* 
+
+*527   local_irq_disable();* 
+
+*528   early_boot_irqs_off();* 
+
+​    *&#x2F;** 
+
+​     *** *每一个中断都有一个中断描述符（**struct irq_desc**）来进行描述，这个函数的* 
+
+​     *** *作用就是设置所有中断描述符的锁* 
+
+​     **&#x2F;* 
+
+*529   early_init_irq_lock_class();* 
+
+*530* 
+
+*531 &#x2F;** 
+
+*532 \* Interrupts are still disabled. Do necessary setups, then* 
+
+*533 \* enable them* 
+
+*534 \*&#x2F;* 
+
+​    *&#x2F;** *获取大内核锁，锁定整个内核。* **&#x2F;* 
+
+*535   lock_kernel();* 
+
+​    *&#x2F;** *如果定义了**CONFIG_GENERIC_CLOCKEVENTS**，则注册**clockevents**框架* **&#x2F;* 
+
+*536   tick_init();* 
+
+*537   boot_cpu_init();* 
+
+​    *&#x2F;** *初始化页地址，使用链表将其链接起来* **&#x2F;* 
+
+*538   page_address_init();* 
+
+*539   printk(KERN_NOTICE);* 
+
+​    *&#x2F;** *显示内核的版本信息* **&#x2F;* 
+
+*540   printk(linux_banner);* 
+
+​    *&#x2F;** 
+
+​     *** *每种体系结构都有自己的**setup_arch()**函数，是体系结构相关的，具体编译哪个* 
+
+​     *** *体系结构的**setup_arch()**函数**,**由源码树顶层目录下的**Makefile**中的**ARCH**变量* 
+
+​     *** *决定* 
+
+​     **&#x2F;* 
+
+*541   setup_arch(&amp;command_line);* 
+
+*542   setup_command_line(command_line);* 
+
+*543   unwind_setup();* 
+
+​    *&#x2F;** *每个**CPU**分配**pre-cpu**结构内存，* *并复制**.data.percpu**段的数据* **&#x2F;* 
+
+*544   setup_per_cpu_areas();* 
+
+*545   smp_prepare_boot_cpu(); &#x2F;\* arch-specific boot-cpu hooks \*&#x2F;* 
+
+*546* 
+
+*547   &#x2F;** 
+
+*548   \* Set up the scheduler prior starting any interrupts (such as the* 
+
+*549   \* timer interrupt). Full topology setup happens at smp_init()* 
+
+*550   \* time - but meanwhile we still have a functioning scheduler.* 
+
+*551   \*&#x2F;* 
+
+​    *&#x2F;** *进程调度器初始化* **&#x2F;* 
+
+*552   sched_init();* 
+
+*553   &#x2F;** 
+
+*554   \* Disable preemption - early bootup scheduling is extremely* 
+
+*555   \* fragile until we cpu_idle() for the first time.* 
+
+*556   \*&#x2F;* 
+
+​    *&#x2F;** *禁止内核抢占* **&#x2F;* 
+
+*557   preempt_disable();* 
+
+*558   build_all_zonelists();* 
+
+*559   page_alloc_init();* 
+
+​    *&#x2F;** *打印**Linux**启动命令行参数* **&#x2F;* 
+
+*560   printk(KERN_NOTICE &quot;Kernel command line: %s\n&quot;, boot_command_line);* 
+
+​    *&#x2F;** *对内核选项的两次解析* **&#x2F;* 
+
+*561   parse_early_param();* 
+
+*562   parse_args(&quot;Booting kernel&quot;, static_command_line, __start___param,* 
+
+*563      __stop___param - __start___param,* 
+
+*564      &amp;unknown_bootoption);* 
+
+​    *&#x2F;** *检查中断是否已经打开，如果已经打开，则关闭中断* **&#x2F;* 
+
+*565   if (!irqs_disabled()) &#123;* 
+
+*566     printk(KERN_WARNING &quot;start_kernel(): bug: interrupts were &quot;* 
+
+*567         &quot;enabled \*very\* early, fixing it\n&quot;);* 
+
+*568     local_irq_disable();* 
+
+*569   &#125;* 
+
+*570   sort_main_extable();* 
+
+​    *&#x2F;** 
+
+​     ** trap_init**函数完成对系统保留中断向量（异常、非屏蔽中断以及系统调用）*        
+
+​     *** *的初始化，**init_IRQ**函数则完成其余中断向量的初始化* 
+
+​     **&#x2F;* 
+
+*571   trap_init();* 
+
+​    *&#x2F;** *初始化**RCU(Read-Copy Update)**机制* **&#x2F;* 
+
+*572   rcu_init();* 
+
+*573   init_IRQ();* 
+
+​    *&#x2F;** *初始化**hash**表，便于从进程的**PID**获得对应的进程描述符指针* **&#x2F;* 
+
+*574   pidhash_init();* 
+
+​    *&#x2F;** *初始化定时器相关的数据结构* **&#x2F;* 
+
+*575   init_timers();* 
+
+​    *&#x2F;** *对高精度时钟进行初始化* **&#x2F;* 
+
+*576   hrtimers_init();* 
+
+​    *&#x2F;** *初始化**tasklet_softirq**和**hi_softirq \*&#x2F;* 
+
+*577   softirq_init();* 
+
+*578   timekeeping_init();* 
+
+​    *&#x2F;** *初始化系统时钟源* **&#x2F;* 
+
+*579   time_init();* 
+
+​    *&#x2F;** *对内核的**profile**（一个内核性能调式工具）功能进行初始化* **&#x2F;* 
+
+*580   profile_init();* 
+
+*581   if (!irqs_disabled())* 
+
+*582     printk(&quot;start_kernel(): bug: interrupts were enabled early\n&quot;);* 
+
+*583   early_boot_irqs_on();* 
+
+*584   local_irq_enable();* 
+
+*585* 
+
+*586   &#x2F;** 
+
+*587   \* HACK ALERT! This is early. We&#39;re enabling the console before* 
+
+*588   \* we&#39;ve done PCI setups etc, and console_init() must be aware of* 
+
+*589   \* this. But we do want output early, in case something goes wrong.* 
+
+*590   \*&#x2F;* 
+
+​      *&#x2F;** 
+
+​     *** *初始化控制台以显示**printk**的内容，在此之前调用的**printk* 
+
+​     *** *只是把数据存到缓冲区里* 
+
+​     **&#x2F;* 
+
+*591   console_init();* 
+
+*592   if (panic_later)* 
+
+*593     panic(panic_later, panic_param);* 
+
+*594* 
+
+​    *&#x2F;** *如果定义了**CONFIG_LOCKDEP**宏，则打印锁依赖信息，否则什么也不做* **&#x2F;* 
+
+*595   lockdep_info();* 
+
+*596* 
+
+*597   &#x2F;** 
+
+*598   \* Need to run this when irqs are enabled, because it wants* 
+
+*599   \* to self-test [hard&#x2F;soft]-irqs on&#x2F;off lock inversion bugs* 
+
+*600   \* too:* 
+
+*601   \*&#x2F;* 
+
+*602   locking_selftest();* 
+
+*603* 
+
+*604 #ifdef CONFIG_**BLK**_DEV_INITRD* 
+
+*605   if (initrd_start &amp;&amp; !initrd_below_start_ok &amp;&amp;* 
+
+*606       initrd_start &lt; min_low_pfn &lt;&lt; PAGE_SHIFT) &#123;* 
+
+*607     printk(KERN_CRIT &quot;initrd overwritten
+*
+
+*(0x%08lx &lt; 0x%08lx) - &quot;* 
+
+*608       &quot;disabling it.\n&quot;,initrd_start,
+*
+
+*min_low_pfn &lt;&lt; PAGE_SHIFT);* 
+
+*609     initrd_start &#x3D; 0;* 
+
+*610   &#125;* 
+
+*611 #endif* 
+
+​    *&#x2F;** *虚拟文件系统的初始化* **&#x2F;* 
+
+*612   vfs_caches_init_early();* 
+
+*613   cpuset_init_early();* 
+
+*614   mem_init();* 
+
+​    *&#x2F;\* slab**初始化* **&#x2F;* 
+
+*615   kmem_cache_init();* 
+
+*616   setup_per_cpu_pageset();* 
+
+*617   numa_policy_init();* 
+
+*618   if (late_time_init)* 
+
+*619     late_time_init();* 
+
+​    *&#x2F;** 
+
+​     *** *一个非常有趣的**CPU**性能测试函数，可以计算出**CPU**在**1s**内执行了多少次一个* 
+
+​     *** *极短的循环，计算出来的值经过处理后得到**BogoMIPS**值（**Bogo**是**Bogus**的意思），* 
+
+​     **&#x2F;* 
+
+*620   calibrate_delay();* 
+
+*621   pidmap_init();* 
+
+​    *&#x2F;** *接下来的函数中，大多数都是为有关的管理机制建立专用的**slab**缓存* **&#x2F;* 
+
+*622   pgtable_cache_init();* 
+
+​    *&#x2F;** *初始化优先级树**index_bits_to_maxindex**数组* **&#x2F;* 
+
+*623   prio_tree_init();* 
+
+*624   anon_vma_init();* 
+
+*625 #ifdef CONFIG_X86* 
+
+*626   if (efi_enabled)* 
+
+*627     efi_enter_virtual_mode();* 
+
+*628 #endif* 
+
+​    *&#x2F;** *根据物理内存大小计算允许创建进程的数量* **&#x2F;* 
+
+*629   fork_init(num_physpages);* 
+
+​    *&#x2F;** 
+
+​     ** proc_caches_init()**，**buffer_init()**，**
+unnamed_dev_init()**，* *key_init()* 
+
+​     *** 
+
+​     **&#x2F;* 
+
+*630   proc_caches_init();* 
+
+*631   buffer_init();* 
+
+*632   unnamed_dev_init();* 
+
+*633   key_init();* 
+
+*634   security_init();* 
+
+*635   vfs_caches_init(num_physpages);* 
+
+*636   radix_tree_init();* 
+
+*637   signals_init();* 
+
+*638   &#x2F;\* rootfs populating might need page-writeback \*&#x2F;* 
+
+*639   page_writeback_init();* 
+
+*640 #ifdef CONFIG_PROC_FS* 
+
+*641   proc_root_init();* 
+
+*642 #endif* 
+
+*643   cpuset_init();* 
+
+*644   taskstats_init_early();* 
+
+*645   delayacct_init();* 
+
+*646* 
+
+​    *&#x2F;** 
+
+​     *** *测试该**CPU**的各种缺陷，记录检测到的缺陷，以便于内核的其他部分以后可以* 
+
+​     *** *使用它们的工作。* 
+
+​     **&#x2F;* 
+
+*647   check_bugs();* 
+
+*648* 
+
+*649   acpi_early_init(); &#x2F;\* before LAPIC and* *SMP* *init \*&#x2F;* 
+
+*650* 
+
+*651   &#x2F;\* Do the rest non-__init&#39;ed, we&#39;re now alive \*&#x2F;* 
+
+​    *&#x2F;** *创建**init**进程* **&#x2F;* 
+
+*652   rest_init();* 
+
+*653 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><h3 id="reset-init-函数：在start-kernel函数的最后调用了reset-init函数进行后续的初始化。"><a href="#reset-init-函数：在start-kernel函数的最后调用了reset-init函数进行后续的初始化。" class="headerlink" title="reset_init()函数：在start_kernel函数的最后调用了reset_init函数进行后续的初始化。"></a><em>reset_init()函数：在start_kernel函数的最后调用了reset_init函数进行后续的初始化。</em></h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">*438 static void noinline __init_refok rest_init(void)* 
+
+*439   __releases(kernel_lock)* 
+
+*440 &#123;* 
+
+*441   int pid;* 
+
+*442* 
+
+​    *&#x2F;\* reset_init()**函数最主要的历史使命就是启动内核线程**kernel_init \*&#x2F;* 
+
+*443   kernel_thread(kernel_init, NULL, CLONE_FS | CLONE_SIGHAND);* 
+
+*444   numa_default_policy();* 
+
+​    *&#x2F;** *启动内核线程**kthreadd**，运行**kthread_create_list**全局链表中的**kthread \*&#x2F;* 
+
+*445   pid &#x3D; kernel_thread(kthreadd, NULL, CLONE_FS | CLONE_FILES);* 
+
+*446   kthreadd_task &#x3D; find_task_by_pid(pid);* 
+
+*447   unlock_kernel();* 
+
+*448* 
+
+*449   &#x2F;** 
+
+*450   \* The boot idle thread must execute schedule()* 
+
+*451   \* at least once to get things moving:* 
+
+*452   \*&#x2F;* 
+
+​    *&#x2F;** 
+
+​     *** *增加**idle**进程的**need_resched**标志，* *并且调用**schedule**释放**CPU,* 
+
+​     *** *将其赋给更应该获取**CPU**的进程。* 
+
+​     **&#x2F;* 
+
+*453   init_idle_bootup_task(current);* 
+
+*454   preempt_enable_no_resched();* 
+
+*455   schedule();* 
+
+*456   preempt_disable();* 
+
+*457* 
+
+*458   &#x2F;\* Call into cpu_idle with preempt disabled \*&#x2F;* 
+
+​    *&#x2F;** 
+
+​     *** *进入**idle**循环以消耗空闲的**CPU**时间片，* *该函数从不返回。然而，当有实际工作* 
+
+​     *** *要处理时，该函数就会被抢占。* 
+
+​     **&#x2F;* 
+
+*459   cpu_idle();* 
+
+*460 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><h3 id="kernel-init-函数：kernel-init函数将完成设备驱动程序的初始化，并调用init-post函数启动用户空间的init进程。"><a href="#kernel-init-函数：kernel-init函数将完成设备驱动程序的初始化，并调用init-post函数启动用户空间的init进程。" class="headerlink" title="kernel_init()函数：kernel_init函数将完成设备驱动程序的初始化，并调用init_post函数启动用户空间的init进程。"></a><em>kernel_init()函数：kernel_init函数将完成设备驱动程序的初始化，并调用init_post函数启动用户空间的init进程。</em></h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">*813 static int __init kernel_init(void \* unused)* 
+
+*814 &#123;* 
+
+*815   lock_kernel();* 
+
+*816   &#x2F;** 
+
+*817   \* init can run on any cpu.* 
+
+*818   \*&#x2F;* 
+
+​    *&#x2F;** *修改进程的**CPU**亲和力* **&#x2F;* 
+
+*819   set_cpus_allowed(current, CPU_MASK_**ALL**);* 
+
+*820   &#x2F;** 
+
+*821   \* Tell the world that we&#39;re going to be the grim* 
+
+*822   \* reaper of innocent orphaned children.* 
+
+*823   ** 
+
+*824   \* We don&#39;t want people to have to make incorrect* 
+
+*825   \* assumptions about where in the task array this* 
+
+*826   \* can be found.* 
+
+*827   \*&#x2F;* 
+
+​    *&#x2F;** *把当前进程设为接受其他孤儿进程的进程* **&#x2F;* 
+
+*828   init_pid_ns.child_reaper &#x3D; current;* 
+
+*829* 
+
+*830   __set_special_pids(1, 1);* 
+
+*831   cad_pid &#x3D; task_pid(current);* 
+
+*832* 
+
+*833   smp_prepare_cpus(max_cpus);* 
+
+*834* 
+
+*835   do_pre_smp_initcalls();* 
+
+*836* 
+
+​    *&#x2F;** *激活**SMP**系统中其他**CPU \*&#x2F;* 
+
+*837   smp_init();* 
+
+*838   sched_init_smp();* 
+
+*839* 
+
+*840   cpuset_init_smp();* 
+
+*841* 
+
+​    *&#x2F;** 
+
+​     *** *此时与体系结构相关的部分已经初始化完成，现在开始调用**do_basic_setup**函数* 
+
+​     *** *初始化设备，完成外设及其驱动程序（直接编译进内核的模块）的加载和初始化* 
+
+​     **&#x2F;* 
+
+*842   do_basic_setup();* 
+
+*843* 
+
+*844   &#x2F;** 
+
+*845   \* check if there is an early userspace init. If yes, let it do all* 
+
+*846   \* the work* 
+
+*847   \*&#x2F;* 
+
+*848* 
+
+*849   if (!ramdisk_execute_command)* 
+
+*850     ramdisk_execute_command &#x3D; &quot;&#x2F;init&quot;;* 
+
+*851* 
+
+*852   if (sys_access((const char __user \*)ramdisk_execute_command, 0) !&#x3D; 0) &#123;* 
+
+*853     ramdisk_execute_command &#x3D; NULL;* 
+
+*854     prepare_namespace();* 
+
+*855   &#125;* 
+
+*856* 
+
+*857   &#x2F;** 
+
+*858   \* Ok, we have completed the initial bootup, and* 
+
+*859   \* we&#39;re essentially up and running. Get rid of the* 
+
+*860   \* initmem segments and start the user-mode stuff.* 
+
+*861   \*&#x2F;* 
+
+*862   init_post();* 
+
+*863   return 0;* 
+
+*864 &#125;*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li><h3 id="init-post-函数：到init-post函数为止，内核的初始化已经进入尾声，第一个用户空间进程init将姗姗来迟。"><a href="#init-post-函数：到init-post函数为止，内核的初始化已经进入尾声，第一个用户空间进程init将姗姗来迟。" class="headerlink" title="init_post()函数：到init_post函数为止，内核的初始化已经进入尾声，第一个用户空间进程init将姗姗来迟。"></a><em>init_post()函数：到init_post函数为止，内核的初始化已经进入尾声，第一个用户空间进程init将姗姗来迟。</em></h3></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">*774 static int noinline init_post(void)* 
+
+*775 &#123;* 
+
+*776   free_initmem();* 
+
+*777   unlock_kernel();* 
+
+*778   mark_rodata_ro();* 
+
+*779   system_state &#x3D; SYSTEM_RUNNING;* 
+
+*780   numa_default_policy();* 
+
+*781* 
+
+*782   if (sys_open((const char __user \*) &quot;&#x2F;dev&#x2F;console&quot;, O_**RDWR**, 0) &lt; 0)* 
+
+*783     printk(KERN_WARNING &quot;Warning: unable to open an initial console.\n&quot;);* 
+
+*784* 
+
+*785   (void) sys_dup(0);* 
+
+*786   (void) sys_dup(0);* 
+
+*787* 
+
+*788   if (ramdisk_execute_command) &#123;* 
+
+*789     run_init_process(ramdisk_execute_command);* 
+
+*790     printk(KERN_WARNING &quot;Failed to execute %s\n&quot;,* 
+
+*791         ramdisk_execute_command);* 
+
+*792   &#125;* 
+
+*793* 
+
+*794   &#x2F;** 
+
+*795   \* We try each of these until one succeeds.* 
+
+*796   ** 
+
+*797   \* The Bourne shell can be used instead of init if we are* 
+
+*798   \* trying to recover a really broken machine.* 
+
+*799   \*&#x2F;* 
+
+*800   if (execute_command) &#123;* 
+
+*801     run_init_process(execute_command);* 
+
+*802     printk(KERN_WARNING &quot;Failed to execute %s. Attempting &quot;* 
+
+*803           &quot;defaults...\n&quot;, execute_command);* 
+
+*804   &#125;* 
+
+*805   run_init_process(&quot;&#x2F;sbin&#x2F;init&quot;);* 
+
+*806   run_init_process(&quot;&#x2F;etc&#x2F;init&quot;);* 
+
+*807   run_init_process(&quot;&#x2F;bin&#x2F;init&quot;);* 
+
+*808   run_init_process(&quot;&#x2F;bin&#x2F;sh&quot;);* 
+
+*809* 
+
+*810   panic(&quot;No init found. Try passing init&#x3D; option to kernel.&quot;);* 
+
+*811 &#125;*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="ps："><a href="#ps：" class="headerlink" title="ps："></a><em>ps：</em></h3><blockquote>
+<ul>
+<li>第776行，到此，内核初始化已经接近尾声了，所有的初始化函数都已经被调用，因此free_initmem函数可以舍弃内存的__init_begin至__init_end（包括.init.setup、.initcall.init等节）之间的数据。所有使用__init标记过的函数和使用__initdata标记过的数据，在free_initmem函数执行后，都不能使用，它们曾经获得的内存现在可以重新用于其他目的。</li>
+<li>第782行，如果可能，打开控制台设备，这样init进程就拥有一个控制台，并可以从中读取输入信息，也可以向其中写入信息。实际上init进程除了打印错误信息以外，并不使用控制台，但是如果调用的是shell或者其他需要交互的进程，而不是init，那么就需要一个可以交互的输入源。如果成功执行open，/dev/console即成为init的标准输入源（文件描述符0）。</li>
+<li>第785～786行，调用dup打开/dev/console文件描述符两次。这样，该控制台设备就也可以供标准输出和标准错误使用（文件描述符1和2）。假设第782行的open成功执行（正常情况），init进程现在就拥有3个文件描述符–标准输入、标准输出以及标准错误。</li>
+<li>第788～804行，如果内核命令行中给出了到init进程的直接路径（或者别的可替代的程序），这里就试图执行init。因为当kernel_execve函数成功执行目标程序时并不返回，只有失败时，才能执行相关的表达式。接下来的几行会在几个地方查找init，按照可能性由高到低的顺序依次是： /sbin/init，这是init标准的位置；/etc/init和/bin/init，两个可能的位置。</li>
+<li>第805～807行，这些是init可能出现的所有地方。如果在这3个地方都没有发现init，也就无法找到它的同名者了，系统可能就此崩溃。因此，第808行会试图建立一个交互的shell（/bin/sh）来代替，希望root用户可以修复这种错误并重新启动机器。</li>
+<li>第810行，由于某些原因，init甚至不能创建shell。当前面的所有情况都失败时，调用panic。这样内核就会试图同步磁盘，确保其状态一致。如果超过了内核选项中定义的时间，它也可能会重新启动机器。</li>
+</ul>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -564,11 +1630,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/new/">
-                                    <span class="chip bg-color">new</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -754,7 +1816,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Makefile组织结构及编译控制
+                            Makefile组织结构及编译控制学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -765,21 +1827,13 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/new/" class="post-category">
-                                    new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    日常学习
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/new/">
-                        <span class="chip bg-color">new</span>
-                    </a>
-                    
                 </div>
                 
             </div>

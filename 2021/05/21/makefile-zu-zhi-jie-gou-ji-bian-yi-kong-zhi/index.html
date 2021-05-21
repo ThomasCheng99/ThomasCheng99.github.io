@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/new/">
-                                <span class="chip bg-color">new</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/new/" class="post-category">
-                                new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -466,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    640
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -501,7 +497,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><img src="/2021/05/21/makefile-zu-zhi-jie-gou-ji-bian-yi-kong-zhi/11.png"></p>
+<center>Makefile文件的组织结构</center>
+
+<center>注解详见：<a herf="https://www.bbsmax.com/A/1O5EpQLnJ7/">https://www.bbsmax.com/A/1O5EpQLnJ7/</a></center>
+
+
+
+<p>列出makefile中跟目标有关的语法：</p>
+<blockquote>
+<p>[目标1]：[依赖]</p>
+<p>[[命令1]</p>
+<p>[[命令2]</p>
+<p>[[目标2]：[依赖]</p>
+<p>[[命令1]</p>
+<p>[[命令2]</p>
+</blockquote>
+<p>注解：</p>
+<blockquote>
+<p>1）目标：指make要做的事情，可以是一个简单的代号，也可以是目标文件，需要顶格书写，前面不能有空格或Tab。一个Makefile可以有多个目标，写在最前面的第一个目标，会被Make程序确立为 “默认目标”；</p>
+<p>2）依赖：要达成目标需要依赖的某些文件或其它目标；</p>
+<p>3）命令1，命令2…命令n：make达成目标所需要的命令。只有当目标不存在或依赖文件的修改时间比目标文件还要新时，才会执行命令。要特别注意命令的开头要用“Tab”键，不能使用空格代替，有的编辑器会把Tab键自动转换成空格导致出错，若出现这种情况请检查自己的编辑器配置；</p>
+</blockquote>
+<p>下面列举一个实例展示makefile实现编译控制的方法：</p>
+<p>现有三个文件：hello_main.c主文件，hello_func.c函数文件，hello_func.h头文件，hello_main.c的main主函数调用了hello_func.c文件的打印函数，而打印函数在hello_func.h文件中声明。</p>
+<p>hello_main.c主文件</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">\#include <span class="token string">"hello_func.h"</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">&#123;</span>
+
+	<span class="token function">hello_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>hello_func.c函数文件</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">\#include <span class="token operator">&lt;</span>stdio<span class="token punctuation">.</span>h<span class="token operator">></span>
+    
+\#include <span class="token string">"hello_func.h"</span>
+
+<span class="token keyword">void</span> <span class="token function">hello_func</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">&#123;</span>
+
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world! This is a C program.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+
+	<span class="token punctuation">&#123;</span>
+
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"output i=%d\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>hello_func.h头文件</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">hello_func</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>则可以编写makefile代码如下：</p>
+<pre class="line-numbers language-makefile" data-language="makefile"><code class="language-makefile"><span class="token comment">#Makefile格式</span>
+
+<span class="token comment">#目标:依赖</span>
+
+<span class="token comment">#Tab 命令1</span>
+
+<span class="token comment">#Tab 命令2</span>
+
+<span class="token comment">#默认目标</span>
+
+<span class="token comment">#hello_main依赖于hello_main.c和hello_func.c文件</span>
+
+<span class="token symbol">hello_main</span><span class="token punctuation">:</span> hello_main.c hello_func.c 
+
+gcc -o hello_main hello_main.c hello_func.c -I
+
+
+
+<span class="token comment">#clean目标，用来删除编译生成的文件</span>
+
+<span class="token symbol">clean</span><span class="token punctuation">:</span> 
+
+rm -f *.o hello_main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>该文件定义了默认目标hello_main用于编译程序，clean目标用于删除编译生成的文件。特别地，其中hello_main目标名与gcc编译生成的文件名”gcc -o hello_main”设置成一致了，也就是说，此处的目标hello_main在Makefile看来，已经是一个目标文件hello_main。这样的好处是make每次执行的时候，会检查hello_main文件和依赖文件hello_main.c、hello_func.c的修改日期，如果依赖文件的修改日期比hello_main文件的日期新，那么make会执行目标其下的Shell命令更新hello_main文件，否则不会执行。如此便实现了编译控制。</p>
+
                 
             </div>
             <hr/>
@@ -564,11 +657,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/new/">
-                                    <span class="chip bg-color">new</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -755,7 +844,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Makefile组织结构及编译控制
+                            Makefile组织结构及编译控制学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -766,8 +855,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/new/" class="post-category">
-                                    new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    日常学习
                                 </a>
                             
                             
@@ -775,14 +864,6 @@
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/new/">
-                        <span class="chip bg-color">new</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -805,7 +886,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux kernel启动流程学习
+                            Linux kernel启动流程学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -816,21 +897,13 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/new/" class="post-category">
-                                    new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    日常学习
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/new/">
-                        <span class="chip bg-color">new</span>
-                    </a>
-                    
                 </div>
                 
             </div>
