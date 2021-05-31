@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-05-31T06:55:21.107Z</updated>
+  <updated>2021-05-31T07:31:04.359Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux find指令的exec参数</title>
+    <link href="http://thomascheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/"/>
+    <id>http://thomascheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/</id>
+    <published>2021-05-31T07:24:54.000Z</published>
+    <updated>2021-05-31T07:31:04.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Linux 下找文件经常会用上 find 指令，当用 find 指令找到文件或目录后，可以在后面加上 -exec 参数，来对每一个找到的文件或目录执行特定指令。&lt;/p&gt;
+&lt;p&gt;find 指令加上 -exec 参数的具体语法是这样:&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>新零售：吹响第四次零售革命的号角</title>
@@ -490,32 +515,6 @@
     
     
     <category term="黑客尝试" scheme="http://thomascheng99.github.io/tags/%E9%BB%91%E5%AE%A2%E5%B0%9D%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下删除文件的几种方法及速度比较</title>
-    <link href="http://thomascheng99.github.io/2021/04/22/0-ri-chang-xue-xi/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/"/>
-    <id>http://thomascheng99.github.io/2021/04/22/0-ri-chang-xue-xi/linux-xia-shan-chu-wen-jian-de-ji-chong-fang-fa-ji-su-du-bi-jiao/</id>
-    <published>2021-04-22T02:53:32.000Z</published>
-    <updated>2021-04-25T09:32:30.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;方法汇总：&quot;&gt;&lt;a href=&quot;#方法汇总：&quot; class=&quot;headerlink&quot; title=&quot;方法汇总：&quot;&gt;&lt;/a&gt;方法汇总：&lt;/h3&gt;&lt;p&gt;场景：删除/tmp下的所有文件&lt;/p&gt;
-&lt;p&gt;方法一：直接使用rm——rm -f</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Linux" scheme="http://thomascheng99.github.io/tags/Linux/"/>
     
   </entry>
   

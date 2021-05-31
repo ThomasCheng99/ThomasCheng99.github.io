@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux find指令的exec参数</title>
+      <link href="2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/"/>
+      <url>2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/</url>
+      
+        <content type="html"><![CDATA[<p>Linux 下找文件经常会用上 find 指令，当用 find 指令找到文件或目录后，可以在后面加上 -exec 参数，来对每一个找到的文件或目录执行特定指令。</p><p>find 指令加上 -exec 参数的具体语法是这样:</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “filename” -exec command &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在 -exec 前面是 find 指令找出想要的文件，在 -exec 后面的 command 是要执行的指令, 而 { } 包着的是找到的文件或目录，后面需要加上 ; 完结。</p><p>以下是几个 find -exec 的使用例子：</p><p>搜寻并删除所有大过 100MB 的档案：</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -size +100M -exec &#x2F;bin&#x2F;rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>找出 .log.old 结尾的档案并删除:</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “*.log.old” -exec &#x2F;bin&#x2F;rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将所有档案 .php 档案改变权限为 644:</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “*.php” -exec chmod 644 &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将所有目录改变权限为 755:</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -type d -exec chmod 755 &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将所有属于 “olduser” 的档案，改变为 “newuser”:</p><pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -user olduser -exec chown newuser &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新零售：吹响第四次零售革命的号角</title>
       <link href="2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/"/>
       <url>2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/</url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="新零售：吹响第四次零售革命的号角, Bobby">
+    <meta name="keywords" content="Linux find指令的exec参数, Bobby">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>新零售：吹响第四次零售革命的号角 | Bobby</title>
+    <title>Linux find指令的exec参数 | Bobby</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">新零售：吹响第四次零售革命的号角</h1>
+                    <h1 class="description center-align post-title">Linux find指令的exec参数</h1>
                 </div>
             </div>
         </div>
@@ -430,13 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/new/">
-                                <span class="chip bg-color">new</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -444,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/new/" class="post-category">
-                                new
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                日常学习
                             </a>
                         
                     </div>
@@ -466,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    40
+                    271
                 </div>
                 
 
@@ -501,12 +497,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>刘慈欣在《三体》中说：“弱小和无知不是生存的障碍，而傲慢才是。”</li>
-</ul>
-<ul>
-<li>万物皆有裂痕，那是光照进来的地方。</li>
-</ul>
+                <p>Linux 下找文件经常会用上 find 指令，当用 find 指令找到文件或目录后，可以在后面加上 -exec 参数，来对每一个找到的文件或目录执行特定指令。</p>
+<p>find 指令加上 -exec 参数的具体语法是这样:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “filename” -exec command &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在 -exec 前面是 find 指令找出想要的文件，在 -exec 后面的 command 是要执行的指令, 而 { } 包着的是找到的文件或目录，后面需要加上 ; 完结。</p>
+<p>以下是几个 find -exec 的使用例子：</p>
+<p>搜寻并删除所有大过 100MB 的档案：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -size +100M -exec &#x2F;bin&#x2F;rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>找出 .log.old 结尾的档案并删除:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “*.log.old” -exec &#x2F;bin&#x2F;rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>将所有档案 .php 档案改变权限为 644:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -name “*.php” -exec chmod 644 &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>将所有目录改变权限为 755:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -type d -exec chmod 755 &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>将所有属于 “olduser” 的档案，改变为 “newuser”:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ find &#x2F;path&#x2F;to -user olduser -exec chown newuser &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -533,7 +551,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ThomasCheng99.github.io/2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/">http://ThomasCheng99.github.io/2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/</a>
+                    <a href="http://ThomasCheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/">http://ThomasCheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,11 +588,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/new/">
-                                    <span class="chip bg-color">new</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -744,9 +758,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/">
                     <div class="card-image">
@@ -764,49 +779,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    日常学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/27/0-ri-chang-xue-xi/find-zhi-ling-xiang-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Find指令详解">
-                        
-                        <span class="card-title">Find指令详解</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Find指令详解
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
@@ -819,6 +793,56 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="新零售：吹响第四次零售革命的号角">
+                        
+                        <span class="card-title">新零售：吹响第四次零售革命的号角</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            新零售：吹响第四次零售革命的号角
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/new/" class="post-category">
+                                    new
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/new/">
+                        <span class="chip bg-color">new</span>
+                    </a>
+                    
                 </div>
                 
             </div>
