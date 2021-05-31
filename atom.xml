@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-05-21T04:20:34.606Z</updated>
+  <updated>2021-05-31T06:55:21.107Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新零售：吹响第四次零售革命的号角</title>
+    <link href="http://thomascheng99.github.io/2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/"/>
+    <id>http://thomascheng99.github.io/2021/05/31/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/</id>
+    <published>2021-05-31T06:52:31.000Z</published>
+    <updated>2021-05-31T06:55:21.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;刘慈欣在《三体》中说：“弱小和无知不是生存的障碍，而傲慢才是。”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;万物皆有裂痕，那是光照进来的地方。&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/tags/new/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Find指令详解</title>
+    <link href="http://thomascheng99.github.io/2021/05/27/0-ri-chang-xue-xi/find-zhi-ling-xiang-jie/"/>
+    <id>http://thomascheng99.github.io/2021/05/27/0-ri-chang-xue-xi/find-zhi-ling-xiang-jie/</id>
+    <published>2021-05-27T09:21:43.000Z</published>
+    <updated>2021-05-31T07:18:54.301Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Linux中find命令用法全汇总，看完就没有不会用的！&quot;&gt;&lt;a href=&quot;#Linux中find命令用法全汇总，看完就没有不会用的！&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Makefile组织结构及编译控制</title>
@@ -220,7 +274,7 @@
     <link href="http://thomascheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/"/>
     <id>http://thomascheng99.github.io/2021/05/12/ji-suan-ji-wang-luo/</id>
     <published>2021-05-12T02:58:50.000Z</published>
-    <updated>2021-05-21T06:09:32.746Z</updated>
+    <updated>2021-05-21T08:41:35.922Z</updated>
     
     
       
@@ -230,9 +284,9 @@
     <summary type="html">&lt;ul&gt;
 &lt;li&gt;互联网之所以能够向用户提供许多服务，就是因为互联网具有两个重要基本特点，即连通性和共享。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;电路交换——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送。&lt;/li&gt;
-&lt;li&gt;报文交换——整个报文先传送到相邻结点，全</summary>
+&lt;blockquote&gt;
+&lt;p&gt;电路交换——整个报文的比特流连续地从源点直达终点，好像在一个管道中传送。&lt;/p&gt;
+&lt;p&gt;报文交换——整个报文先传送到相</summary>
         
       
     
@@ -462,59 +516,6 @@
     
     
     <category term="Linux" scheme="http://thomascheng99.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>主题美化</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/zhu-ti-mei-hua/</id>
-    <published>2021-04-21T07:36:15.000Z</published>
-    <updated>2021-04-25T09:47:53.631Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;center&gt;详情请见官方文档：&lt;a herf=&quot;https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md&quot;&gt;hexo-theme-matery&lt;/a&gt;&lt;/center&gt;
-
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="个人博客设计" scheme="http://thomascheng99.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="主题美化" scheme="http://thomascheng99.github.io/tags/%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac怎样查看隐藏文件</title>
-    <link href="http://thomascheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/21/0-yi-nan-za-zheng/mac-zen-yang-cha-kan-yin-cang-wen-jian/</id>
-    <published>2021-04-21T07:18:16.000Z</published>
-    <updated>2021-04-21T07:27:44.424Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;现代人的隐私保护意识越来越强。而电脑做为日常生活和工作资料的储存箱，会存放很多涉及个人隐私的内容。所以有人喜欢在Mac上隐藏文件和文件夹，来保护自己的个人隐私。&lt;/p&gt;
-&lt;p&gt;但是隐藏之后，有些用户却不知道如何让隐藏文件再显示出来，今天就来教大家如何在Mac上显示隐藏文件的</summary>
-        
-      
-    
-    
-    
-    <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
-    
-    
-    <category term="Mac电脑使用技巧" scheme="http://thomascheng99.github.io/tags/Mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
