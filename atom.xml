@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-06-04T09:08:59.890Z</updated>
+  <updated>2021-06-07T06:55:10.862Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>人人都是产品经理</title>
+    <link href="http://thomascheng99.github.io/2021/06/07/ren-ren-du-shi-chan-pin-jing-li/"/>
+    <id>http://thomascheng99.github.io/2021/06/07/ren-ren-du-shi-chan-pin-jing-li/</id>
+    <published>2021-06-07T06:55:10.000Z</published>
+    <updated>2021-06-07T06:55:10.862Z</updated>
+    
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/tags/new/"/>
+    
+  </entry>
+  
+  <entry>
     <title>富爸爸：财富自由之路</title>
-    <link href="http://thomascheng99.github.io/2021/06/04/fu-ba-ba-cai-fu-zi-you-zhi-lu/"/>
-    <id>http://thomascheng99.github.io/2021/06/04/fu-ba-ba-cai-fu-zi-you-zhi-lu/</id>
+    <link href="http://thomascheng99.github.io/2021/06/04/0-du-shu-bi-ji/fu-ba-ba-cai-fu-zi-you-zhi-lu/"/>
+    <id>http://thomascheng99.github.io/2021/06/04/0-du-shu-bi-ji/fu-ba-ba-cai-fu-zi-you-zhi-lu/</id>
     <published>2021-06-04T03:03:19.000Z</published>
-    <updated>2021-06-04T09:08:59.890Z</updated>
+    <updated>2021-06-07T06:52:22.976Z</updated>
     
     
       
@@ -31,7 +48,11 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;显而易见，任何认为钱不重要的人都不能长期缺钱。&lt;/p&gt;
 &lt;/blockquote&gt;
-</summary>
+&lt;blockquote&gt;
+&lt;p&gt;钱没有什么不同，但是挣钱的途径却截然不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;财商不是指你挣了多少</summary>
         
       
     
@@ -497,35 +518,6 @@
     
     <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>日常学习01</title>
-    <link href="http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/"/>
-    <id>http://thomascheng99.github.io/2021/04/25/ri-chang-xue-xi-01/</id>
-    <published>2021-04-25T10:33:38.000Z</published>
-    <updated>2021-04-26T08:28:08.847Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;宏病毒：鉴于绝大多数人都不需要或者不会使用宏功能，所以可以得出一个相对重要的结论：如果office文档在打开时，系统给出一个宏病毒警告框，就应该对这个文档保持高度警惕，它被感染的可能性极大。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;解压缩：以往的压缩工具通常是将</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
