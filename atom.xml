@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-06-07T07:56:18.545Z</updated>
+  <updated>2021-06-15T09:30:52.496Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下使用GitHub+Hexo搭建个人博客</title>
+    <link href="http://thomascheng99.github.io/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/"/>
+    <id>http://thomascheng99.github.io/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/</id>
+    <published>2021-06-15T08:36:49.000Z</published>
+    <updated>2021-06-15T09:30:52.496Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;开始之前需要在电脑上安装好&lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt;和&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>定期更新Homebrew</title>
+    <link href="http://thomascheng99.github.io/2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/"/>
+    <id>http://thomascheng99.github.io/2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/</id>
+    <published>2021-06-15T08:32:49.000Z</published>
+    <updated>2021-06-15T08:36:10.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/1.webp&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习笔记</title>
+    <link href="http://thomascheng99.github.io/2021/06/07/java-xue-xi-bi-ji/"/>
+    <id>http://thomascheng99.github.io/2021/06/07/java-xue-xi-bi-ji/</id>
+    <published>2021-06-07T09:05:08.000Z</published>
+    <updated>2021-06-08T09:20:19.618Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;大小写敏感&lt;/strong&gt;：Java</summary>
+        
+      
+    
+    
+    
+    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>人人都是产品经理</title>
@@ -453,77 +524,6 @@
     
     
     <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chrome更新书签策略</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0-ri-chang-xue-xi/chrome-geng-xin-shu-qian-ce-lue/</id>
-    <published>2021-04-26T08:21:09.000Z</published>
-    <updated>2021-04-26T08:26:55.337Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h5 id=&quot;A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）&quot;&gt;&lt;a href=&quot;#A：这个主要比对的是云端最后一次操作时间和你机器上的最后一次操作时间。（本地修改文件会自动更新修改日期）&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>WPS表格无法多窗口打开文件</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/wps-biao-ge-wu-fa-duo-chuang-kou-da-kai-wen-jian/</id>
-    <published>2021-04-26T08:19:04.000Z</published>
-    <updated>2021-04-26T08:26:23.061Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;双击WPS表格EXE打开多个窗口后选择对应的文件打开&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>知乎不支持转载的文章怎样复制文字?</title>
-    <link href="http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/"/>
-    <id>http://thomascheng99.github.io/2021/04/26/0-yi-nan-za-zheng/zhi-hu-bu-zhi-chi-zhuan-zai-de-wen-zhang-zen-yang-fu-zhi-wen-zi/</id>
-    <published>2021-04-26T08:16:39.000Z</published>
-    <updated>2021-04-26T08:33:43.997Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;只要从你要复制的最后开始往前选，一直选到开头的X人赞同的同字（包括同字），然后Ctrl+C，万事大吉（谷歌浏览器亲测有效，其余浏览器未测试）&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="疑难杂症" scheme="http://thomascheng99.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
     
   </entry>

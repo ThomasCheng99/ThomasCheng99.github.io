@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>Mac下使用GitHub+Hexo搭建个人博客</title>
+      <link href="2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/"/>
+      <url>2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/</url>
+      
+        <content type="html"><![CDATA[<p>开始之前需要在电脑上安装好<a href="https://git-scm.com/">Git</a>和<a href="https://nodejs.org/en/">node.js</a>，Mac上可以使用Homebrew命令行工具来安装Git和node.js</p><hr><h4 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h4><p>在命令行工具输入以下命令，如果已经安装过Homebrew可以忽略</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr><h4 id="Homebrew-安装-node-js"><a href="#Homebrew-安装-node-js" class="headerlink" title="Homebrew 安装 node.js"></a>Homebrew 安装 node.js</h4><pre class="line-numbers language-none"><code class="language-none">brew install node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装后可以使用命令来检查是否安装成功</p><p>检查node</p><pre class="line-numbers language-none"><code class="language-none">node -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>输出结果：</p><pre class="line-numbers language-none"><code class="language-none">v12.14.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>检查<a href="https://www.npmjs.com/">npm</a>是否安装成功，npm是node.js的包管理工具，用它来安装hexo</p><pre class="line-numbers language-none"><code class="language-none">npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>输出结果:</p><pre class="line-numbers language-none"><code class="language-none">6.13.4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr><h4 id="Homebrew-安装git"><a href="#Homebrew-安装git" class="headerlink" title="Homebrew 安装git"></a>Homebrew 安装git</h4><pre class="line-numbers language-none"><code class="language-none">brew install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>检查git是否安装成功</p><pre class="line-numbers language-none"><code class="language-none">git -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>输出结果:</p><pre class="line-numbers language-none"><code class="language-none">git version 2.24.3 (Apple Git-128)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr><h4 id="使用-npm-安装-hexo"><a href="#使用-npm-安装-hexo" class="headerlink" title="使用 npm 安装 hexo"></a>使用 npm 安装 <a href="https://hexo.io/zh-cn/docs/">hexo</a></h4><pre class="line-numbers language-none"><code class="language-none">sudo npm install -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装完成后，在Desktop创建一个blog文件夹，在该文件夹下初始化我们的博客</p><pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;Desktop &amp;&amp; mkdir blog &amp;&amp; cd blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在该文件件目录下执行博客初始化操作</p><pre class="line-numbers language-none"><code class="language-none"># 会下载一些node.js的依赖文件hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>初始化成功后，在blog目录下执行预览操作</p><pre class="line-numbers language-none"><code class="language-none">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>当看到如下输出就可以预览我们创建的博客了</p><pre class="line-numbers language-none"><code class="language-none">INFO  Validating configINFO  Start processingINFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000 . Press Ctrl+C to stop. <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>预览效果如下</p><p><img src="/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/1.jfif"></p><hr><h4 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h4><p><strong>如果已经配置过，该步骤可以忽略</strong><br>在命令行输入配置用户名和账号的命令</p><pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;username&quot;git config --global user.email &quot;email@gmail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>其中 <code>username</code> 是你的用户名，<code>email@gmail.com</code>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p><pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果已经创建过会出现 <code>Overwrite (y/n)? n</code>提示可以输入 <code>n</code>，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在<code>~/.ssh/id_rsa.pub</code>目录下生成 需要使用的 key。</p><p>可以使用命令行输出key并复制</p><pre class="line-numbers language-none"><code class="language-none">cat ~&#x2F;.ssh&#x2F;id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>或者可以找到这个文件并打开它，复制里面的内容。</p><p>登录github账号 找到 <code>setting</code></p><p><img src="/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/2.png"></p><p>先点击 <code>SSH and GPG keys</code> 然后再点击 <code>New SSH key </code>进入到配置 SSH Key 的页面</p><p><img src="/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/3.jfif"></p><p>然后输入复制好的key的内容</p><p><img src="/2021/06/15/0-ri-chang-xue-xi/mac-xia-shi-yong-github-hexo-da-jian-ge-ren-bo-ke/4.png"></p><p>点击 <code>Add SSH Key </code>即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>定期更新Homebrew</title>
+      <link href="2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/"/>
+      <url>2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2021/06/15/0-ri-chang-xue-xi/ding-qi-geng-xin-homebrew/1.webp"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>Homebrew</code> 是使用 <code>Mac OS</code> 的一件利器，<code>Homebrew</code> 可以安装 <code>Apple</code> 没有预装但非常需要的东西。<code>Homebrew</code> 会将软件包安装到独立目录，并将其文件软链接至 <code>/usr/local</code>。</p><p>这一切只需要一条指令：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="是否需要定期更新"><a href="#是否需要定期更新" class="headerlink" title="是否需要定期更新"></a>是否需要定期更新</h1><p>软件保持最新肯定是好的，但是一些软件因为某些原因没有更新到最新，如果一味地更新 <code>Homebrew</code> 所有安装包可能带来依赖的不支持。所以我的意见是每个月定期查看一下，有选择性地更新。</p><h1 id="如何更新"><a href="#如何更新" class="headerlink" title="如何更新"></a>如何更新</h1><p>更新 Homebrew 自己：</p><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">brew update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>查看哪些安装包需要更新：</p><pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">brew outdated<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>更新：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew upgrade             <span class="token comment"># 更新所有的包</span>brew upgrade <span class="token variable">$FORMULA</span>    <span class="token comment"># 更新指定的包</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>清理旧版本：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cleanup             <span class="token comment"># 清理所有包的旧版本</span>brew cleanup <span class="token variable">$FORMULA</span>    <span class="token comment"># 清理指定包的旧版本</span>brew cleanup -n          <span class="token comment"># 查看可清理的旧版本包，不执行实际操作</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>锁定不想更新的包：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew pin <span class="token variable">$FORMULA</span>      <span class="token comment"># 锁定某个包</span>brew unpin <span class="token variable">$FORMULA</span>    <span class="token comment"># 取消锁定</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>查看安装包的相关信息：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew info <span class="token variable">$FORMULA</span>    <span class="token comment"># 显示某个包的信息</span>brew info             <span class="token comment"># 显示安装了包数量，文件数量，和总占用空间</span>brew deps --installed --tree <span class="token comment"># 查看已安装的包的依赖，树形显示</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>列出已安装包</p><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">brew list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>删除</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">rm</span> <span class="token variable">$FORMULA</span>                <span class="token comment"># 删除某个包</span>brew uninstall --force <span class="token variable">$FORMULA</span> <span class="token comment"># 删除所有版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java学习笔记</title>
+      <link href="2021/06/07/java-xue-xi-bi-ji/"/>
+      <url>2021/06/07/java-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<ul><li><strong>大小写敏感</strong>：Java 是大小写敏感的</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>人人都是产品经理</title>
       <link href="2021/06/07/0-du-shu-bi-ji/ren-ren-du-shi-chan-pin-jing-li/"/>
       <url>2021/06/07/0-du-shu-bi-ji/ren-ren-du-shi-chan-pin-jing-li/</url>
