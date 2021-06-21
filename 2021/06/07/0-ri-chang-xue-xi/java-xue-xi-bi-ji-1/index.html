@@ -505,24 +505,24 @@
 <p><img src="/2021/06/07/0-ri-chang-xue-xi/java-xue-xi-bi-ji-1/image-20210618111014389.png"></p>
 <h4 id="大小写敏感"><a href="#大小写敏感" class="headerlink" title="大小写敏感"></a>大小写敏感</h4><hr>
 <p>Java 是大小写敏感的</p>
-<ul>
-<li>Java入口程序规定的方法必须是静态方法，方法名必须为<code>main</code>，括号内的参数必须是String数组。</li>
-</ul>
-<ul>
-<li>int i3 = 2_000_000_000; // 加下划线更容易识别</li>
-</ul>
-<ul>
-<li>对于<code>float</code>类型，需要加上<code>f</code>后缀。</li>
-</ul>
+<blockquote>
+<p>Java入口程序规定的方法必须是静态方法，方法名必须为<code>main</code>，括号内的参数必须是String数组。</p>
+</blockquote>
+<blockquote>
+<p>int i3 = 2_000_000_000; // 加下划线更容易识别</p>
+</blockquote>
+<blockquote>
+<p>对于<code>float</code>类型，需要加上<code>f</code>后缀。</p>
+</blockquote>
 <h4 id="Java布尔类型的存储大小"><a href="#Java布尔类型的存储大小" class="headerlink" title="Java布尔类型的存储大小"></a>Java布尔类型的存储大小</h4><hr>
 <p>Java语言对布尔类型的存储并没有做规定，因为理论上存储布尔类型只需要1 bit，但是通常JVM内部会把<code>boolean</code>表示为4字节整数。</p>
 <p>理由：在《Java虚拟机规范》一书中的描述：“虽然定义了boolean这种数据类型，但是只对它提供了非常有限的支持。在Java虚拟机中没有任何供boolean值专用的字节码指令，Java语言表达式所操作的boolean值，在编译之后都使用Java虚拟机中的int数据类型来代替，而boolean数组将会被编码成Java虚拟机的byte数组，每个元素boolean元素占8位”。也就是说JVM规范指出boolean当做int处理，也就是4字节，boolean数组当做byte数组处理，这样我们可以得出boolean类型占了单独使用是4个字节，在数组中是确定的1个字节。</p>
 <p>如果认同上面说法，那么存在问题：那虚拟机为什么要用int来代替boolean呢？为什么不用byte或short，这样不是更节省内存空间吗。经过查阅资料发现，使用int的原因是，对于当下32位的处理器（CPU）来说，一次处理数据是32位（这里不是指的是32/64位系统，而是指CPU硬件层面），32 位 CPU 使用 4 个字节是最为节省的，哪怕你是 1 个 bit 他也是占用 4 个字节。因为 CPU 寻址系统只能 32 位 32 位地寻址，具有高效存取的特点。</p>
 <p>It depends on Java virtual machine.这取决于java虚拟机 。</p>
 <p>总结：java规范中，没有明确指出boolean的大小。在《Java虚拟机规范》给出了4个字节，和boolean数组1个字节的定义，具体还要看虚拟机实现是否按照规范来，所以1个字节、4个字节都是有可能的。</p>
-<ul>
-<li>定义变量的时候，如果加上<code>final</code>修饰符，这个变量就变成了常量：根据习惯，常量名通常全部大写。</li>
-</ul>
+<blockquote>
+<p>定义变量的时候，如果加上<code>final</code>修饰符，这个变量就变成了常量：根据习惯，常量名通常全部大写。</p>
+</blockquote>
 <h4 id="var关键字"><a href="#var关键字" class="headerlink" title="var关键字"></a>var关键字</h4><hr>
 <p><img src="/2021/06/07/0-ri-chang-xue-xi/java-xue-xi-bi-ji-1/image-20210618112928152.png"></p>
 <h4 id="整数注意事项"><a href="#整数注意事项" class="headerlink" title="整数注意事项"></a>整数注意事项</h4><blockquote>
@@ -552,13 +552,15 @@
 <ul>
 <li>在运算过程中，如果参与运算的两个数类型不一致，那么计算结果为较大类型的整型。例如，<code>short</code>和<code>int</code>计算，结果总是<code>int</code>，原因是<code>short</code>首先自动被转型为<code>int</code>。</li>
 </ul>
-<p>也可以将结果强制转型，即将大范围的整数转型为小范围的整数。强制转型使用<code>(类型)</code>，例如，将<code>int</code>强制转型为<code>short</code>：</p>
+<ul>
+<li>也可以将结果强制转型，即将大范围的整数转型为小范围的整数。强制转型使用<code>(类型)</code>，例如，将<code>int</code>强制转型为<code>short</code>：</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">12345</span><span class="token punctuation">;</span>
 <span class="token keyword">short</span> s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span> i<span class="token punctuation">;</span> <span class="token comment">// 12345</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
-<ul>
-<li>浮点数<code>0.1</code>在计算机中就无法精确表示，因为十进制的<code>0.1</code>换算成二进制是一个无限循环小数，很显然，无论使用<code>float</code>还是<code>double</code>，都只能存储一个<code>0.1</code>的近似值。但是，<code>0.5</code>这个浮点数又可以精确地表示。</li>
-</ul>
+<blockquote>
+<p>浮点数<code>0.1</code>在计算机中就无法精确表示，因为十进制的<code>0.1</code>换算成二进制是一个无限循环小数，很显然，无论使用<code>float</code>还是<code>double</code>，都只能存储一个<code>0.1</code>的近似值。但是，<code>0.5</code>这个浮点数又可以精确地表示。</p>
+</blockquote>
 <ul>
 <li>如果参与运算的两个数其中一个是整型，那么整型可以自动提升到浮点型：</li>
 </ul>
@@ -588,18 +590,18 @@
 
 
 
-<ul>
-<li>可以将浮点数强制转型为整数。在转型时，浮点数的小数部分会被丢掉。如果转型后超过了整型能表示的最大范围，将返回整型的最大值。</li>
-</ul>
-<ul>
-<li>如果要进行四舍五入，可以对浮点数加上0.5再强制转型：</li>
-</ul>
-<ul>
-<li>布尔运算的一个重要特点是短路运算。如果一个布尔运算的表达式能提前确定结果，则后续的计算不再执行，直接返回结果。</li>
-</ul>
-<ul>
-<li>如果用<code>+</code>连接字符串和其他数据类型，会将其他数据类型先自动转型为字符串，再连接：</li>
-</ul>
+<blockquote>
+<p>可以将浮点数强制转型为整数。在转型时，浮点数的小数部分会被丢掉。如果转型后超过了整型能表示的最大范围，将返回整型的最大值。</p>
+</blockquote>
+<blockquote>
+<p>如果要进行四舍五入，可以对浮点数加上0.5再强制转型。</p>
+</blockquote>
+<blockquote>
+<p>布尔运算的一个重要特点是短路运算。如果一个布尔运算的表达式能提前确定结果，则后续的计算不再执行，直接返回结果。</p>
+</blockquote>
+<blockquote>
+<p>如果用<code>+</code>连接字符串和其他数据类型，会将其他数据类型先自动转型为字符串，再连接。</p>
+</blockquote>
 <h4 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h4><hr>
 <p>如果我们要表示多行字符串，使用+号连接会非常不方便：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"first line \n"</span>
@@ -675,25 +677,25 @@
 └───┴───────────┴───┴───────────┴───┘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>原来的字符串<code>&quot;hello&quot;</code>还在，只是我们无法通过变量<code>s</code>访问它而已。因此，字符串的不可变是指<strong>字符串内容不可变</strong>。</p>
+<blockquote>
+<p>注意要区分空值<code>null</code>和空字符串<code>&quot;&quot;</code>，空字符串是一个有效的字符串对象，它不等于<code>null</code>。</p>
+</blockquote>
+<blockquote>
+<p>Java的数组有几个特点：</p>
 <ul>
-<li>注意要区分空值<code>null</code>和空字符串<code>&quot;&quot;</code>，空字符串是一个有效的字符串对象，它不等于<code>null</code>。</li>
-</ul>
-<ul>
-<li>Java的数组有几个特点：<ul>
 <li>数组所有元素初始化为默认值，整型都是<code>0</code>，浮点型是<code>0.0</code>，布尔型是<code>false</code>；</li>
 <li>数组一旦创建后，大小就不可改变。</li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><code>println</code>是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用<code>print()</code>：</li>
-</ul>
+</blockquote>
+<blockquote>
+<p><code>println</code>是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用<code>print()</code>：</p>
+</blockquote>
 <h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><hr>
 <p>Java还提供了格式化输出的功能。为什么要格式化输出？因为计算机表示的数据不一定适合人来阅读：</p>
 <p>如果要把数据显示成我们期望的格式，就需要使用格式化输出的功能。格式化输出使用<code>System.out.printf()</code>，通过使用占位符<code>%?</code>，<code>printf()</code>可以把后面的参数格式化成指定格式，而不能使用<code>println</code>。</p>
-<ul>
-<li>在使用git这些版本控制系统自动合并时更容易出问题，所以不推荐忽略花括号的写法。</li>
-</ul>
+<blockquote>
+<p>在使用git这些版本控制系统自动合并时更容易出问题，所以不推荐忽略花括号的写法。</p>
+</blockquote>
 <h4 id="新Switch语法"><a href="#新Switch语法" class="headerlink" title="新Switch语法"></a>新Switch语法</h4><hr>
 <p>使用新的<code>switch</code>语法，不但不需要<code>break</code>，还可以直接返回值。把上面的代码改写如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
