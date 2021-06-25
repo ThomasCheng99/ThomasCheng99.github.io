@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-06-25T03:17:42.013Z</updated>
+  <updated>2021-06-25T06:54:32.699Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>知乎：大家有可怜中透着一丝丝搞笑的舔狗语录吗?</title>
+    <link href="http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-da-jia-you-ke-lian-zhong-tou-zhao-yi-si-si-gao-xiao-de-tian-gou-yu-lu-ma/"/>
+    <id>http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-da-jia-you-ke-lian-zhong-tou-zhao-yi-si-si-gao-xiao-de-tian-gou-yu-lu-ma/</id>
+    <published>2021-06-25T06:39:44.000Z</published>
+    <updated>2021-06-25T06:54:32.699Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;今天和她一起打排位，一不小心抢了她一个人头，她给我发了一个“nmsl”就下线了。&lt;/p&gt;
+&lt;p&gt;柠檬酸了？我想了半天，她应该是看我操作太秀了，她有一些嫉妒，不愧是我喜欢的姑娘，太可爱了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="网络文章分享" scheme="http://thomascheng99.github.io/categories/%E7%BD%91%E7%BB%9C%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>知乎：有哪些小时候不明白，长大了才懂的事情？</title>
+    <link href="http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-xiao-shi-hou-bu-ming-bai-chang-da-liao-cai-dong-de-shi-qing/"/>
+    <id>http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-xiao-shi-hou-bu-ming-bai-chang-da-liao-cai-dong-de-shi-qing/</id>
+    <published>2021-06-25T06:39:21.000Z</published>
+    <updated>2021-06-25T06:42:34.262Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;小时候刚刚开始认字，喜欢看成语故事。&lt;/p&gt;
+&lt;p&gt;看到一个故事叫“刻舟求剑”，心里觉得这个人好傻，世上怎么会有这样的人，难道不知道剑在江中央掉下了水，跑到江边是找不到的？然而长大后发现，在这条岁月的长河里，很多人在某个节点遗失的东西，之后一次又一次返回寻找，却不知道自己只</summary>
+        
+      
+    
+    
+    
+    <category term="网络文章分享" scheme="http://thomascheng99.github.io/categories/%E7%BD%91%E7%BB%9C%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>知乎：昆虫为什么不会因趋光性齐刷刷地奔向太阳？</title>
@@ -454,60 +506,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;好产品靠设计&lt;/p&gt;
 &lt;p&gt;我从不认为富</summary>
-        
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux find指令的exec参数</title>
-    <link href="http://thomascheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/"/>
-    <id>http://thomascheng99.github.io/2021/05/31/0-ri-chang-xue-xi/linux-find-zhi-ling-de-exec-can-shu/</id>
-    <published>2021-05-31T07:24:54.000Z</published>
-    <updated>2021-06-25T03:33:34.402Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Linux 下找文件经常会用上 find 指令，当用 find 指令找到文件或目录后，可以在后面加上 -exec 参数，来对每一个找到的文件或目录执行特定指令。&lt;/p&gt;
-&lt;p&gt;find 指令加上 -exec 参数的具体语法是这样:&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>新零售：吹响第四次零售革命的号角</title>
-    <link href="http://thomascheng99.github.io/2021/05/31/0-du-shu-bi-ji/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/"/>
-    <id>http://thomascheng99.github.io/2021/05/31/0-du-shu-bi-ji/xin-ling-shou-chui-xiang-di-si-ci-ling-shou-ge-ming-de-hao-jiao/</id>
-    <published>2021-05-31T06:52:31.000Z</published>
-    <updated>2021-06-25T03:28:30.184Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;刘慈欣在《三体》中说：“弱小和无知不是生存的障碍，而傲慢才是。”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;万物皆有裂痕，那是光照进来的地方。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​        马云说：“纯电商已死，新零售已来，变革超乎我们想象！”</summary>
         
       
     
