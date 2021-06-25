@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-06-25T02:52:34.169Z</updated>
+  <updated>2021-06-25T02:54:11.040Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -17,22 +17,56 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>知乎：昆虫为什么不会因趋光性齐刷刷地奔向太阳？</title>
+    <link href="http://thomascheng99.github.io/2021/06/25/zhi-hu-kun-chong-wei-shi-me-bu-hui-yin-qu-guang-xing-qi-shua-shua-di-ben-xiang-tai-yang/"/>
+    <id>http://thomascheng99.github.io/2021/06/25/zhi-hu-kun-chong-wei-shi-me-bu-hui-yin-qu-guang-xing-qi-shua-shua-di-ben-xiang-tai-yang/</id>
+    <published>2021-06-25T02:54:11.000Z</published>
+    <updated>2021-06-25T02:54:11.040Z</updated>
+    
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+    <category term="tag" scheme="http://thomascheng99.github.io/tags/tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知乎：你有什么能讲一年的笑话？</title>
+    <link href="http://thomascheng99.github.io/2021/06/25/zhi-hu-ni-you-shi-me-neng-jiang-yi-nian-de-xiao-hua/"/>
+    <id>http://thomascheng99.github.io/2021/06/25/zhi-hu-ni-you-shi-me-neng-jiang-yi-nian-de-xiao-hua/</id>
+    <published>2021-06-25T02:53:50.000Z</published>
+    <updated>2021-06-25T02:53:50.583Z</updated>
+    
+    
+    
+    
+    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
+    
+    
+    <category term="tag" scheme="http://thomascheng99.github.io/tags/tag/"/>
+    
+  </entry>
+  
+  <entry>
     <title>知乎：有哪些只有美国人才能听懂的笑话?</title>
     <link href="http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-zhi-you-mei-guo-ren-cai-neng-ting-dong-de-xiao-hua/"/>
     <id>http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-zhi-you-mei-guo-ren-cai-neng-ting-dong-de-xiao-hua/</id>
     <published>2021-06-25T02:43:42.000Z</published>
-    <updated>2021-06-25T02:52:34.169Z</updated>
+    <updated>2021-06-25T02:56:07.835Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;1.“你们美国黑人帮派里面为什么都有一个白人成员？”&lt;/p&gt;
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;“你们美国黑人帮派里面为什么都有一个白人成员？”&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;“总要有人负责跟警察交涉吧”&lt;/p&gt;
-&lt;p&gt;2.“你不能堕胎，这是谋杀”&lt;/p&gt;
-&lt;p&gt;“我可以干掉任何一个闯入我家的混蛋，这是美国法律赋予我的权利”&lt;/p&gt;
-&lt;p&gt;3.“你们白人头发有金色的红色的，眼珠有</summary>
+&lt;ol</summary>
         
       
     
@@ -461,52 +495,6 @@
     
     
     <category term="读书笔记" scheme="http://thomascheng99.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Find指令详解</title>
-    <link href="http://thomascheng99.github.io/2021/05/27/0-ri-chang-xue-xi/find-zhi-ling-xiang-jie/"/>
-    <id>http://thomascheng99.github.io/2021/05/27/0-ri-chang-xue-xi/find-zhi-ling-xiang-jie/</id>
-    <published>2021-05-27T09:21:43.000Z</published>
-    <updated>2021-05-31T07:23:53.786Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Linux中find命令用法全汇总，看完就没有不会用的！&quot;&gt;&lt;a href=&quot;#Linux中find命令用法全汇总，看完就没有不会用的！&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Makefile组织结构及编译控制</title>
-    <link href="http://thomascheng99.github.io/2021/05/21/0-ri-chang-xue-xi/makefile-zu-zhi-jie-gou-ji-bian-yi-kong-zhi/"/>
-    <id>http://thomascheng99.github.io/2021/05/21/0-ri-chang-xue-xi/makefile-zu-zhi-jie-gou-ji-bian-yi-kong-zhi/</id>
-    <published>2021-05-21T03:56:02.000Z</published>
-    <updated>2021-05-21T04:20:34.606Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
