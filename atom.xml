@@ -6,7 +6,7 @@
   <link href="http://thomascheng99.github.io/atom.xml" rel="self"/>
   
   <link href="http://thomascheng99.github.io/"/>
-  <updated>2021-06-24T08:41:03.816Z</updated>
+  <updated>2021-06-25T02:35:30.761Z</updated>
   <id>http://thomascheng99.github.io/</id>
   
   <author>
@@ -17,19 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>知乎：有哪些让人深思的故事？</title>
+    <link href="http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-rang-ren-shen-si-de-gu-shi/"/>
+    <id>http://thomascheng99.github.io/2021/06/25/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-you-na-xie-rang-ren-shen-si-de-gu-shi/</id>
+    <published>2021-06-25T02:34:02.000Z</published>
+    <updated>2021-06-25T02:35:30.761Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一只兔子在山洞口写论文。&lt;/p&gt;
+&lt;p&gt;一只狐狸走过来，问：“兔子，你在干什么啊？”&lt;br&gt;兔子回答：“我在写论文。”&lt;br&gt;狐狸：“什么论文？”&lt;br&gt;兔子：“为什么兔子比狐狸更强大。”&lt;br&gt;狐狸听了捧着肚子大笑：“你，，你居然说你比我更强大。”&lt;br&gt;兔子不动神色：“</summary>
+        
+      
+    
+    
+    
+    <category term="网络文章分享" scheme="http://thomascheng99.github.io/categories/%E7%BD%91%E7%BB%9C%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>知乎：你在什么时候突然有了扎心的感觉？</title>
-    <link href="http://thomascheng99.github.io/2021/06/24/zhi-hu-ni-zai-shi-me-shi-hou-tu-ran-you-liao-zha-xin-de-gan-jue/"/>
-    <id>http://thomascheng99.github.io/2021/06/24/zhi-hu-ni-zai-shi-me-shi-hou-tu-ran-you-liao-zha-xin-de-gan-jue/</id>
+    <link href="http://thomascheng99.github.io/2021/06/24/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-ni-zai-shi-me-shi-hou-tu-ran-you-liao-zha-xin-de-gan-jue/"/>
+    <id>http://thomascheng99.github.io/2021/06/24/0-wang-luo-wen-zhang-fen-xiang/zhi-hu-ni-zai-shi-me-shi-hou-tu-ran-you-liao-zha-xin-de-gan-jue/</id>
     <published>2021-06-24T08:41:03.000Z</published>
-    <updated>2021-06-24T08:41:03.816Z</updated>
+    <updated>2021-06-25T02:37:18.933Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有这样一个姑娘，长得挺好看，嘴巴却特别毒。&lt;/p&gt;
+&lt;p&gt;曾经我问她：有一天要是我赚不到钱了，你会不会离开我？&lt;/p&gt;
+&lt;p&gt;她几乎是秒答：当然了，你不知道老子就是喜欢有钱人哦。&lt;/p&gt;
+&lt;p&gt;事实上有段时间我确实很穷，穷到房租都付不起快过年了也买不起羽绒服，在家就是静音模</summary>
+        
+      
     
     
     
+    <category term="网络文章分享" scheme="http://thomascheng99.github.io/categories/%E7%BD%91%E7%BB%9C%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/"/>
     
-    <category term="new" scheme="http://thomascheng99.github.io/categories/new/"/>
-    
-    
-    <category term="前路浩浩荡荡,万物皆可期待" scheme="http://thomascheng99.github.io/tags/%E5%89%8D%E8%B7%AF%E6%B5%A9%E6%B5%A9%E8%8D%A1%E8%8D%A1-%E4%B8%87%E7%89%A9%E7%9A%86%E5%8F%AF%E6%9C%9F%E5%BE%85/"/>
     
   </entry>
   
@@ -463,29 +496,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;理解JNI需要理解以下问题：&quot;&gt;&lt;a href=&quot;#理解JNI需要理解以下问题：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常学习" scheme="http://thomascheng99.github.io/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HAL层学习</title>
-    <link href="http://thomascheng99.github.io/2021/05/21/0-ri-chang-xue-xi/hal-ceng-xue-xi/"/>
-    <id>http://thomascheng99.github.io/2021/05/21/0-ri-chang-xue-xi/hal-ceng-xue-xi/</id>
-    <published>2021-05-21T03:24:58.000Z</published>
-    <updated>2021-05-21T03:37:07.860Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Android-HAL-简介&quot;&gt;&lt;a href=&quot;#Android-HAL-简介&quot; class=&quot;headerlink&quot; title=&quot;Android HAL 简介&quot;&gt;&lt;/a&gt;Android HAL 简介&lt;/h1&gt;&lt;p&gt;Android</summary>
         
       
     
